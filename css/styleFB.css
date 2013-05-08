@@ -1,0 +1,234 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:300;
+    color: #666;
+    font-size:12px;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	background: #fff;
+	width: 810px;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+
+.center {
+    width: 100%;
+    float:left;
+    min-height: 635px;
+}
+
+.center .containerCt{
+    width: 810px;
+    margin: 0 auto;
+}
+
+.center .containerCt .container {
+    min-height: 635px;
+    background:#fff;
+    width: 100%;
+    float: left;
+/*    padding-bottom: 30px;*/
+    position:relative;
+}
+
+footer {
+    width: 100%;
+    float:left;
+    height: 32px;
+    border-top:1px solid #2f92c5;
+    background: #2f92c5;
+    position: relative;
+    z-index: 3;
+}
+
+footer label {
+    width: 100%;
+    padding-top: 10px;
+    text-align:center;
+    border-top: 2px solid #6ab1d5;
+    color: #fff;
+    float:left;
+    font-size: 11px;
+}
+
+footer label  span {
+    color: #a2dfff;
+    padding-left:5px;
+    font-size: 11px;
+}
+
+.box_home01 {
+    width: 100%;
+    float:left;
+    height: auto;
+	position:relative;
+}
+
+.intro_text {
+    width: 385px;
+    height: 290px;
+    float: left;
+    padding-left: 400px;
+    margin-top: 15px;
+    position:relative;
+}
+
+.intro_text h2 {
+    font-size: 18px;
+    color: #f0702e;
+    font-weight: 700;
+    width: 100%;
+    float: left;
+    margin: 18px 0 12px 0;
+}
+
+.intro_text p {
+    font-size: 18px;
+    float: left;
+    width: 100%;
+    line-height: 135%;
+}
+
+.img_home01 {
+    position:absolute;
+    width: 448px;
+    height: 332px;
+    background: url(../images/img01FB.png) no-repeat;
+    top: 15px;
+    left: 0;
+}
+
+.title_cad {
+    width: 100%;
+    text-align: center;
+    color: #2f92c5;
+    font-size: 22px;
+    float: left;
+    margin-top: 75px;
+    font-weight:700;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+strong {
+    font-size: 18px;
+    font-weight: 400;
+    color: #2f92c5;
+}
+
+.box_cad_home {
+    width: 281px;
+    padding-left:42px;
+    min-height: 237px;
+    float:left;
+    padding-top: 30px;
+    position:relative;
+    z-index:1;
+	margin-bottom:25px;
+}
+
+.box_cad_home label {
+    font-size: 16px;
+    color: #f0702e;
+    font-weight: 400;
+    width: 100%;
+    float: left;
+}
+
+.box_cad_home input[type='text'], .box_cad_home input[type='password']{
+    width: 250px;
+    padding: 5px;
+    float: left;
+    border: 2px solid #f0702e;
+    margin: 8px 365px 18px 0;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    outline: 0 none;
+    color: #666;
+}
+
+.box_cad_home input[type='submit'], input[type='button'] {
+    padding: 3px 20px;
+    float:left;
+    background: #8d96a6;
+    color: #fff;
+    border: 2px solid #676767;
+    text-transform: uppercase;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 14px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    margin-left: 78px;
+    cursor: pointer;
+}
+
+.img_home02 {
+    width: 533px;
+	height: 289px;
+	background: url(../images/img02FB.png) no-repeat;
+	position: absolute;
+	right: 0;
+	bottom: -30px;
+}
+
+.error{
+	width: 100%;
+	max-width: 385px;
+	float: left;
+	color: red;
+	margin-top: -15px;
+	margin-bottom: 20px;
+	color: red!important;
+}
+
+
+.btn_default {
+	padding: 3px 20px;
+    float: left;
+    background: #8d96a6;
+    color: #fff;
+    border: 2px solid #676767;
+    text-transform: uppercase;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 14px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    cursor:pointer;
+	margin-left: 78px;
+}
