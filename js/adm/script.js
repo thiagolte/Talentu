@@ -28,6 +28,8 @@ $(document).ready(function() {
     });
     
     $('#NovoCat').click(function(){
+        $('#EditarCat').hide();
+        $('#SalvarCat').show();
         $( "#dialogCat" ).dialog( "open" );
     });
     
@@ -58,6 +60,34 @@ $(document).ready(function() {
         });
     });
     
+    $('#EditarCat').click(function(){
+        var ativoCat = 0;
+        
+        if($('#AtivoCat').prop('checked') == true){
+            ativoCat = 1;
+        }
+
+        $.ajax({
+            url: "index.php?adm",
+            type: "GET",
+            data: {
+                    UpdateCat: 1,
+                    CodigoCat: $('#CodigoCat').attr('value'),
+                    NomeCat:$('#NomeCat').attr('value'),
+                    AtivoCat:ativoCat
+                   },
+            success: function(data)
+            {
+                if(data > 0){
+                    $( "#dialogCat" ).dialog( "close" );
+                }else{
+                    alert('ERRO: tente novamente mais tarde');
+                    $( "#dialogCat" ).dialog( "close" );
+                }
+            }
+        });
+    });
+
     $('.DeleteCategorias').live('click',function() {
         var anSelected = fnGetSelected(oCategorias);
         if ( anSelected.length !== 0 ) {
@@ -82,6 +112,18 @@ $(document).ready(function() {
             } 
         }
     });
+
+    $('.EditCategorias').live('click',function() {
+        var anSelected = fnGetSelected(oCategorias);
+        if ( anSelected.length !== 0 ) {
+            $('#SalvarCat').hide();
+            $('#CodigoCat').attr('value',anSelected.find('.codigo').val());
+            $('#NomeCat').attr('value',anSelected.find('.nome').val());
+            $('#AtivoCat').attr('checked',anSelected.find('.ativo').val());
+            $('#EditarCat').show();
+            $( "#dialogCat" ).dialog( "open" );
+        }
+    });
         
     var oCategorias = $('#Categorias').dataTable({
         "bJQueryUI": true,
@@ -98,6 +140,8 @@ $(document).ready(function() {
     });
     
     $('#NovoVag').click(function(){
+        $('#EditarVag').hide();
+        $('#SalvarVag').show();
         $( "#dialogVag" ).dialog( "open" );
     });
     
@@ -128,6 +172,34 @@ $(document).ready(function() {
         });
     });
     
+    $('#EditarVag').click(function(){
+        var ativoCat = 0;
+        
+        if($('#AtivoVag').prop('checked') == true){
+            ativoVag = 1;
+        }
+
+        $.ajax({
+            url: "index.php?adm",
+            type: "GET",
+            data: {
+                    UpdateVag: 1,
+                    CodigoVag: $('#CodigoVag').attr('value'),
+                    NomeVag:$('#NomeVag').attr('value'),
+                    AtivoVag:ativoVag
+                   },
+            success: function(data)
+            {
+                if(data > 0){
+                    $( "#dialogVag" ).dialog( "close" );
+                }else{
+                    alert('ERRO: tente novamente mais tarde');
+                    $( "#dialogVag" ).dialog( "close" );
+                }
+            }
+        });
+    });
+
     $('.DeleteVagas').click( function() {
         var anSelected = fnGetSelected(oVagas);
         if ( anSelected.length !== 0 ) {
@@ -151,6 +223,18 @@ $(document).ready(function() {
                     }
                 });
             } 
+        }
+    });
+
+    $('.EditVagas').live('click',function() {
+        var anSelected = fnGetSelected(oVagas);
+        if ( anSelected.length !== 0 ) {
+            $('#SalvarVag').hide();
+            $('#CodigoVag').attr('value',anSelected.find('.codigo').val());
+            $('#NomeVag').attr('value',anSelected.find('.nome').val());
+            $('#AtivoVag').attr('checked',anSelected.find('.ativo').val());
+            $('#EditarVag').show();
+            $( "#dialogVag" ).dialog( "open" );
         }
     });
     

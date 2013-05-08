@@ -156,6 +156,10 @@ a {
     float: left;
 }
 
+.DialogInput{
+	width: 220px;
+}
+
 input[type='submit'] {
     padding: 3px 20px;
     float: left;

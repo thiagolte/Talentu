@@ -29,6 +29,19 @@ class Adm_Controller {
             echo 1; 
         }
         
+        if (isset($getVars['UpdateCat']) && !empty($getVars['UpdateCat']) &&
+                isset($getVars['CodigoCat']) && !empty($getVars['CodigoCat']) &&
+                isset($getVars['NomeCat']) && !empty($getVars['NomeCat']) &&
+                isset($getVars['AtivoCat']) && !empty($getVars['AtivoCat'])){
+            
+            $Codigo = $getVars['CodigoCat'];
+            $Nome = $getVars['NomeCat'];
+            $Ativo = $getVars['AtivoCat'];
+
+            $Retorno = $Adm_Model->update_Categoria($Codigo, $Nome, $Ativo);
+            echo 1; 
+        }
+
         if (isset($getVars['DeleteCat']) && !empty($getVars['DeleteCat']) &&
                 isset($getVars['CodigoCat']) && !empty($getVars['CodigoCat'])){
             
@@ -47,6 +60,19 @@ class Adm_Controller {
             $Nome = $getVars['NomeVag'];
             $Ativo = $getVars['AtivoVag'];
             $Retorno = $Adm_Model->set_Vaga($Nome, $Ativo);
+            echo 1; 
+        }
+
+        if (isset($getVars['UpdateVag']) && !empty($getVars['UpdateVag']) &&
+                isset($getVars['CodigoVag']) && !empty($getVars['CodigoVag']) &&
+                isset($getVars['NomeVag']) && !empty($getVars['NomeVag']) &&
+                isset($getVars['AtivoVag']) && !empty($getVars['AtivoVag'])){
+            
+            $Codigo = $getVars['CodigoVag'];
+            $Nome = $getVars['NomeVag'];
+            $Ativo = $getVars['AtivoVag'];
+
+            $Retorno = $Adm_Model->update_Vaga($Codigo, $Nome, $Ativo);
             echo 1; 
         }
         
