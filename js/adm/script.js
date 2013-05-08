@@ -85,7 +85,9 @@ $(document).ready(function() {
         
     var oCategorias = $('#Categorias').dataTable({
         "bJQueryUI": true,
-        "sPaginationType": "full_numbers"
+        "sPaginationType": "full_numbers",
+        "aLengthMenu": [[60, 80, 100, -1], [60, 80, 100, "All"]],
+        "iDisplayLength": 60
     });
     
     
@@ -154,10 +156,11 @@ $(document).ready(function() {
     
     var oVagas = $('#Vagas').dataTable({
         "bJQueryUI": true,
-        "sPaginationType": "full_numbers"
+        "sPaginationType": "full_numbers",
+        "aLengthMenu": [[60, 80, 100, -1], [60, 80, 100, "All"]],
+        "iDisplayLength": 60
     });
-    
-    
+
     
     /* Add a click handler to the rows - this could be used as a callback */
     $(".DataTable tbody tr").live('click',function( e ) {
