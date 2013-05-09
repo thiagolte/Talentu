@@ -1413,10 +1413,9 @@ strong {
 }
 
 .radio_lbl2 {
-	width: 100px;
+	width: auto;
 	float: left;
-	margin-bottom:0px;
-	margin-top:5px;
+	margin: 5px 20px 0 0;
 }
 
 .radio_lbl2 label {
