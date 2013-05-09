@@ -33,7 +33,7 @@
 					
 					<div class="radio_lbl">
                     	<input type="radio" name="empresa"/>
-						<label class="lbl_form">vaga na minha empresa</label>
+						<label class="lbl_form">vaga em outra empresa</label>
 					</div>
 					    
 
@@ -142,14 +142,21 @@
 					
 					<div class="radio_lbl2">
                     	<input type="radio" name="forma_contato"/>
-						<label class="lbl_form">e-mail</label>
+						<label class="lbl_form">E-mail</label>
+					</div>
+					
+					<div class="radio_lbl2">
+                    	<input type="radio" name="forma_contato"/>
+						<label class="lbl_form">Telefone e E-mail</label>
 					</div>
 					
 					<input type="text" class="input_form" style="width: 420px;">
+					<input type="text" class="input_form" style="width: 194px;">
+					<input type="text" class="input_form" style="width: 194px; float: right; margin-right: -2px!important">
 					
 					<label class="lbl_form">Ativar Vagar?</label>
 					<div class="radio_lbl2">
-						<input type="radio" checked name="ativar"/>
+						<input type="radio" checked="true" name="ativar"/>
 						<label class="lbl_form">Sim</label>
 					</div>
 					
