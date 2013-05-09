@@ -6,6 +6,10 @@ $idade	 = utf8_decode($_POST['nascimento']);
 $sexo	 = utf8_decode($_POST['sexo']);
 $telefone	 = utf8_decode($_POST['telefone']);
 $celular	 = utf8_decode($_POST['celular']);
+$endereco	 = utf8_decode($_POST['endereco']);
+$nro	 = utf8_decode($_POST['nro']);
+$bairro	 = utf8_decode($_POST['bairro']);
+$cep	 = utf8_decode($_POST['cep']);
 $cidade	 = utf8_decode($_POST['cidade']);
 $estado	 = utf8_decode($_POST['estado']);
 $pretensao	 = utf8_decode($_POST['pretensao']);
@@ -46,7 +50,8 @@ $html =
 			
 			<p style='font-size: 14px; font-style: italic'>
 				$idade, Sexo $sexo, $esCivil <br/>
-				$cidade - $estado<br/>
+				$endereco, $nro - $bairro<br/>
+				$cidade - $estado - $cep<br/>
 				Telefone: $telefone / Celular: $celular / E-mail: $email<br/>
 				
 			</p>
