@@ -293,7 +293,7 @@
               
               <?}else{?>
               
-            <div class="box_x2" style="width: 920px; margin-bottom: 30px; min-height: 893px;">
+            <div class="box_x2" style="width: 920px; margin-bottom: 30px; min-height: 990px;">
               <h1 class="title_pages"><?= $data['Nome']  ?></h1>
 				
 				<div style="width: 200px; float:right; margin-top: -70px;">
@@ -330,6 +330,10 @@
 					"/>
 					<input type="hidden" name="telefone" value="<?= $data['Telefone'] ?>"/>
 					<input type="hidden" name="celular" value="<?= $data['Celular'] ?>"/>
+					<input type="hidden" name="endereco" value="<?= $data['Endereco'] ?>"/>
+					<input type="hidden" name="nro" value="<?= $data['Numero'] ?>"/>
+					<input type="hidden" name="bairro" value="<?= $data['Bairro'] ?>"/>
+					<input type="hidden" name="cep" value="<?= $data['CEP'] ?>"/>
 					<input type="hidden" name="cidade" value="<?= $data['Cidade'] ?>"/>
 					<input type="hidden" name="estado" value="<?= $data['Estado'] ?>"/>
 					<input type="hidden" name="pretensao" value="
@@ -437,8 +441,10 @@
                   </span></label>
                 <label class="lbl_pre">Celular: <span>
 					<?= $data['Celular']  ?>
-                  
                 </span></label>
+				<label class="lbl_pre">Endereço: <span><?= $data['Endereco'] ?>, <?= $data['Numero'] ?></span></label>
+				<label class="lbl_pre">Bairro: <span><?= $data['Bairro'] ?></span></label>
+				<label class="lbl_pre">CEP: <span><?= $data['CEP'] ?></span></label>
                 <label class="lbl_pre">Cidade/Estado: <span><?= $data['Cidade']  ?> - <?= $data['Estado']  ?></span></label>
                 <label class="lbl_pre">Pretensão salarial: <span>
                   <?php
@@ -585,6 +591,7 @@
                 </div>
                 
 				
+
 				<!--text area que aceita html-->
                 <div class="txt_html" style="width: 100%; position: absolute; bottom: 0;">
 					<label class="lbl_pre"><span>Envie uma mensagem para o candidato</span></label>	
