@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 .DS_Store
 
 *.pdf
@@ -32,11 +33,31 @@
 *.ser
 
 dompdf/lib/php-font-lib/.htaccess
+=======
+sendgrid-php-master/Test/Mock/Mock_loader.php
+
+sendgrid-php-master/Test/.DS_Store
+
+*.php
+
+*.skel
+
+*.xml
+
+*.afm
+
+*.LGPL
+
+*.ufm
+
+*.ttf
+>>>>>>> ignores
 
 *.map
 
 *.png
 
+<<<<<<< HEAD
 *.inc
 
 *.ico
@@ -90,6 +111,69 @@ js/flexigrid-1.1/js/.svn/entries
 *.properties
 
 sendgrid-php-master/.gitignore
+=======
+*.gif
+
+*.js
+
+*.inc
+
+*.css
+
+*.html
+
+*.bmp
+
+js/.DS_Store
+
+js/flexigrid-1.1/.DS_Store
+
+*.svn-work
+
+*.svn-base
+
+sendgrid-php-master/.gitignore
+
+*.md
+
+*.json
+
+*.lock
+
+*.ico
+
+dompdf/lib/php-font-lib/.htaccess
+
+*.htm
+
+*.ser
+
+*.xcf
+
+*.jpg
+
+dompdf/www/test/images/no_extension
+
+*.foo
+
+*.txt
+
+images/.DS_Store
+
+*.pdf
+
+.DS_Store
+
+js/flexigrid-1.1/css/.svn/all-wcprops
+
+js/flexigrid-1.1/css/images/.svn/all-wcprops
+
+js/flexigrid-1.1/js/.svn/entries
+
+js/flexigrid-1.1/css/images/.svn/entries
+
+*.properties
+>>>>>>> ignores
 
 *.yml
 
@@ -97,8 +181,12 @@ sendgrid-php-master/.gitignore
 
 sendgrid-php-master/Makefile
 
+<<<<<<< HEAD
 *.md
 
 *.json
 
 *.lock
+=======
+js/flexigrid-1.1/css/.svn/entries
+>>>>>>> ignores
