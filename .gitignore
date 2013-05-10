@@ -90,23 +90,7 @@ sendgrid-php-master/.gitignore
 
 js/flexigrid-1.1/.DS_Store
 
-images/.DS_Store
-
-images/bg_title_item.jpg
-
-images/d_active_menu.jpg
-
-images/tContainer.jpg
-
-images/tLeft.jpg
-
-images/tRight.jpg
-
-images/top_admin.jpg
-
 js/.DS_Store
-
-images/bg_menu_Internal.jpg
 
 dompdf/www/test/images/unknown_extension.foo
 
