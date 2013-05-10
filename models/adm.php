@@ -1,7 +1,7 @@
 <?php
 
 class Adm_Model {
-private $db;
+    private $db;
 
     public function __construct() {
         $this->db = new MysqlImproved_Driver();
@@ -52,6 +52,8 @@ private $db;
     }
     
     public function set_Categoria($Nome, $Ativo){
+        $this->db->connect(); 
+
         $Nome = $this->db->escape(utf8_decode($Nome));
         $Ativo = $this->db->escape(utf8_decode($Ativo));
         
@@ -71,6 +73,8 @@ private $db;
     
     public function update_Categoria($Codigo,$Nome,$Ativo){
         
+        $this->db->connect(); 
+
         $Codigo = $this->db->escape(utf8_decode($Codigo));
         $Nome = $this->db->escape(utf8_decode($Nome));
         $Ativo = $this->db->escape(utf8_decode($Ativo));
@@ -81,7 +85,7 @@ private $db;
                 tb0007_Categorias
             SET
                 nomeCATEGORIA = '$Nome'
-                ativoCATEGORIA = $Ativo
+                ,ativoCATEGORIA = $Ativo
             WHERE
                 codigoCATEGORIA = $Codigo
             ;
@@ -91,22 +95,22 @@ private $db;
         return $Retorno;
     }
     
-    public function delete_Categoria($Codigo){
+    // public function delete_Categoria($Codigo){
         
-        $Codigo = $this->db->escape(utf8_decode($Codigo));
+    //     $Codigo = $this->db->escape(utf8_decode($Codigo));
         
-        $Retorno = $this->MySQLIUD(
-            "
-            DELETE FROM
-                tb0007_Categorias
-            WHERE
-                codigoCATEGORIA = $Codigo
-            ;
-            "
-        );
+    //     $Retorno = $this->MySQLIUD(
+    //         "
+    //         DELETE FROM
+    //             tb0007_Categorias
+    //         WHERE
+    //             codigoCATEGORIA = $Codigo
+    //         ;
+    //         "
+    //     );
         
-        return $Retorno;
-    }
+    //     return $Retorno;
+    // }
     
     //VAGA
     public function get_Vagas() {        
@@ -126,6 +130,8 @@ private $db;
     }
     
     public function set_Vaga($Nome,$Ativo){
+        $this->db->connect(); 
+
         $Nome = $this->db->escape(utf8_decode($Nome));
         $Ativo = $this->db->escape(utf8_decode($Ativo));
         
@@ -144,7 +150,8 @@ private $db;
     }
     
     public function update_Vaga($Codigo,$Nome,$Ativo){
-        
+        $this->db->connect(); 
+
         $Codigo = $this->db->escape(utf8_decode($Codigo));
         $Nome = $this->db->escape(utf8_decode($Nome));
         $Ativo = $this->db->escape(utf8_decode($Ativo));
@@ -154,7 +161,7 @@ private $db;
             UPDATE
                 tb0008_Vagas
             SET
-                nomeVAGA = '$Nome'
+                nomeVAGA = '$Nome',
                 ativoVAGA = $Ativo
             WHERE
                 codigoVAGA = $Codigo
@@ -165,21 +172,21 @@ private $db;
         return $Retorno;
     }
     
-    public function delete_Vaga($Codigo){
+    // public function delete_Vaga($Codigo){
         
-        $Codigo = $this->db->escape(utf8_decode($Codigo));
+    //     $Codigo = $this->db->escape(utf8_decode($Codigo));
         
-        $Retorno = $this->MySQLIUD(
-            "
-            DELETE FROM
-                tb0008_Vagas
-            WHERE
-                codigoVAGA = $Codigo
-            ;
-            "
-        );
+    //     $Retorno = $this->MySQLIUD(
+    //         "
+    //         DELETE FROM
+    //             tb0008_Vagas
+    //         WHERE
+    //             codigoVAGA = $Codigo
+    //         ;
+    //         "
+    //     );
         
-        return $Retorno;
-    }
+    //     return $Retorno;
+    // }
 
 }

@@ -64,7 +64,7 @@
                                             <tr class="gradeA">
                                                 <td>
                                                     <div class="menu hide">
-                                                        <div class="DeleteCategorias delete"></div>
+                                                        <!-- <div class="DeleteCategorias delete"></div> -->
                                                         <div class="EditCategorias edit"></div>
                                                     </div>
                                                 </td>
@@ -126,7 +126,7 @@
                                             <tr class="gradeB">
                                                 <td>
                                                     <div class="menu hide">
-                                                        <div class="DeleteVagas delete"></div>
+                                                        <!-- <div class="DeleteVagas delete"></div> -->
                                                         <div class="EditVagas edit"></div>
                                                     </div>
                                                 </td>

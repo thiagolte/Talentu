@@ -88,30 +88,30 @@ $(document).ready(function() {
         });
     });
 
-    $('.DeleteCategorias').live('click',function() {
-        var anSelected = fnGetSelected(oCategorias);
-        if ( anSelected.length !== 0 ) {
-            if(confirm('Deseja deletar o intem selecionado?')){
-                $.ajax({
-                    url: "index.php?adm",
-                    type: "GET",
-                    data: {
-                            DeleteCat: 1,
-                            CodigoCat:anSelected.find('.codigo').val()
-                           },
-                    success: function(data)
-                    {
-                        if(data > 0){
-                            oCategorias.fnDeleteRow( anSelected[0] );
-                        }else{
-                            alert('ERRO: tente novamente mais tarde');
-                            oCategorias.fnDeleteRow( anSelected[0] );
-                        }
-                    }
-                });
-            } 
-        }
-    });
+    // $('.DeleteCategorias').live('click',function() {
+    //     var anSelected = fnGetSelected(oCategorias);
+    //     if ( anSelected.length !== 0 ) {
+    //         if(confirm('Deseja deletar o intem selecionado?')){
+    //             $.ajax({
+    //                 url: "index.php?adm",
+    //                 type: "GET",
+    //                 data: {
+    //                         DeleteCat: 1,
+    //                         CodigoCat:anSelected.find('.codigo').val()
+    //                        },
+    //                 success: function(data)
+    //                 {
+    //                     if(data > 0){
+    //                         oCategorias.fnDeleteRow( anSelected[0] );
+    //                     }else{
+    //                         alert('ERRO: tente novamente mais tarde');
+    //                         oCategorias.fnDeleteRow( anSelected[0] );
+    //                     }
+    //                 }
+    //             });
+    //         } 
+    //     }
+    // });
 
     $('.EditCategorias').live('click',function() {
         var anSelected = fnGetSelected(oCategorias);
@@ -119,7 +119,13 @@ $(document).ready(function() {
             $('#SalvarCat').hide();
             $('#CodigoCat').attr('value',anSelected.find('.codigo').val());
             $('#NomeCat').attr('value',anSelected.find('.nome').val());
-            $('#AtivoCat').attr('checked',anSelected.find('.ativo').val());
+
+            if(anSelected.find('.ativo').val() == 'true'){
+                $('#AtivoCat').prop('checked', true);
+            }else{
+                $('#AtivoCat').prop('checked', false);
+            }
+
             $('#EditarCat').show();
             $( "#dialogCat" ).dialog( "open" );
         }
@@ -171,9 +177,9 @@ $(document).ready(function() {
             }
         });
     });
-    
+
     $('#EditarVag').click(function(){
-        var ativoCat = 0;
+        var ativoVag = 0;
         
         if($('#AtivoVag').prop('checked') == true){
             ativoVag = 1;
@@ -200,31 +206,31 @@ $(document).ready(function() {
         });
     });
 
-    $('.DeleteVagas').click( function() {
-        var anSelected = fnGetSelected(oVagas);
-        if ( anSelected.length !== 0 ) {
-            oVagas.fnDeleteRow( anSelected[0] );
-            if(confirm('Deseja deletar o intem selecionado?')){
-                $.ajax({
-                    url: "index.php?adm",
-                    type: "GET",
-                    data: {
-                            DeleteVag: 1,
-                            CodigoVag:anSelected.find('.codigo').val()
-                           },
-                    success: function(data)
-                    {
-                        if(data > 0){
-                            oVagas.fnDeleteRow( anSelected[0] );
-                        }else{
-                            alert('ERRO: tente novamente mais tarde');
-                            oVagas.fnDeleteRow( anSelected[0] );
-                        }
-                    }
-                });
-            } 
-        }
-    });
+    // $('.DeleteVagas').click( function() {
+    //     var anSelected = fnGetSelected(oVagas);
+    //     if ( anSelected.length !== 0 ) {
+    //         oVagas.fnDeleteRow( anSelected[0] );
+    //         if(confirm('Deseja deletar o intem selecionado?')){
+    //             $.ajax({
+    //                 url: "index.php?adm",
+    //                 type: "GET",
+    //                 data: {
+    //                         DeleteVag: 1,
+    //                         CodigoVag:anSelected.find('.codigo').val()
+    //                        },
+    //                 success: function(data)
+    //                 {
+    //                     if(data > 0){
+    //                         oVagas.fnDeleteRow( anSelected[0] );
+    //                     }else{
+    //                         alert('ERRO: tente novamente mais tarde');
+    //                         oVagas.fnDeleteRow( anSelected[0] );
+    //                     }
+    //                 }
+    //             });
+    //         } 
+    //     }
+    // });
 
     $('.EditVagas').live('click',function() {
         var anSelected = fnGetSelected(oVagas);
@@ -232,7 +238,13 @@ $(document).ready(function() {
             $('#SalvarVag').hide();
             $('#CodigoVag').attr('value',anSelected.find('.codigo').val());
             $('#NomeVag').attr('value',anSelected.find('.nome').val());
-            $('#AtivoVag').attr('checked',anSelected.find('.ativo').val());
+
+            if(anSelected.find('.ativo').val() == 'true'){
+                $('#AtivoVag').prop('checked', true);
+            }else{
+                $('#AtivoVag').prop('checked', false);
+            }
+
             $('#EditarVag').show();
             $( "#dialogVag" ).dialog( "open" );
         }

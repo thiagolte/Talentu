@@ -32,7 +32,7 @@ class Adm_Controller {
         if (isset($getVars['UpdateCat']) && !empty($getVars['UpdateCat']) &&
                 isset($getVars['CodigoCat']) && !empty($getVars['CodigoCat']) &&
                 isset($getVars['NomeCat']) && !empty($getVars['NomeCat']) &&
-                isset($getVars['AtivoCat']) && !empty($getVars['AtivoCat'])){
+                isset($getVars['AtivoCat'])){
             
             $Codigo = $getVars['CodigoCat'];
             $Nome = $getVars['NomeCat'];
@@ -42,13 +42,13 @@ class Adm_Controller {
             echo 1; 
         }
 
-        if (isset($getVars['DeleteCat']) && !empty($getVars['DeleteCat']) &&
-                isset($getVars['CodigoCat']) && !empty($getVars['CodigoCat'])){
+        // if (isset($getVars['DeleteCat']) && !empty($getVars['DeleteCat']) &&
+        //         isset($getVars['CodigoCat']) && !empty($getVars['CodigoCat'])){
             
-            $Codigo = $getVars['CodigoCat'];
-            $Retorno = $Adm_Model->delete_Categoria($Codigo);
-            echo 1; 
-        }
+        //     $Codigo = $getVars['CodigoCat'];
+        //     $Retorno = $Adm_Model->delete_Categoria($Codigo);
+        //     echo 1; 
+        // }
         
         
         
@@ -66,7 +66,7 @@ class Adm_Controller {
         if (isset($getVars['UpdateVag']) && !empty($getVars['UpdateVag']) &&
                 isset($getVars['CodigoVag']) && !empty($getVars['CodigoVag']) &&
                 isset($getVars['NomeVag']) && !empty($getVars['NomeVag']) &&
-                isset($getVars['AtivoVag']) && !empty($getVars['AtivoVag'])){
+                isset($getVars['AtivoVag'])){
             
             $Codigo = $getVars['CodigoVag'];
             $Nome = $getVars['NomeVag'];
@@ -76,13 +76,13 @@ class Adm_Controller {
             echo 1; 
         }
         
-        if (isset($getVars['DeleteVag']) && !empty($getVars['DeleteVag']) &&
-                isset($getVars['CodigoVag']) && !empty($getVars['CodigoVag'])){
+        // if (isset($getVars['DeleteVag']) && !empty($getVars['DeleteVag']) &&
+        //         isset($getVars['CodigoVag']) && !empty($getVars['CodigoVag'])){
             
-            $Codigo = $getVars['CodigoVag'];
-            $Retorno = $Adm_Model->delete_Vaga($Codigo);
-            echo 1; 
-        }
+        //     $Codigo = $getVars['CodigoVag'];
+        //     $Retorno = $Adm_Model->delete_Vaga($Codigo);
+        //     echo 1; 
+        // }
         
         //Main
         if (count($getVars) == 0) {

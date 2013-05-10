@@ -1,7 +1,7 @@
 <?php
 
 class Cadastrar_cv_Model {
-private $db;
+    private $db;
 
     public function __construct() {
         $this->db = new MysqlImproved_Driver();
