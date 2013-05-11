@@ -76,12 +76,15 @@
 				
 				<div class="box_x2">									
 					<h2 class="sub_title">Dados da vaga </h2>
+					
+					<label class="lbl_form">Quantidade de Vagas</label>
+					<input type="text" class="input_form" style="width: 383px;">
 										
 					<label class="lbl_form">Atribuições e Responsabilidades</label>
-					<textarea class="txt_search" style="width: 383px!important; height: 80px;"></textarea>
+					<textarea class="txt_search" style="width: 383px!important; height: 60px;"></textarea>
 					
 					<label class="lbl_form">Experiência e habilidades</label>
-					<textarea class="txt_search" style="width: 383px!important; height: 80px;"></textarea>
+					<textarea class="txt_search" style="width: 383px!important; height: 60px;"></textarea>
 					
 					<label class="lbl_form">Escolaridade</label>
 					<select class="select_form" value="" style="width: 395px;">
@@ -89,7 +92,7 @@
                     </select>
 					
 					<label class="lbl_form">Qualificações: <span>(cursos, certificações e conhecimentos)</span></label>
-					<textarea class="txt_search" style="width: 383px!important; height: 80px;"></textarea>
+					<textarea class="txt_search" style="width: 383px!important; height: 60px;"></textarea>
 					
 					<label class="lbl_form b2">Categoria da area de atuação do profissional</label>
 					<select class="select_form" value="" style="width: 395px;">
@@ -135,26 +138,20 @@
                     </select>
 					
 					<label class="lbl_form b2">Meios para receber candidatos:</label>
+					
 					<div class="radio_lbl2">
-						<input type="radio" name="forma_contato"/>
-						<label class="lbl_form">Telefone</label>
+                    	<input type="radio" id="other_unSelected" name="forma_contato"/>
+						<label class="lbl_form">E-mail de cadastro</label>
 					</div>
 					
 					<div class="radio_lbl2">
-                    	<input type="radio" name="forma_contato"/>
-						<label class="lbl_form">E-mail</label>
+                    	<input type="radio" id="other_selected" name="forma_contato"/>
+						<label class="lbl_form">Outro e-mail</label>
 					</div>
 					
-					<div class="radio_lbl2">
-                    	<input type="radio" name="forma_contato"/>
-						<label class="lbl_form">Telefone e E-mail</label>
-					</div>
+					<input type="text" class="input_form other_mail" style="width: 420px; display: none; margin-bottom: 3px!important">
 					
-					<input type="text" class="input_form" style="width: 420px;">
-					<input type="text" class="input_form" style="width: 194px;">
-					<input type="text" class="input_form" style="width: 194px; float: right; margin-right: -2px!important">
-					
-					<label class="lbl_form">Ativar Vagar?</label>
+					<label class="lbl_form b2" style="margin-top: 15px;">Ativar Vagar?</label>
 					<div class="radio_lbl2">
 						<input type="radio" checked="true" name="ativar"/>
 						<label class="lbl_form">Sim</label>
@@ -164,6 +161,242 @@
                     	<input type="radio" name="ativar"/>
 						<label class="lbl_form">Não</label>
 					</div>
+				</div>
+				
+				<div class="spacer"></div>
+				
+				<div class="box_x2" style="width: 915px;">									
+					<h2 class="sub_title">Questão Personalizada</h2>
+					
+					<label class="lbl_form" style="margin-bottom: 5px;">
+						É permitido solicitar ao candidato que comente sua formação acadêmica, experiência na função e quais suas atividades, mas para atender as solicitações legais, NÃO É PERMITIDO perdir que ele informe ou comprove o tempo de experiência ou formação.
+					</label>
+					<label class="lbl_form2" style="width: 100%; margin: 0 0 10px 0;">É possível inserir até 5 questões.</label>
+					
+					<div class="question_item" id="00">
+						<label class="lbl_form b2">
+							1ª Questão:
+						</label>
+						
+						<textarea class="txt_search" style="width: 99%; height: 30px;"></textarea>
+								
+						<label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
+						<div class="radio_lbl2">
+							<input type="radio" checked="true" name="ativar"/>
+							<label class="lbl_form">Resposta do tipo aberta</label><label class="lbl_form2">exemplo: comente sua experiência na area...</label>
+						</div>
+						
+						<div class="radio_lbl2">
+							<input type="radio" name="ativar"/>
+							<label class="lbl_form">Resposta do tipo SIM ou NÃO</label><label class="lbl_form2">exemplo: possui carro próprio?</label>
+						</div>
+						
+						<label class="lbl_form b2" style="margin-top: 15px;">Ativar Filtro?</label>
+						<label class="lbl_form2" style="width: 100%; margin: 0;">Utilize esta opção apenas para requisitos imprescindiveis da vaga. Exemplo: possui disponinilidade para viajens?</label>
+						<div class="radio_lbl2">
+							<input type="radio" checked="true" name="ativar"/>
+							<label class="lbl_form">Sim</label>
+						</div>
+						
+						<div class="radio_lbl2">
+							<input type="radio" name="ativar"/>
+							<label class="lbl_form">Não</label>
+						</div>
+					</div>
+					
+					<div class="question_item" id="01" style="display: none;">
+						<label class="lbl_form b2">
+							2ª Questão:
+						</label>
+						
+						<textarea class="txt_search" style="width: 99%; height: 30px;"></textarea>
+								
+						<label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
+						<div class="radio_lbl2">
+							<input type="radio" checked="true" name="ativar"/>
+							<label class="lbl_form">Resposta do tipo aberta</label><label class="lbl_form2">exemplo: comente sua experiência na area...</label>
+						</div>
+						
+						<div class="radio_lbl2">
+							<input type="radio" name="ativar"/>
+							<label class="lbl_form">Resposta do tipo SIM ou NÃO</label><label class="lbl_form2">exemplo: possui carro próprio?</label>
+						</div>
+						
+						<label class="lbl_form b2" style="margin-top: 15px;">Ativar Filtro?</label>
+						<label class="lbl_form2" style="width: 100%; margin: 0;">Utilize esta opção apenas para requisitos imprescindiveis da vaga. Exemplo: possui disponinilidade para viajens?</label>
+						<div class="radio_lbl2">
+							<input type="radio" checked="true" name="ativar"/>
+							<label class="lbl_form">Sim</label>
+						</div>
+						
+						<div class="radio_lbl2">
+							<input type="radio" name="ativar"/>
+							<label class="lbl_form">Não</label>
+						</div>
+					</div>
+					
+					<div class="question_item" id="02" style="display: none;">
+						<label class="lbl_form b2">
+							3ª Questão:
+						</label>
+						
+						<textarea class="txt_search" style="width: 99%; height: 30px;"></textarea>
+								
+						<label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
+						<div class="radio_lbl2">
+							<input type="radio" checked="true" name="ativar"/>
+							<label class="lbl_form">Resposta do tipo aberta</label><label class="lbl_form2">exemplo: comente sua experiência na area...</label>
+						</div>
+						
+						<div class="radio_lbl2">
+							<input type="radio" name="ativar"/>
+							<label class="lbl_form">Resposta do tipo SIM ou NÃO</label><label class="lbl_form2">exemplo: possui carro próprio?</label>
+						</div>
+						
+						<label class="lbl_form b2" style="margin-top: 15px;">Ativar Filtro?</label>
+						<label class="lbl_form2" style="width: 100%; margin: 0;">Utilize esta opção apenas para requisitos imprescindiveis da vaga. Exemplo: possui disponinilidade para viajens?</label>
+						<div class="radio_lbl2">
+							<input type="radio" checked="true" name="ativar"/>
+							<label class="lbl_form">Sim</label>
+						</div>
+						
+						<div class="radio_lbl2">
+							<input type="radio" name="ativar"/>
+							<label class="lbl_form">Não</label>
+						</div>
+					</div>
+					
+					<div class="question_item" id="03" style="display: none;">
+						<label class="lbl_form b2">
+							4ª Questão:
+						</label>
+						
+						<textarea class="txt_search" style="width: 99%; height: 30px;"></textarea>
+								
+						<label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
+						<div class="radio_lbl2">
+							<input type="radio" checked="true" name="ativar"/>
+							<label class="lbl_form">Resposta do tipo aberta</label><label class="lbl_form2">exemplo: comente sua experiência na area...</label>
+						</div>
+						
+						<div class="radio_lbl2">
+							<input type="radio" name="ativar"/>
+							<label class="lbl_form">Resposta do tipo SIM ou NÃO</label><label class="lbl_form2">exemplo: possui carro próprio?</label>
+						</div>
+						
+						<label class="lbl_form b2" style="margin-top: 15px;">Ativar Filtro?</label>
+						<label class="lbl_form2" style="width: 100%; margin: 0;">Utilize esta opção apenas para requisitos imprescindiveis da vaga. Exemplo: possui disponinilidade para viajens?</label>
+						<div class="radio_lbl2">
+							<input type="radio" checked="true" name="ativar"/>
+							<label class="lbl_form">Sim</label>
+						</div>
+						
+						<div class="radio_lbl2">
+							<input type="radio" name="ativar"/>
+							<label class="lbl_form">Não</label>
+						</div>
+					</div>
+					
+					<div class="question_item" id="04" style="display: none;">
+						<label class="lbl_form b2">
+							5ª Questão:
+						</label>
+						
+						<textarea class="txt_search" style="width: 99%; height: 30px;"></textarea>
+								
+						<label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
+						<div class="radio_lbl2">
+							<input type="radio" checked="true" name="ativar"/>
+							<label class="lbl_form">Resposta do tipo aberta</label><label class="lbl_form2">exemplo: comente sua experiência na area...</label>
+						</div>
+						
+						<div class="radio_lbl2">
+							<input type="radio" name="ativar"/>
+							<label class="lbl_form">Resposta do tipo SIM ou NÃO</label><label class="lbl_form2">exemplo: possui carro próprio?</label>
+						</div>
+						
+						<label class="lbl_form b2" style="margin-top: 15px;">Ativar Filtro?</label>
+						<label class="lbl_form2" style="width: 100%; margin: 0;">Utilize esta opção apenas para requisitos imprescindiveis da vaga. Exemplo: possui disponinilidade para viajens?</label>
+						<div class="radio_lbl2">
+							<input type="radio" checked="true" name="ativar"/>
+							<label class="lbl_form">Sim</label>
+						</div>
+						
+						<div class="radio_lbl2">
+							<input type="radio" name="ativar"/>
+							<label class="lbl_form">Não</label>
+						</div>
+					</div>
+					
+					<a class="btn_default" id="add_question"  data-number="1" style="float: left; margin-bottom: 15px;">+ Adicionar outra questão</a>
+				</div>
+
+				<div class="spacer"></div>
+				
+				<div class="box_x2" style="width: 915px;">
+					<h2 class="sub_title">Filtro de CV</h2>
+					<label class="lbl_form" style="margin-bottom: 15px;">
+						Esses filtros visam apenas agilizar o seu processo seletivo e somente devem ser utilizados se forem realmente imprescindíveis para a função a ser desempenhada.
+					</label>
+					
+					<label class="lbl_form b2" style="margin-top: 15px;">Sexo</label>
+					<div class="radio_lbl2">
+						<input type="radio" name="s_sexo"/>
+						<label class="lbl_form">Masculino</label>
+					</div>
+					
+					<div class="radio_lbl2">
+                    	<input type="radio" name="s_sexo"/>
+						<label class="lbl_form">Feminino</label>
+					</div>
+					
+					<span style="width: 100%; float: left;"></span>
+					
+					<div class="filters_multi">
+						<label class="lbl_form b2" style="margin-top: 15px;">Faixa Etária</label>
+						
+						<select multiple class="select_multi">
+						  <option>asdasd</option>
+						  <option>asdasd</option>
+						</select>
+					</div>
+					
+					<div class="filters_multi" style="margin-left: 32px;">
+						<label class="lbl_form b2" style="margin-top: 15px;">Pretensão salarial</label>
+						
+						<select multiple class="select_multi">
+						  <option>asdasd</option>
+						  <option>asdasd</option>
+						</select>
+					</div>
+					
+					<div class="filters_multi" style="float: right;">
+						<label class="lbl_form b2" style="margin-top: 15px;">PNE</label>
+						
+						<select multiple class="select_multi">
+						  <option>asdasd</option>
+						  <option>asdasd</option>
+						</select>
+					</div>
+					
+					<div class="filters_multi">
+						<label class="lbl_form b2" style="margin-top: 15px;">Estado</label>
+						
+						<select multiple class="select_multi cities">
+						  <option>asdasd</option>
+						  <option>asdasd</option>
+						</select>
+					</div>
+					
+					<div class="filters_multi" style="margin-left: 32px;">
+						<label class="lbl_form b2" style="margin-top: 15px;">Cidade</label>
+						
+						<select multiple class="select_multi cities">
+						  <option>asdasd</option>
+						  <option>asdasd</option>
+						</select>
+					</div>
+					
 				</div>
 				
                 <div style="float: left; width: 577px; margin:40px 40px 0 0;">

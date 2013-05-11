@@ -530,6 +530,7 @@ strong {
     float: left;
     color: #00a2ff;
     font-size:16px;
+	line-height:130%;
 }
 
 .input_form {
@@ -1430,4 +1431,31 @@ strong {
 .hours {
 	float:left;
 	margin: 10px 3px 0 0;
+}
+
+.lbl_form2 {
+	float: left;
+	margin:6px;
+}
+
+.question_item {
+	margin-bottom:15px;
+	padding-bottom:20px;
+	float:left;
+	border-bottom:2px solid #676767;
+}
+
+.filters_multi {
+	width: 31%;
+	float: left; 
+}
+
+.select_multi {
+	float: left;
+	width: 100%;
+	min-height: 80px
+}
+
+.cities {
+	height: 200px;
 }
