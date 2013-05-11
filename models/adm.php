@@ -72,7 +72,6 @@ class Adm_Model {
     }
     
     public function update_Categoria($Codigo,$Nome,$Ativo){
-        
         $this->db->connect(); 
 
         $Codigo = $this->db->escape(utf8_decode($Codigo));

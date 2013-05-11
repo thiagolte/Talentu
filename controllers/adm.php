@@ -21,7 +21,7 @@ class Adm_Controller {
         //Categorias
         if (isset($getVars['SetCat']) && !empty($getVars['SetCat']) &&
                 isset($getVars['NomeCat']) && !empty($getVars['NomeCat']) &&
-                isset($getVars['AtivoCat']) && !empty($getVars['AtivoCat'])){
+                isset($getVars['AtivoCat'])){
             
             $Nome = $getVars['NomeCat'];
             $Ativo = $getVars['AtivoCat'];
@@ -55,7 +55,7 @@ class Adm_Controller {
         //Vagas
         if (isset($getVars['SetVag']) && !empty($getVars['SetVag']) &&
                 isset($getVars['NomeVag']) && !empty($getVars['NomeVag']) &&
-                isset($getVars['AtivoVag']) && !empty($getVars['AtivoVag'])){
+                isset($getVars['AtivoVag'])){
             
             $Nome = $getVars['NomeVag'];
             $Ativo = $getVars['AtivoVag'];
