@@ -58,7 +58,7 @@
                     
                     <label class="lbl_pre">Número de funcionários: <span><?= $_COOKIE['NumFunc']?></span></label>
                     <label class="lbl_pre">Área de atuação: <span><?= $_COOKIE['AreaAtuacao']?></span></label>
-                    <label class="lbl_pre">Website da empresa: <a href="<?= $_COOKIE['Site']?>" target="_blank"><span><?= $_COOKIE['Site']?></span></label></a>
+                    <label class="lbl_pre">Website da empresa: <a href="<?= $_COOKIE['Site']?>" target="_blank"><span><?= $_COOKIE['Site']?></span></a></label>
                     <label class="lbl_pre">Cidade/Estado: <span><?= $_COOKIE['Cidade']?> - <?= $_COOKIE['Estado']?></span></label>
                     
                 </div>
