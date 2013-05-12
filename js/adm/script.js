@@ -52,6 +52,7 @@ $(document).ready(function() {
             {
                 if(data > 0){
                     $( "#dialogCat" ).dialog( "close" );
+                    document.location.reload(true);
                 }else{
                     alert('ERRO: tente novamente mais tarde');
                     $( "#dialogCat" ).dialog( "close" );
@@ -80,6 +81,7 @@ $(document).ready(function() {
             {
                 if(data > 0){
                     $( "#dialogCat" ).dialog( "close" );
+                    document.location.reload(true);
                 }else{
                     alert('ERRO: tente novamente mais tarde');
                     $( "#dialogCat" ).dialog( "close" );
@@ -87,31 +89,6 @@ $(document).ready(function() {
             }
         });
     });
-
-    // $('.DeleteCategorias').live('click',function() {
-    //     var anSelected = fnGetSelected(oCategorias);
-    //     if ( anSelected.length !== 0 ) {
-    //         if(confirm('Deseja deletar o intem selecionado?')){
-    //             $.ajax({
-    //                 url: "index.php?adm",
-    //                 type: "GET",
-    //                 data: {
-    //                         DeleteCat: 1,
-    //                         CodigoCat:anSelected.find('.codigo').val()
-    //                        },
-    //                 success: function(data)
-    //                 {
-    //                     if(data > 0){
-    //                         oCategorias.fnDeleteRow( anSelected[0] );
-    //                     }else{
-    //                         alert('ERRO: tente novamente mais tarde');
-    //                         oCategorias.fnDeleteRow( anSelected[0] );
-    //                     }
-    //                 }
-    //             });
-    //         } 
-    //     }
-    // });
 
     $('.EditCategorias').live('click',function() {
         var anSelected = fnGetSelected(oCategorias);
@@ -170,6 +147,7 @@ $(document).ready(function() {
             {
                 if(data > 0){
                     $( "#dialogVag" ).dialog( "close" );
+                    document.location.reload(true);
                 }else{
                     alert('ERRO: tente novamente mais tarde');
                     $( "#dialogVag" ).dialog( "close" );
@@ -198,6 +176,7 @@ $(document).ready(function() {
             {
                 if(data > 0){
                     $( "#dialogVag" ).dialog( "close" );
+                    document.location.reload(true);
                 }else{
                     alert('ERRO: tente novamente mais tarde');
                     $( "#dialogVag" ).dialog( "close" );
@@ -205,32 +184,6 @@ $(document).ready(function() {
             }
         });
     });
-
-    // $('.DeleteVagas').click( function() {
-    //     var anSelected = fnGetSelected(oVagas);
-    //     if ( anSelected.length !== 0 ) {
-    //         oVagas.fnDeleteRow( anSelected[0] );
-    //         if(confirm('Deseja deletar o intem selecionado?')){
-    //             $.ajax({
-    //                 url: "index.php?adm",
-    //                 type: "GET",
-    //                 data: {
-    //                         DeleteVag: 1,
-    //                         CodigoVag:anSelected.find('.codigo').val()
-    //                        },
-    //                 success: function(data)
-    //                 {
-    //                     if(data > 0){
-    //                         oVagas.fnDeleteRow( anSelected[0] );
-    //                     }else{
-    //                         alert('ERRO: tente novamente mais tarde');
-    //                         oVagas.fnDeleteRow( anSelected[0] );
-    //                     }
-    //                 }
-    //             });
-    //         } 
-    //     }
-    // });
 
     $('.EditVagas').live('click',function() {
         var anSelected = fnGetSelected(oVagas);
@@ -258,6 +211,108 @@ $(document).ready(function() {
     });
 
     
+
+   //CATEGORIAS+VAGAS
+    $( "#dialogCatVag" ).dialog({
+        autoOpen: false  
+    });
+    
+    $('#NovoCatVag').click(function(){
+        $('#EditarCatVag').hide();
+        $('#SalvarCatVag').show();
+        $( "#dialogCatVag" ).dialog( "open" );
+    });
+    
+    $('#SalvarCatVag').click(function(){
+        var ativoVag = 0;
+        
+        if($('#AtivoCatVag').prop('checked') == true){
+            ativoCatVag = 1;
+        }
+
+        $.ajax({
+            url: "index.php?adm",
+            type: "GET",
+            data: {
+                    SetCatVag: 1,
+                    NomeCatVag:$('#NomeCatVag').attr('value'),
+                    AtivoCatVag:ativoCatVag
+                   },
+            success: function(data)
+            {
+                if(data > 0){
+                    $( "#dialogCatVag" ).dialog( "close" );
+                    document.location.reload(true);
+                }else{
+                    alert('ERRO: tente novamente mais tarde');
+                    $( "#dialogCatVag" ).dialog( "close" );
+                }
+            }
+        });
+    });
+
+    $('#EditarCatVag').click(function(){
+        var ativoCatVag = 0;
+        
+        if($('#AtivoVag').prop('checked') == true){
+            ativoCatVag = 1;
+        }
+
+        $.ajax({
+            url: "index.php?adm",
+            type: "GET",
+            data: {
+                    UpdateCatVag: 1,
+                    CodigoCatVag: $('#CodigoCatVag').attr('value'),
+                    NomeCatVag:$('#NomeCatVag').attr('value'),
+                    AtivoCatVag:ativoCatVag
+                   },
+            success: function(data)
+            {
+                if(data > 0){
+                    $( "#dialogCatVag" ).dialog( "close" );
+                    document.location.reload(true);
+                }else{
+                    alert('ERRO: tente novamente mais tarde');
+                    $( "#dialogCatVag" ).dialog( "close" );
+                }
+            }
+        });
+    });
+
+    $('.EditCatVag').live('click',function() {
+        var anSelected = fnGetSelected(oCatVag);
+        if ( anSelected.length !== 0 ) {
+            $('#SalvarCatVag').hide();
+            $('#CodigoCatVag').attr('value',anSelected.find('.codigo').val());
+            $('#NomeCatVag').attr('value',anSelected.find('.nome').val());
+
+            if(anSelected.find('.ativo').val() == 'true'){
+                $('#AtivoCatVag').prop('checked', true);
+            }else{
+                $('#AtivoCatVag').prop('checked', false);
+            }
+
+            $('#EditarCatVag').show();
+            $( "#dialogCatVag" ).dialog( "open" );
+        }
+    });
+    
+    var oCatVag = $('#CatVag').dataTable({
+        "bJQueryUI": true,
+        "sPaginationType": "full_numbers",
+        "aLengthMenu": [[60, 80, 100, -1], [60, 80, 100, "All"]],
+        "iDisplayLength": 60
+    });
+
+
+
+
+
+
+
+
+
     /* Add a click handler to the rows - this could be used as a callback */
     $(".DataTable tbody tr").live('click',function( e ) {
         if ( $(this).hasClass('row_selected') ) {

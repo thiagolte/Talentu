@@ -188,4 +188,71 @@ class Adm_Model {
     //     return $Retorno;
     // }
 
+    //CATEGORIA + VAGA
+    public function get_Categorias_Vagas() {        
+        $Retorno = $this->MySQLSelect(
+            "
+            SELECT  
+                codigoVAGACATEGORIA AS codigo,
+                codigoCATEGORIA AS codigoCat, 
+                nomeCATEGORIA AS nomeCat,
+                codigoVAGA AS codigoVag, 
+                nomeVAGA AS nomeVag,
+                ativoVAGACATEGORIA AS ativo
+            FROM
+                tb0009_Categoria_Vagas
+            INNER JOIN 
+                tb0007_Categorias ON codigoCATEGORIA = categoriaVAGACATEGORIA
+            INNER JOIN 
+                tb0008_Vagas ON codigoVAGA = vagaVAGACATEGORIA
+            ;
+            "
+        );
+        
+        return $Retorno;
+    }
+    
+    public function set_CategoriaVaga($idCat,$idVag){
+        $this->db->connect(); 
+
+        $idCat = $this->db->escape(utf8_decode($idCat));
+        $idVag = $this->db->escape(utf8_decode($idVag));
+        
+        $Retorno = $this->MySQLIUD(
+            "
+            INSERT INTO 
+                tb0009_Categoria_Vagas
+                    (categoriaVAGACATEGORIA,vagaVAGACATEGORIA)
+            SELECT
+                $idCat,$idVag
+            ;
+            "
+        );
+        
+        return $Retorno;
+    }
+    
+    public function update_CategoriaVaga($Codigo,$idCat,$idVag){
+        $this->db->connect(); 
+
+        $Codigo = $this->db->escape(utf8_decode($Codigo));
+        $idCat = $this->db->escape(utf8_decode($idCat));
+        $idVag = $this->db->escape(utf8_decode($idVag));
+        
+        $Retorno = $this->MySQLIUD(
+            "
+            UPDATE
+                tb0009_Categoria_Vagas
+            SET
+                categoriaVAGACATEGORIA = $idCat,
+                vagaVAGACATEGORIA = $idVag
+            WHERE
+                codigoVAGACATEGORIA = $Codigo
+            ;
+            "
+        );
+        
+        return $Retorno;
+    }
+
 }

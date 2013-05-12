@@ -91,6 +91,7 @@ class Adm_Controller {
             
             $this->CarregaCategorias($view);
             $this->CarregaVagas($view);
+            $this->CarregaCategoriasVagas($view);
             
             $view->render();
         }
@@ -112,5 +113,14 @@ class Adm_Controller {
         $Retorno = $Adm_Model->get_Vagas();
 
         $view->assign('dtVagas', $Retorno);
+    }
+
+    //Categorias+Vagas
+    function CarregaCategoriasVagas($view){
+        $Adm_Model = new Adm_Model();
+        
+        $Retorno = $Adm_Model->get_Categorias_Vagas();
+
+        $view->assign('dtCategoriasVagas', $Retorno);
     }
 }
