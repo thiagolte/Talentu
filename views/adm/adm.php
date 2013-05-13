@@ -164,7 +164,20 @@
                             <div id="dialogCatVag" title="Categoria X Vaga">
                                 <p>
                                     <input id="CodigoCatVag" type="hidden"/>
-                                    Nome: <input id="NomeCatVag" type="text" class="DialogInput" /> </br>
+                                    Categoria:</br>
+                                    <select id="CodigoCat_catvag">
+                                        <?foreach ($data['dtCategorias'] as $dados) { ?>
+                                        <option value="<?echo(utf8_encode($dados['codigo'])); ?>"><?echo(utf8_encode($dados['nome'])); ?></option>
+                                        <?}?>
+                                    </select>
+                                    </br></br>
+                                    Vaga: </br>
+                                    <select id="CodigoVag_catvag">
+                                        <?foreach ($data['dtVagas'] as $dados) { ?>
+                                        <option value="<?echo(utf8_encode($dados['codigo'])); ?>"><?echo(utf8_encode($dados['nome'])); ?></option>
+                                        <?}?>
+                                    </select>
+                                    </br>
                                     <input id="AtivoCatVag" type="checkbox" /> Ativo</br></br>
                                     <input id="SalvarCatVag" type="submit" value="Salvar">
                                     <input id="EditarCatVag" type="submit" value="Editar">

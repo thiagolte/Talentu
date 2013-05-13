@@ -19,6 +19,11 @@ class Adm_Controller {
         }
         
         //Categorias
+        if (isset($getVars['getCat']) && !empty($getVars['getCat'])){
+            $Retorno = $Adm_Model->get_Categorias();
+            echo 1; 
+        }
+
         if (isset($getVars['SetCat']) && !empty($getVars['SetCat']) &&
                 isset($getVars['NomeCat']) && !empty($getVars['NomeCat']) &&
                 isset($getVars['AtivoCat'])){
@@ -53,6 +58,11 @@ class Adm_Controller {
         
         
         //Vagas
+        if (isset($getVars['getVag']) && !empty($getVars['getVag'])){
+            $Retorno = $Adm_Model->get_Vagas();
+            echo 1; 
+        }
+
         if (isset($getVars['SetVag']) && !empty($getVars['SetVag']) &&
                 isset($getVars['NomeVag']) && !empty($getVars['NomeVag']) &&
                 isset($getVars['AtivoVag'])){
@@ -84,6 +94,43 @@ class Adm_Controller {
         //     echo 1; 
         // }
         
+
+
+        //Categorias+Vagas
+        if (isset($getVars['getCatVag']) && !empty($getVars['getCatVag'])){
+            $Retorno = $Adm_Model->get_Vagas();
+            echo 1; 
+        }
+
+        if (isset($getVars['SetCatVag']) && !empty($getVars['SetCatVag']) &&
+                isset($getVars['CodigoCat']) && !empty($getVars['CodigoCat']) &&
+                isset($getVars['CodigoVag']) && !empty($getVars['CodigoVag']) &&
+                isset($getVars['AtivoCatVag'])){
+            
+            $CodigoCat = $getVars['CodigoCat'];
+            $CodigoVag = $getVars['CodigoVag'];
+            $Ativo = $getVars['AtivoCatVag'];
+            $Retorno = $Adm_Model->set_CategoriaVaga($CodigoCat, $CodigoVag, $Ativo);
+            echo 1; 
+        }
+
+        if (isset($getVars['UpdateCatVag']) && !empty($getVars['UpdateCatVag']) &&
+                isset($getVars['CodigoCatVag']) && !empty($getVars['CodigoCatVag']) &&
+                isset($getVars['CodigoCat']) && !empty($getVars['CodigoCat']) &&
+                isset($getVars['CodigoVag']) && !empty($getVars['CodigoVag']) &&
+                isset($getVars['AtivoCatVag'])){
+            
+            $Codigo = $getVars['CodigoCatVag'];
+            $CodigoCat = $getVars['CodigoCat'];
+            $CodigoVag = $getVars['CodigoVag'];
+            $Ativo = $getVars['AtivoCatVag'];
+
+            $Retorno = $Adm_Model->update_CategoriaVaga($Codigo, $CodigoCat, $CodigoVag, $Ativo);
+            echo 1; 
+        }
+
+
+
         //Main
         if (count($getVars) == 0) {
             //telmplates

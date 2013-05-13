@@ -563,6 +563,29 @@ class Cadastrar_cv_Model {
         
         return $Retorno;
     }
+
+    public function get_VagasAtivas($idCategoria) {
+        $Retorno = $this->MySQLSelect(
+                "
+                SELECT 
+                    codigoVAGA AS Codigo,
+                    nomeVAGA  AS Nome
+                FROM
+                        tb0008_Vagas
+                INNER JOIN 
+                    tb0009_Categoria_Vagas ON codigoVAGA = vagaVAGACATEGORIA
+                AND 
+                    categoriaVAGACATEGORIA = $idCategoria
+                WHERE
+                    ativoVAGA = 1
+                ORDER BY
+                    nomeVAGA ASC
+                ;
+                "
+        );
+        
+        return $Retorno;
+    }
     
     public function get_ExistsEmail($EmailCrip) {        
         $Retorno = $this->MySQLSelect(

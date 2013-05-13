@@ -212,19 +212,20 @@ class Adm_Model {
         return $Retorno;
     }
     
-    public function set_CategoriaVaga($idCat,$idVag){
+    public function set_CategoriaVaga($idCat,$idVag,$Ativo){
         $this->db->connect(); 
 
         $idCat = $this->db->escape(utf8_decode($idCat));
         $idVag = $this->db->escape(utf8_decode($idVag));
+        $Ativo = $this->db->escape(utf8_decode($Ativo));
         
         $Retorno = $this->MySQLIUD(
             "
             INSERT INTO 
                 tb0009_Categoria_Vagas
-                    (categoriaVAGACATEGORIA,vagaVAGACATEGORIA)
+                    (categoriaVAGACATEGORIA,vagaVAGACATEGORIA, ativoVAGACATEGORIA)
             SELECT
-                $idCat,$idVag
+                $idCat,$idVag,$Ativo
             ;
             "
         );
@@ -232,12 +233,13 @@ class Adm_Model {
         return $Retorno;
     }
     
-    public function update_CategoriaVaga($Codigo,$idCat,$idVag){
+    public function update_CategoriaVaga($Codigo,$idCat,$idVag,$Ativo){
         $this->db->connect(); 
 
         $Codigo = $this->db->escape(utf8_decode($Codigo));
         $idCat = $this->db->escape(utf8_decode($idCat));
         $idVag = $this->db->escape(utf8_decode($idVag));
+        $Ativo = $this->db->escape(utf8_decode($Ativo));
         
         $Retorno = $this->MySQLIUD(
             "
@@ -245,7 +247,8 @@ class Adm_Model {
                 tb0009_Categoria_Vagas
             SET
                 categoriaVAGACATEGORIA = $idCat,
-                vagaVAGACATEGORIA = $idVag
+                vagaVAGACATEGORIA = $idVag,
+                ativoVAGACATEGORIA = $Ativo
             WHERE
                 codigoVAGACATEGORIA = $Codigo
             ;

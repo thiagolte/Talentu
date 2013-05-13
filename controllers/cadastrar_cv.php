@@ -227,7 +227,7 @@ class Cadastrar_cv_Controller {
         
         //GET Vagas
         if (isset($getVars['getVagas']) && !empty($getVars['getVagas'])){
-            $Retorno = $Cadastrar_cv_Model->get_Vagas($getVars['getVagas']);
+            $Retorno = $Cadastrar_cv_Model->get_VagasAtivas($getVars['getVagas']);
             
             $texto = "[";
             if($Retorno){

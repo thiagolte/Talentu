@@ -224,7 +224,7 @@ $(document).ready(function() {
     });
     
     $('#SalvarCatVag').click(function(){
-        var ativoVag = 0;
+        var ativoCatVag = 0;
         
         if($('#AtivoCatVag').prop('checked') == true){
             ativoCatVag = 1;
@@ -235,14 +235,14 @@ $(document).ready(function() {
             type: "GET",
             data: {
                     SetCatVag: 1,
-                    NomeCatVag:$('#NomeCatVag').attr('value'),
+                    CodigoCat:$('#CodigoCat_catvag').val(),
+                    CodigoVag:$('#CodigoVag_catvag').val(),
                     AtivoCatVag:ativoCatVag
                    },
             success: function(data)
             {
                 if(data > 0){
                     $( "#dialogCatVag" ).dialog( "close" );
-                    document.location.reload(true);
                 }else{
                     alert('ERRO: tente novamente mais tarde');
                     $( "#dialogCatVag" ).dialog( "close" );
@@ -254,7 +254,7 @@ $(document).ready(function() {
     $('#EditarCatVag').click(function(){
         var ativoCatVag = 0;
         
-        if($('#AtivoVag').prop('checked') == true){
+        if($('#AtivoCatVag').prop('checked') == true){
             ativoCatVag = 1;
         }
 
@@ -264,14 +264,14 @@ $(document).ready(function() {
             data: {
                     UpdateCatVag: 1,
                     CodigoCatVag: $('#CodigoCatVag').attr('value'),
-                    NomeCatVag:$('#NomeCatVag').attr('value'),
+                    CodigoCat:$('#CodigoCat_catvag').val(),
+                    CodigoVag:$('#CodigoVag_catvag').val(),
                     AtivoCatVag:ativoCatVag
                    },
             success: function(data)
             {
                 if(data > 0){
                     $( "#dialogCatVag" ).dialog( "close" );
-                    document.location.reload(true);
                 }else{
                     alert('ERRO: tente novamente mais tarde');
                     $( "#dialogCatVag" ).dialog( "close" );
@@ -285,7 +285,8 @@ $(document).ready(function() {
         if ( anSelected.length !== 0 ) {
             $('#SalvarCatVag').hide();
             $('#CodigoCatVag').attr('value',anSelected.find('.codigo').val());
-            $('#NomeCatVag').attr('value',anSelected.find('.nome').val());
+            $("#CodigoCat_catvag option[value='" + anSelected.find('.codigoCat').val() + "']").prop('selected',true);
+            $("#CodigoVag_catvag option[value='" + anSelected.find('.codigoVag').val() + "']").prop('selected',true);
 
             if(anSelected.find('.ativo').val() == 'true'){
                 $('#AtivoCatVag').prop('checked', true);
