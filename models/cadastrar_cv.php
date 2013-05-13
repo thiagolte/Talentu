@@ -576,6 +576,7 @@ class Cadastrar_cv_Model {
                     tb0009_Categoria_Vagas ON codigoVAGA = vagaVAGACATEGORIA
                 AND 
                     categoriaVAGACATEGORIA = $idCategoria
+                AND ativoVAGACATEGORIA = 1
                 WHERE
                     ativoVAGA = 1
                 ORDER BY
