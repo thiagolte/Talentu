@@ -1158,8 +1158,8 @@ strong {
 }
 
 .vacancy_item_txt {
-    width: 90%;
-    padding: 0 5%;
+    width: 400px;
+    padding: 0 20px;
     float: left;
     border-top: 1px solid #fff;
 } 
@@ -1458,4 +1458,13 @@ strong {
 
 .cities {
 	height: 200px;
+}
+
+.img_vagas {
+    width: 361px;
+    height: 331px;
+    position: absolute;
+    top: 24px;
+    right: -43px;
+    background: url(../images/img_vagas.png) no-repeat;
 }

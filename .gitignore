@@ -6,13 +6,7 @@
 
 *.sql
 
-*.php
-
 *.gif
-
-*.css
-
-*.js
 
 *.LGPL
 
@@ -60,13 +54,9 @@ sendgrid-php-master/Test/.DS_Store
 <<<<<<< HEAD
 *.inc
 
-*.ico
-
 *.xcf
 
 *.bmp
-
-*.jpg
 
 dompdf/www/test/images/no_extension
 
