@@ -22,8 +22,6 @@
 
 *.ufm
 
-*.html
-
 *.ser
 
 dompdf/lib/php-font-lib/.htaccess
@@ -31,8 +29,6 @@ dompdf/lib/php-font-lib/.htaccess
 sendgrid-php-master/Test/Mock/Mock_loader.php
 
 sendgrid-php-master/Test/.DS_Store
-
-*.php
 
 *.skel
 
@@ -49,7 +45,6 @@ sendgrid-php-master/Test/.DS_Store
 
 *.map
 
-*.png
 
 <<<<<<< HEAD
 *.inc
@@ -72,7 +67,6 @@ joomla/libraries/phputf8/README
 
 joomla/libraries/simplepie/idn/LICENCE
 
-*.htm
 
 *.swf
 
@@ -107,10 +101,6 @@ sendgrid-php-master/.gitignore
 *.js
 
 *.inc
-
-*.css
-
-*.html
 
 *.bmp
 
@@ -173,8 +163,6 @@ sendgrid-php-master/Makefile
 
 <<<<<<< HEAD
 *.md
-
-*.json
 
 *.lock
 =======
