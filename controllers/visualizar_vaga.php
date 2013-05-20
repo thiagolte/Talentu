@@ -1,7 +1,7 @@
 <?php
-class Fale_conosco_Controller {
+class Visualizar_vaga_Controller {
 
-    public $template = 'fale_conosco/fale_conosco';
+    public $template = 'visualizar_vaga/visualizar_vaga';
 
     public function main(array $getVars) {
         

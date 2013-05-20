@@ -41,12 +41,13 @@
                                 usuários durante suas pesquisas, na utilização da 
                                 biblioteca. Garantir a organização da biblioteca...
                             </p>
-                            <div class="vacancy_ct_buttons">
-								<a class="btn_default btn_vacancy">Compartilhar</a>
-								<a class="btn_default btn_vacancy">Visualizar</a>
-								<a class="btn_default btn_vacancy">Candidatar-se</a>
-                            </div>
                         </div>
+						
+						<div class="vacancy_ct_buttons">
+							<a class="btn_default btn_vacancy">Compartilhar</a>
+							<a class="btn_default btn_vacancy">Visualizar</a>
+<!--							<a class="btn_default btn_vacancy">Candidatar-se</a>-->
+						</div>
                     </div>
 					
 					<div class="vacancy_item">
@@ -59,58 +60,16 @@
                                 usuários durante suas pesquisas, na utilização da 
                                 biblioteca. Garantir a organização da biblioteca...
                             </p>
-                            <div class="vacancy_ct_buttons">
-								<a class="btn_default btn_vacancy">Compartilhar</a>
-								<a class="btn_default btn_vacancy">Visualizar</a>
-								<a class="btn_default btn_vacancy">Candidatar-se</a>
-                            </div>
                         </div>
+						
+						<div class="vacancy_ct_buttons">
+							<a class="btn_default btn_vacancy">Compartilhar</a>
+							<a class="btn_default btn_vacancy">Visualizar</a>
+<!--							<a class="btn_default btn_vacancy">Candidatar-se</a>-->
+						</div>
                     </div>
-					
-					
-					<h2 class="sub_title">Minhas vagas ativas</h2>
-					
-					
-					<div class="vacancy_item">
-                        <h1>Motorista Particular</h1>
-                        <div class="vacancy_item_txt">
-                            <p>
-                                <strong>Salário: </strong>R$ 1.372,00<br/>
-                                <strong>Local: </strong> São Paulo - SP<br/><br/>
-                                <strong>Sobre a Vaga: </strong>Dar suporte aos alunos, professores, sócios e outros 
-                                usuários durante suas pesquisas, na utilização da 
-                                biblioteca. Garantir a organização da biblioteca...
-                            </p>
-                            <div class="vacancy_ct_buttons">
-								<a class="btn_default btn_vacancy">Desativar</a>
-								<a class="btn_default btn_vacancy">Visualizar</a>
-								<a class="btn_default btn_vacancy">Editar</a>
-                            </div>
-                        </div>
-                    </div>
-					
-					<div class="vacancy_item">
-                        <h1>Motorista Particular</h1>
-                        <div class="vacancy_item_txt">
-                            <p>
-                                <strong>Salário: </strong>R$ 1.372,00<br/>
-                                <strong>Local: </strong> São Paulo - SP<br/><br/>
-                                <strong>Sobre a Vaga: </strong>Dar suporte aos alunos, professores, sócios e outros 
-                                usuários durante suas pesquisas, na utilização da 
-                                biblioteca. Garantir a organização da biblioteca...
-                            </p>
-                            <div class="vacancy_ct_buttons">
-								<a class="btn_default btn_vacancy">Desativar</a>
-								<a class="btn_default btn_vacancy">Visualizar</a>
-								<a class="btn_default btn_vacancy">Editar</a>
-                            </div>
-                        </div>
-                    </div>
-					
-                   
-                         
-                </div>
-                
+
+                </div>                
             </div>
         </div>
     </div>

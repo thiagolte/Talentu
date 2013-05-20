@@ -35,11 +35,11 @@
 					
 					<span style="width: 100%; float: left; height: 30px;"></span>
                     
-					<h2 style="position:relative;">Critérios de Busca<span class="img_vagas"></span></h2>
+					<h2 style="position:relative; color: #999; font-size: 22px">Critérios de Busca<span class="img_vagas"></span></h2>
 					
 					
 					<div class="filters_multi">
-						<label class="lbl_form" style="margin-top: 15px;">Área de Interesse</label>
+						<label class="lbl_form b2" style="margin-top: 15px;">Área de Interesse</label>
 						
 						<select multiple class="select_multi">
 						  <option>asdasd</option>
@@ -48,7 +48,7 @@
 					</div>
 					
 					<div class="filters_multi" style="margin-left: 32px;">
-						<label class="lbl_form" style="margin-top: 15px;">Vaga</label>
+						<label class="lbl_form b2" style="margin-top: 15px;">Vaga</label>
 						
 						<select multiple class="select_multi">
 						  <option>asdasd</option>

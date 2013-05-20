@@ -293,7 +293,7 @@
               
               <?}else{?>
               
-            <div class="box_x2" style="width: 920px; margin-bottom: 30px; min-height: 990px;">
+            <div class="box_x2" style="width: 920px; margin-bottom: 30px; min-height: 1022px;">
               <h1 class="title_pages"><?= $data['Nome']  ?></h1>
 				
 				<div style="width: 200px; float:right; margin-top: -70px;">

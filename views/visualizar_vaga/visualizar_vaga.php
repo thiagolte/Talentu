@@ -20,31 +20,44 @@
         <div class="containerCt">
             <div class="container">
                 <div class="box_x2" style="width: 963px;">
-                    <h1 class="title_pages">Fale conosco</h1>
-                    <h2 class="sub_title" style="margin-bottom: 20px;">Este é o seu canal de comunicação direta com a Talentu.</h2>
+                    <h1 class="title_pages">Analista de Recursos Humanos Pleno</h1>
+					
+					<div class="vacancy_full">
+					
+					<label class="lbl_pre">Salário: <span>R$ 5.000,00</span></label>
+					<label class="lbl_pre">Area de Atuação: <span>Administrativo</span></label>
+					<label class="lbl_pre">Empresa: <span>Confidencial</span></label>
+					<label class="lbl_pre">Porte da Empresa: <span>Pequeno (de 1 a 99 funcionários)</span></label>
+					<label class="lbl_pre">Nacionalidade da empresa: <span>Nacional</span></label>
+					<label class="lbl_pre">Ramo de atuação da empresa: <span>TI</span></label>
+					<label class="lbl_pre">Vaga: <span>Analista de Recursos Humanos Pleno</span></label>
+					<label class="lbl_pre">Quantidade de vagas: <span>5 vagas</span></label>
+					<label class="lbl_pre">Regime de contratação: <span>CLT</span></label>
+					<label class="lbl_pre">Atribuições e Responsabilidades: <span>Realizar o processo de recrutamento e seleção para diversos níveis. Realizar entrevistas, dinâmicas e entrevistas de desligamentos. Atuar com a elaboração de laudo, avaliação de proficiência em idioma e buscar candidatos em diversas fontes.
+Experiência em recrutamento e seleção.</span>
+					</label>
+					<label class="lbl_pre">Experiência e habilidades: <span>Experiência em recrutamento e seleção.</span></label>
+					<label class="lbl_pre">Escolaridade: <span>Ensino Superior Completo</span></label>
+					<label class="lbl_pre">Qualificações: <span>Conhecimentos com pacote Office</span></label>
+					<label class="lbl_pre">Benefícios: <span>Seguro de vida em grupo, Tíquete-refeição, Vale-transporte</span>
+					</label>
+					<label class="lbl_pre">Regime de trabalho/horário: <span>Segunda a Sexta - 08:00 as 17:00</span></label>
+					
+                    <label class="lbl_pre">Comente sua expectativa sobre a vaga</label>
+                    <textarea class="txt_search" style="margin: 0 0 20px 0;"></textarea>
+						
+					<label class="lbl_pre">Possui carro próprio?</label>
+                    <span>SIM</span>
+					<input type="radio" name="question1">
+                    <span>NÃO</span>
+					<input type="radio" name="question1">
+                    </div>
+					
+					<div class="btn_container">
+						<a class="btn_default" style="float: left;">Candidatar-se a esta vaga</a>
+					</div>
                     
-                    <form style="width: 400px;" name="form" method="post" id="contatoForm" action="views/fale_conosco/envia.php">
-                        <label class="lbl_form">digite seu nome</label>
-                        <input type="text" class="input_form" name="nome" id="nome"/>
-                        
-                        <label class="lbl_form">endereço de e-mail</label>
-                        <input type="text" class="input_form" name="email" id="email"/>
-                        
-                        <div class="half_inputs" style="width: 300px;">
-                            <label class="lbl_form half">telefone</label>
-                            <input type="text" class="input_form half" name="telefone" id="telefone"/>
-                        </div>
-                        
-                        <label class="lbl_form">assunto da mensagem</label>
-                        <input type="text" class="input_form" name="assunto" id="assunto"/>
-                        
-                        <label class="lbl_form">digite sua mensagem</label>
-                        <textarea class="txt_search" style="width: 385px;" name="mensagem" id="mensagem"></textarea>
-
-                        <input type="submit" value="enviar" style="float: right; margin-top: 10px;"/>
-                    </form>
-                    
-                    <div class="img_contato"></div>
+                   
                 </div>
             </div>
         </div>

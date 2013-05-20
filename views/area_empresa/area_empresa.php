@@ -69,16 +69,15 @@
                 
                 <span class="spacer" style="margin-top: 0!important;"></span>
                 
-                <div class="box_x2" style="width: 963px; display: none;">
+                <div class="box_x2" style="width: 963px;">
                     <div style="float: left; width: 100%;">
                     <h2 class="sub_title" style="width: 500px;">Meus anúncios de vagas ativas</h2>
                     
                     <a class="btn_big">adicionar nova vaga</a>
                     </div>
-                    
-                    <div class="vacancy_item">
+					
+					<div class="vacancy_item">
                         <h1>Motorista Particular</h1>
-                        
                         <div class="vacancy_item_txt">
                             <p>
                                 <strong>Salário: </strong>R$ 1.372,00<br/>
@@ -86,21 +85,23 @@
                                 <strong>Sobre a Vaga: </strong>Dar suporte aos alunos, professores, sócios e outros 
                                 usuários durante suas pesquisas, na utilização da 
                                 biblioteca. Garantir a organização da biblioteca...
-                                
                             </p>
-                            
-                            <div class="vacancy_ct_buttons">
-                            <a class="btn_default btn_vacancy">Visualizar</a>
-                            <a class="btn_default btn_vacancy">Editar</a>
-                            <a class="btn_default btn_vacancy">Excluir</a>
-                            </div>
-                        
                         </div>
+						
+						<div class="btn_filters">
+							<a class="btn_unfiltered" title="Todos os candidatos incritos"><label>50</label></a>
+							<a class="btn_filtered" title="Apenas os candidatos que passaram pelos filtros"><label>103</label></a>
+						</div>
+						
+						<div class="vacancy_ct_buttons">
+							<a class="btn_default btn_vacancy">Desativar</a>
+							<a class="btn_default btn_vacancy">Visualizar</a>
+							<a class="btn_default btn_vacancy">Editar</a>
+						</div>
                     </div>
-                    
-                    <div class="vacancy_item">
-                        <h1>Motorista de Transporte Público</h1>
-                        
+					
+					<div class="vacancy_item">
+                        <h1>Motorista Particular</h1>
                         <div class="vacancy_item_txt">
                             <p>
                                 <strong>Salário: </strong>R$ 1.372,00<br/>
@@ -108,17 +109,21 @@
                                 <strong>Sobre a Vaga: </strong>Dar suporte aos alunos, professores, sócios e outros 
                                 usuários durante suas pesquisas, na utilização da 
                                 biblioteca. Garantir a organização da biblioteca...
-                                
                             </p>
-                            
-                            <div class="vacancy_ct_buttons">
-                            <a class="btn_default btn_vacancy">Visualizar</a>
-                            <a class="btn_default btn_vacancy">Editar</a>
-                            <a class="btn_default btn_vacancy">Excluir</a>
-                            </div>
-                        
                         </div>
+						
+						<div class="btn_filters">
+							<a class="btn_unfiltered" title="Todos os candidatos incritos"><label>50</label></a>
+							<a class="btn_filtered" title="Apenas os candidatos que passaram pelos filtros"><label>103</label></a>
+						</div>
+						
+						<div class="vacancy_ct_buttons">
+							<a class="btn_default btn_vacancy">Desativar</a>
+							<a class="btn_default btn_vacancy">Visualizar</a>
+							<a class="btn_default btn_vacancy">Editar</a>
+						</div>
                     </div>
+					
                 </div>
             </div>
         </div>
