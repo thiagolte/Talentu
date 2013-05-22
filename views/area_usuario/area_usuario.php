@@ -31,6 +31,7 @@
                     <ul>
                         <li><a href="?cadastrar_cv&Editar=1">Editar perfil/cv</a></li>
                         <?php if($_COOKIE['Status'] == 1){ ?>
+<!--						<li><a href="?buscar_vaga">Buscar Vaga</a></li>-->
                         <li><a href="?alterar_senha&resetpswd=<?= $_COOKIE['resetpswd']?>">Alterar Senha</a></li>
                         <li><a id="Congelar">Congelar Cadastro</a></li>
                         <li><a class="hide" id="Descongelar">Descongelar Cadastro</a></li>
@@ -78,99 +79,6 @@
                 </div>
                 
                 <span class="spacer" style="margin-top: 0!important;"></span>
-                
-                <div class="box_x2" style="width: 963px; display: none;">
-                    <h2 class="sub_title">vagas relacionadas ao seu perfil</h2>
-                                        
-                    <div class="vacancy_item">
-                        <h1>Motorista Particular</h1>
-                        
-                        <div class="vacancy_item_txt">
-                            <p>
-                                <strong>Salário: </strong>R$ 1.372,00<br/>
-                                <strong>Local: </strong> São Paulo - SP<br/><br/>
-                                <strong>Sobre a Vaga: </strong>Dar suporte aos alunos, professores, sócios e outros 
-                                usuários durante suas pesquisas, na utilização da 
-                                biblioteca. Garantir a organização da biblioteca...
-                                
-                            </p>
-                            
-                            <div class="vacancy_ct_buttons">
-                            <a class="btn_default btn_vacancy">Visualizar</a>
-                            <a class="btn_default btn_vacancy">Editar</a>
-                            <a class="btn_default btn_vacancy">Excluir</a>
-                            </div>
-                        
-                        </div>
-                    </div>
-                    
-                    <div class="vacancy_item">
-                        <h1>Motorista de Transporte Público</h1>
-                        
-                        <div class="vacancy_item_txt">
-                            <p>
-                                <strong>Salário: </strong>R$ 1.372,00<br/>
-                                <strong>Local: </strong> São Paulo - SP<br/><br/>
-                                <strong>Sobre a Vaga: </strong>Dar suporte aos alunos, professores, sócios e outros 
-                                usuários durante suas pesquisas, na utilização da 
-                                biblioteca. Garantir a organização da biblioteca...
-                                
-                            </p>
-                            
-                            <div class="vacancy_ct_buttons">
-                            <a class="btn_default btn_vacancy">Visualizar</a>
-                            <a class="btn_default btn_vacancy">Editar</a>
-                            <a class="btn_default btn_vacancy">Excluir</a>
-                            </div>
-                        
-                        </div>
-                    </div>
-                    
-                    <div class="vacancy_item">
-                        <h1>Motorista</h1>
-                        
-                        <div class="vacancy_item_txt">
-                            <p>
-                                <strong>Salário: </strong>R$ 1.372,00<br/>
-                                <strong>Local: </strong> São Paulo - SP<br/><br/>
-                                <strong>Sobre a Vaga: </strong>Dar suporte aos alunos, professores, sócios e outros 
-                                usuários durante suas pesquisas, na utilização da 
-                                biblioteca. Garantir a organização da biblioteca...
-                                
-                            </p>
-                            
-                            <div class="vacancy_ct_buttons">
-                            <a class="btn_default btn_vacancy">Visualizar</a>
-                            <a class="btn_default btn_vacancy">Editar</a>
-                            <a class="btn_default btn_vacancy">Excluir</a>
-                            </div>
-                        
-                        </div>
-                    </div>
-                    
-                    <div class="vacancy_item">
-                        <h1>Eletricista</h1>
-                        
-                        <div class="vacancy_item_txt">
-                            <p>
-                                <strong>Salário: </strong>R$ 1.372,00<br/>
-                                <strong>Local: </strong> São Paulo - SP<br/><br/>
-                                <strong>Sobre a Vaga: </strong>Dar suporte aos alunos, professores, sócios e outros 
-                                usuários durante suas pesquisas, na utilização da 
-                                biblioteca. Garantir a organização da biblioteca...
-                                
-                            </p>
-                            
-                            <div class="vacancy_ct_buttons">
-                            <a class="btn_default btn_vacancy">Visualizar</a>
-                            <a class="btn_default btn_vacancy">Editar</a>
-                            <a class="btn_default btn_vacancy">Excluir</a>
-                            </div>
-                        
-                        </div>
-                    </div>
-                         
-                </div>
                 
             </div>
         </div>

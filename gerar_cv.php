@@ -46,9 +46,12 @@ $html =
 		</head>
 		
 		<body>
+			
+			<img src=\"images/logo_mail.jpg\" style=\"height: 60px;\"/>
+		
 			<h1>$nome</h1>
 			
-			<p style='font-size: 14px; font-style: italic'>
+			<p style='font-size: 14px; font-style: italic; font-family: Arial; color: #333;'>
 				$idade, Sexo $sexo, $esCivil <br/>
 				$endereco, $nro - $bairro<br/>
 				$cidade - $estado - $cep<br/>

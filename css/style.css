@@ -1123,12 +1123,13 @@ strong {
     color: #f0702e;
     font-size: 16px;
     margin-bottom: 10px;
-    line-height: 120%;
+    line-height: 140%;
 }
 
 .lbl_pre span{
     font-size: 16px;
     color: #00a2ff;
+	line-height:140%;
 }
 
 .vacancy_item {
@@ -1158,12 +1159,13 @@ strong {
 }
 
 .vacancy_item_txt {
-    width: 90%;
-    padding: 0 5%;
+    width: 400px;
+    padding: 0 20px;
     float: left;
     border-top: 1px solid #fff;
+	position:relative;
+	position:relative;
 } 
-
 
 .vacancy_item_txt p {
     width: 100%;
@@ -1189,8 +1191,61 @@ strong {
     
 }
 
+.btn_filters {
+	width: 118px;
+	height:25px;
+	position:absolute;
+	right:20px;
+	top: 58px;
+}
+
+.btn_filters a label {
+	float: left;
+	margin: 6px 0 0 26px;
+	cursor:pointer;
+}
+
+.btn_unfiltered {
+	width: 54px;
+	height:23px;
+	float:left;
+	background: url(../images/btn_filters_U.png) no-repeat;
+	cursor:pointer;
+	margin-top:1px;
+	margin-left:1px;
+}
+
+.btn_unfiltered:hover {
+	margin-top:0;
+	margin-left:0;
+	-webkit-box-shadow:  1px 1px 1px 1px #999999;
+	box-shadow:  1px 1px 1px 1px #999999;
+}
+
+.btn_filtered {
+	width: 54px;
+	height:23px;
+	margin-left:8px;
+	float:left;
+	background: url(../images/btn_filters.png) no-repeat;
+	cursor:pointer;
+	margin-top:1px;
+}
+
+.btn_filtered:hover {
+	margin-top:0;
+	margin-left:8px;
+	-webkit-box-shadow:  1px 1px 1px 1px #999999;
+	box-shadow:  1px 1px 1px 1px #999999;
+}
+
 .btn_vacancy {
     margin-right: 15px;
+}
+
+.vacancy_full {
+	float: left;
+	width:550px;
 }
 
 .close_item {
@@ -1458,4 +1513,19 @@ strong {
 
 .cities {
 	height: 200px;
+}
+
+.img_vagas {
+    width: 361px;
+    height: 331px;
+    position: absolute;
+    top: 24px;
+    right: -43px;
+    background: url(../images/img_vagas.png) no-repeat;
+}
+
+.btn_container {
+	width: 100%;
+	float: left;
+	margin-top: 20px;
 }

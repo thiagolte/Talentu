@@ -6,13 +6,7 @@
 
 *.sql
 
-*.php
-
 *.gif
-
-*.css
-
-*.js
 
 *.LGPL
 
@@ -28,8 +22,6 @@
 
 *.ufm
 
-*.html
-
 *.ser
 
 dompdf/lib/php-font-lib/.htaccess
@@ -37,8 +29,6 @@ dompdf/lib/php-font-lib/.htaccess
 sendgrid-php-master/Test/Mock/Mock_loader.php
 
 sendgrid-php-master/Test/.DS_Store
-
-*.php
 
 *.skel
 
@@ -55,18 +45,13 @@ sendgrid-php-master/Test/.DS_Store
 
 *.map
 
-*.png
 
 <<<<<<< HEAD
 *.inc
 
-*.ico
-
 *.xcf
 
 *.bmp
-
-*.jpg
 
 dompdf/www/test/images/no_extension
 
@@ -82,7 +67,6 @@ joomla/libraries/phputf8/README
 
 joomla/libraries/simplepie/idn/LICENCE
 
-*.htm
 
 *.swf
 
@@ -117,10 +101,6 @@ sendgrid-php-master/.gitignore
 *.js
 
 *.inc
-
-*.css
-
-*.html
 
 *.bmp
 
@@ -184,11 +164,89 @@ sendgrid-php-master/Makefile
 <<<<<<< HEAD
 *.md
 
-*.json
-
 *.lock
 =======
 js/flexigrid-1.1/css/.svn/entries
 >>>>>>> ignores
+<<<<<<< HEAD
 !/models/cadastrar_vaga.php
 !/js/cadastrar_vaga/script.js
+=======
+
+libraries/drivers/mysqlimproved.php
+
+libraries/database.php
+
+dompdf/dompdf.php
+
+dompdf/dompdf_config.custom.inc.php
+
+dompdf/dompdf_config.inc.php
+
+dompdf/include/absolute_positioner.cls.php
+
+dompdf/include/abstract_renderer.cls.php
+
+dompdf/include/attribute_translator.cls.php
+
+dompdf/include/autoload.inc.php
+
+dompdf/include/block_frame_decorator.cls.php
+
+dompdf/include/block_frame_reflower.cls.php
+
+dompdf/include/block_positioner.cls.php
+
+dompdf/include/block_renderer.cls.php
+
+dompdf/include/cached_pdf_decorator.cls.php
+
+dompdf/include/canvas.cls.php
+
+dompdf/include/canvas_factory.cls.php
+
+dompdf/include/cellmap.cls.php
+
+dompdf/include/cpdf_adapter.cls.php
+
+dompdf/include/css_color.cls.php
+
+dompdf/include/dompdf.cls.php
+
+dompdf/include/dompdf_exception.cls.php
+
+dompdf/include/dompdf_image_exception.cls.php
+
+dompdf/include/fixed_positioner.cls.php
+
+dompdf/include/font_metrics.cls.php
+
+dompdf/include/frame.cls.php
+
+dompdf/include/frame_decorator.cls.php
+
+dompdf/include/frame_factory.cls.php
+
+dompdf/include/frame_reflower.cls.php
+
+dompdf/include/frame_tree.cls.php
+
+dompdf/include/functions.inc.php
+
+dompdf/
+
+sendgrid-php-master/
+>>>>>>> 86a6ae724f8290618c6012367f8371a10aea0c9d
+/BKP/
+/joomla/
+/libraries/
+/teste.php
+/mail/
+/empresa/
+/contato/
+/ajuda/
+/admin/
+/js/flexigrid-1.1/
+/js/jQuery-TE_v.1.3.5/
+/js/jqchart/
+/js/jquery-ui/
