@@ -190,3 +190,5 @@ sendgrid-php-master/Makefile
 =======
 js/flexigrid-1.1/css/.svn/entries
 >>>>>>> ignores
+!/models/cadastrar_vaga.php
+!/js/cadastrar_vaga/script.js
