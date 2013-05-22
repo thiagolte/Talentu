@@ -169,9 +169,12 @@ sendgrid-php-master/Makefile
 js/flexigrid-1.1/css/.svn/entries
 >>>>>>> ignores
 <<<<<<< HEAD
+<<<<<<< HEAD
 !/models/cadastrar_vaga.php
 !/js/cadastrar_vaga/script.js
 =======
+=======
+>>>>>>> 86a6ae724f8290618c6012367f8371a10aea0c9d
 
 libraries/drivers/mysqlimproved.php
 
@@ -236,6 +239,7 @@ dompdf/include/functions.inc.php
 dompdf/
 
 sendgrid-php-master/
+<<<<<<< HEAD
 >>>>>>> 86a6ae724f8290618c6012367f8371a10aea0c9d
 /BKP/
 /joomla/
@@ -250,3 +254,5 @@ sendgrid-php-master/
 /js/jQuery-TE_v.1.3.5/
 /js/jqchart/
 /js/jquery-ui/
+=======
+>>>>>>> 86a6ae724f8290618c6012367f8371a10aea0c9d
