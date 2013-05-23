@@ -5,6 +5,7 @@ class Cadastrar_vaga_Controller {
 
     public function main(array $getVars) {
         
+        $Cadastrar_Vaga_Model = new Cadastrar_vaga_Model();
 
         //Main
         if (count($getVars) == 0) {
