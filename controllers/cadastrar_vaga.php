@@ -7,6 +7,13 @@ class Cadastrar_vaga_Controller {
         
         $Cadastrar_Vaga_Model = new Cadastrar_vaga_Model();
 
+        //Editar
+        if (isset($_GET['ICadastro']) && !empty($_GET['ICadastro'])){
+            
+            var_dump( $_GET['ICadastro'] );
+
+        }
+        
         //Main
         if (count($getVars) == 0) {
             //telmplates
