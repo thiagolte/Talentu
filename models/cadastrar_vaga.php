@@ -69,6 +69,14 @@ class Cadastrar_vaga_Model {
 
             $idCadastro = $this->db->Create('tb0013_Vagas_Empresa',$values);
 
+            if($idCadastro > 0){
+                $values = array($idCadastro, $arrVaga['filtroSexo'], $arrVaga['filtroFaixaEtaria'],
+                                $arrVaga['filtroPretensaoSalarial'], $arrVaga['filtroPNE'],
+                                $arrVaga['filtroEstado'], $arrVaga['filtroCidade']);
+
+                $idFiltro = $this->db->Create('tb0014_Filtros_Vaga',$values);
+            }
+            
             return $idCadastro;
         }
     }

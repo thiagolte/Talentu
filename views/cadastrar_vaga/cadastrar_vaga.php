@@ -342,12 +342,12 @@
 
                             <label class="lbl_form b2" style="margin-top: 15px;">Sexo</label>
                             <div class="radio_lbl2">
-                                <input type="radio" name="FiltroSexo" value="1"/>
+                                <input type="radio" name="filtroSexo" value="1"/>
                                 <label class="lbl_form">Masculino</label>
                             </div>
 
                             <div class="radio_lbl2">
-                                <input type="radio" name="FiltroSexo" value="2"/>
+                                <input type="radio" name="filtroSexo" value="2"/>
                                 <label class="lbl_form">Feminino</label>
                             </div>
 
@@ -356,7 +356,7 @@
                             <div class="filters_multi">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Faixa Etária</label>
 
-                                <select name="FiltroFaixaEtaria" multiple class="select_multi">
+                                <select name="filtroFaixaEtaria" multiple class="select_multi">
                                   <option>asdasd</option>
                                   <option>asdasd</option>
                                 </select>
@@ -365,7 +365,7 @@
                             <div class="filters_multi" style="margin-left: 32px;">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Pretensão salarial</label>
 
-                                <select name="FiltroPretensaoSalarial" multiple class="select_multi">
+                                <select name="filtroPretensaoSalarial" multiple class="select_multi">
                                   <option>asdasd</option>
                                   <option>asdasd</option>
                                 </select>
@@ -374,7 +374,7 @@
                             <div class="filters_multi" style="float: right;">
                                 <label class="lbl_form b2" style="margin-top: 15px;">PNE</label>
 
-                                <select name="FiltroPNE" multiple class="select_multi">
+                                <select name="filtroPNE" multiple class="select_multi">
                                   <option>asdasd</option>
                                   <option>asdasd</option>
                                 </select>
@@ -383,7 +383,7 @@
                             <div class="filters_multi">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Estado</label>
 
-                                <select name="FiltroEstado" multiple class="select_multi cities">
+                                <select name="filtroEstado" multiple class="select_multi cities">
                                   <option>asdasd</option>
                                   <option>asdasd</option>
                                 </select>
@@ -392,7 +392,7 @@
                             <div class="filters_multi" style="margin-left: 32px;">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Cidade</label>
 
-                                <select name="FiltroCidade" multiple class="select_multi cities">
+                                <select name="filtroCidade" multiple class="select_multi cities">
                                   <option>asdasd</option>
                                   <option>asdasd</option>
                                 </select>
