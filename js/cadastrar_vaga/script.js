@@ -168,46 +168,23 @@ $(document).ready(function() {
             data: {ICadastro:$('#frmVagas').serializeObject()},
             success: function(data)
             {
-                console.log(data);
+                if(data > 0){
+                    if($("#Edicao").attr("value") != 1){
+                        alert('Vaga cadastrada com sucesso!');
+                    }else{
+                        alert('Vaga alterada com sucesso!');
+                    }
+
+                }else{
+                    alert('ERRO: Contate o administrador');
+                }
             }
         });
-
-
-        
 //        if($("#dadosPessoais").valid()){
 //            $.ajax({
 //                url: "index.php?cadastrar_cv",
 //                type: "GET",
-//                data: {IcadastroEmail:$('#Email').attr('value'),
-//                        IcadastroNome:$('#Nome').attr('value'),
-//                        IcadastroSenha:$('#Senha').attr('value'),
-//                        IcadastroDatanasci:$('#DataNasci').attr('value'),
-//                        IcadastroTelefone:$('#Telefone').attr('value'),
-//                        IcadastroCelular:$('#Celular').attr('value'),
-//                        IcadastroCpf:$('#Cpf').attr('value'),
-//                        IcadastroCep:$('#Cep').attr('value'),
-//                        IcadastroEndereco:$('#Endereco').attr('value'),
-//                        IcadastroBairro:$('#Bairro').attr('value'),
-//                        IcadastroNumero:$('#Numero').attr('value'),
-//                        IcadastroComplemento:$('#Complemento').attr('value'),
-//                        IcadastroCidade:$('#Cidade').attr('value'),
-//                        IcadastroEstado:$('#Estado').attr('value'),
-//                        IcadastroPretencao:$('#Pretencao').attr('value'),
-//                        IcadastroGrau:$('#Grau').attr('value'),
-//                        IcadastroEstadoCivil:$('#EstadoCivil').attr('value'),
-//                        IcadastroSexo:$('#Sexo').attr('value'),
-//                        IcadastroCat1:$("#Categoria1").attr("value"),
-//                        IcadastroVag1:$("#Vaga1").attr("value"),
-//                        IcadastroTempEx1:$("#TempoExperiencia1").attr("value"),
-//                        IcadastroCat2:$("#Categoria2").attr("value"),
-//                        IcadastroVag2:$("#Vaga2").attr("value"),
-//                        IcadastroTempEx2:$("#TempoExperiencia2").attr("value"),
-//                        IcadastroCat3:$("#Categoria3").attr("value"),
-//                        IcadastroVag3:$("#Vaga3").attr("value"),
-//                        IcadastroTempEx3:$("#TempoExperiencia3").attr("value"),
-//                        IcadastroPNE:$("#PNE").attr("value"),
-//                        IcadastroPNEDetalhes:$("#PNEdetalhes").attr("value"),
-//                        Edicao:$("#Edicao").attr("value"),
+//                data: {Edicao:$("#Edicao").attr("value"),
 //                        IcadastroCV:$('#CV').val()},
 //                success: function(data)
 //                {

@@ -7,10 +7,19 @@ class Cadastrar_vaga_Controller {
         
         $Cadastrar_Vaga_Model = new Cadastrar_vaga_Model();
 
-        //Editar
+        //Nova Vaga
         if (isset($_GET['ICadastro']) && !empty($_GET['ICadastro'])){
             
-            var_dump( $_GET['ICadastro'] );
+            $retorno = $Cadastrar_Vaga_Model->set_CadastroVaga( $_GET['ICadastro'] );
+            echo $retorno;
+
+        }
+        
+        //Editar Vaga
+        if (isset($_GET['ECadastro']) && !empty($_GET['ECadastro'])){
+            
+            $retorno = $Cadastrar_Vaga_Model->edit_CadastroVaga( $_GET['ECadastro'] );
+            echo $retorno;
 
         }
         

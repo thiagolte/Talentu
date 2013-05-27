@@ -25,13 +25,15 @@
                             <h1 class="title_pages">Cadastro de nova vaga</h1>
                             <h2 class="sub_title" style="font-size: 17px;">Dados da empresa onde o candidato irá trabalhar </h2>
 
+                            <input name="empresa" type="hidden" value="1"/>
+                            
                             <div class="radio_lbl">
-                                    <input type="radio" name="empresa" value="1"/>
+                                    <input type="radio" name="local" value="1"/>
                                     <label class="lbl_form">vaga na minha empresa</label>
                             </div>
 
                             <div class="radio_lbl">
-                                <input type="radio" name="empresa" value="2"/>
+                                <input type="radio" name="local" value="2"/>
                                 <label class="lbl_form">vaga em outra empresa</label>
                             </div>
 
@@ -43,13 +45,13 @@
                             </select>
 
                             <label class="lbl_form b2" style="margin-top: 15px;">Ramo de atuação da empresa</label>
-                            <select name="RamoAtuacao" class="select_form" value="" style="width: 395px;">
+                            <select name="ramoAtuacao" class="select_form" value="" style="width: 395px;">
                                 <option value="0">Selecione</option>
                                 <option value="1">Outro</option>
                             </select>
 
                             <label class="lbl_form b2" style="margin-top: 15px;">Nacionalidade da empresa</label>
-                            <select name="Nacionalidade" class="select_form" value="" style="width: 130px;">
+                            <select name="nacionalidade" class="select_form" value="" style="width: 130px;">
                                 <option value="0">Nacional</option>
                                 <option value="1">Multinacional</option>
                             </select>
@@ -59,7 +61,7 @@
                         <div class="box_x2 right_box" style="float: left!important; background: none!important">
 
                             <label class="lbl_form b2" style="margin-top: 100px;">Porte da empresa</label>
-                            <select name="Porte" class="select_form" value="" style="width: 432px;">
+                            <select name="porte" class="select_form" value="" style="width: 432px;">
                                 <option value="0">Selecione</option>
                                 <option value="1">pequeno (de 1 a 99 funcionários)</option>
                                 <option value="1">médio (de 100 a 499 funcionários)</option>
@@ -67,7 +69,7 @@
                             </select>
 
                             <label class="lbl_form">Descrição sumária da empresa</label>
-                            <textarea name="Descricao" class="txt_search" style="width: 420px!important; height: 157px;"></textarea>
+                            <textarea name="descricao" class="txt_search" style="width: 420px!important; height: 157px;"></textarea>
 
                         </div>
 
@@ -77,29 +79,29 @@
                             <h2 class="sub_title">Dados da vaga </h2>
 
                             <label class="lbl_form">Quantidade de Vagas</label>
-                            <input name="Qtd" type="text" class="input_form" style="width: 383px;">
+                            <input name="quantidade" type="text" class="input_form" style="width: 383px;">
 
                             <label class="lbl_form">Atribuições e Responsabilidades</label>
-                            <textarea name="Atribuicoes" name="" class="txt_search" style="width: 383px!important; height: 60px;"></textarea>
+                            <textarea name="atribuicoes" name="" class="txt_search" style="width: 383px!important; height: 60px;"></textarea>
 
                             <label class="lbl_form">Experiência e habilidades</label>
-                            <textarea name="Experiencia" class="txt_search" style="width: 383px!important; height: 60px;"></textarea>
+                            <textarea name="experiencia" class="txt_search" style="width: 383px!important; height: 60px;"></textarea>
 
                             <label class="lbl_form">Escolaridade</label>
-                            <select name="Escolaridade" class="select_form" value="" style="width: 395px;">
+                            <select name="escolaridade" class="select_form" value="" style="width: 395px;">
                                 <option value="0">Selecione</option>
                             </select>
 
                             <label class="lbl_form">Qualificações: <span>(cursos, certificações e conhecimentos)</span></label>
-                            <textarea name="Qualificacoes" class="txt_search" style="width: 383px!important; height: 60px;"></textarea>
+                            <textarea name="qualificacoes" class="txt_search" style="width: 383px!important; height: 60px;"></textarea>
 
                             <label class="lbl_form b2">Categoria da area de atuação do profissional</label>
-                            <select name="Categoria" class="select_form" value="" style="width: 395px;">
+                            <select name="categoria" class="select_form" value="" style="width: 395px;">
                                 <option value="0">Selecione</option>
                             </select>
 
                             <label class="lbl_form b2">Vaga de atuação do profissional</label>
-                            <select name="Vaga" class="select_form" value="" style="width: 395px;">
+                            <select name="vaga" class="select_form" value="" style="width: 395px;">
                                 <option value="0">Selecione</option>
                             </select>
                         </div>
@@ -109,55 +111,55 @@
 
                             <label class="lbl_form b2">Salário mensal</label>
                             <div class="radio_lbl" style="margin-top: 5px;">
-                                <input name="SalarioCombinar" type="checkbox"/>
+                                <input name="salarioCombinar" type="checkbox"/>
                                 <label class="lbl_form">a combinar</label>
                             </div>
 
-                            <input name="SalarioValor" type="text" class="input_form" value="tratar valor" style="width: 200px"/>
+                            <input name="salario" type="text" class="input_form" value="tratar valor" style="width: 200px"/>
 
                             <label class="lbl_form b2">Regime de contratação</label>
-                            <select name="RegimeContratacao" class="select_form" value="" style="width: 432px;">
+                            <select name="regimeContratacao" class="select_form" value="" style="width: 432px;">
                                 <option value="0">Selecione</option>
                             </select>
 
                             <label class="lbl_form">Benefícios</label>
-                            <textarea name="Beneficios" class="txt_search" style="width: 420px!important; height: 80px; margin"></textarea>
+                            <textarea name="beneficios" class="txt_search" style="width: 420px!important; height: 80px; margin"></textarea>
 
                             <label class="lbl_form">Regime de trabalho: <span>(dia, escala, etc)</span></label>
-                            <input name="RegimeTrabalho" type="text" class="input_form" style="width: 420px;">
+                            <input name="regimeTrabalho" type="text" class="input_form" style="width: 420px;">
 
                             <label class="lbl_form">Horário: </label>
                             <span class="hours">a partir das</span>
-                            <select name="HorarioDe" class="select_form" value="" style="width: 100px;">
+                            <select name="horarioDe" class="select_form" value="" style="width: 100px;">
                                 <option value="0">Selecione</option>
                             </select>
                             <span class="hours" style="margin-left: 10px">até as</span>
-                            <select name="HorarioAte" class="select_form" value="" style="width: 100px;">
+                            <select name="horarioAte" class="select_form" value="" style="width: 100px;">
                                 <option value="0">Selecione</option>
                             </select>
 
                             <label class="lbl_form b2">Meios para receber candidatos:</label>
 
                             <div class="radio_lbl2">
-                                <input name="EmailCadastro" type="radio" id="other_unSelected" name="forma_contato" value="0"/>
+                                <input name="meiosRecebimento" type="radio" id="other_unSelected" name="forma_contato" value="0"/>
                                 <label class="lbl_form">E-mail de cadastro</label>
                             </div>
 
                             <div class="radio_lbl2">
-                                <input name="OutroEmail" type="radio" id="other_selected" name="forma_contato" value="1"/>
+                                <input name="meiosRecebimento" type="radio" id="other_selected" name="forma_contato" value="1"/>
                                 <label class="lbl_form">Outro e-mail</label>
                             </div>
 
-                            <input name="EmailContato" type="text" class="input_form other_mail" style="width: 420px; display: none; margin-bottom: 3px!important">
+                            <input name="emailRecebimento" type="text" class="input_form other_mail" style="width: 420px; display: none; margin-bottom: 3px!important">
 
                             <label class="lbl_form b2" style="margin-top: 15px;">Ativar Vagar?</label>
                             <div class="radio_lbl2">
-                                <input name="Ativar" type="radio" checked="true" value="1"/>
+                                <input name="ativar" type="radio" checked="true" value="1"/>
                                 <label class="lbl_form">Sim</label>
                             </div>
 
                             <div class="radio_lbl2">
-                                <input name="Ativar" type="radio" value="0"/>
+                                <input name="ativar" type="radio" value="0"/>
                                 <label class="lbl_form">Não</label>
                             </div>
                         </div>
@@ -177,28 +179,28 @@
                                         1ª Questão:
                                 </label>
 
-                                <textarea class="txt_search" style="width: 99%; height: 30px;"></textarea>
+                                <textarea name="questao1" class="txt_search" style="width: 99%; height: 30px;"></textarea>
 
                                 <label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
                                 <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="TipoResposta" value="1"/>
+                                    <input type="radio" checked="true" name="tipoResposta1" value="1"/>
                                     <label class="lbl_form">Resposta do tipo aberta</label><label class="lbl_form2">exemplo: comente sua experiência na area...</label>
                                 </div>
 
                                 <div class="radio_lbl2">
-                                    <input type="radio" name="TipoResposta" value="2" />
+                                    <input type="radio" name="tipoResposta1" value="2" />
                                     <label class="lbl_form">Resposta do tipo SIM ou NÃO</label><label class="lbl_form2">exemplo: possui carro próprio?</label>
                                 </div>
 
                                 <label class="lbl_form b2" style="margin-top: 15px;">Ativar Filtro?</label>
                                 <label class="lbl_form2" style="width: 100%; margin: 0;">Utilize esta opção apenas para requisitos imprescindiveis da vaga. Exemplo: possui disponinilidade para viajens?</label>
                                 <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="ativarFiltro" value="1"/>
+                                    <input type="radio" checked="true" name="filtroAtivo1" value="1"/>
                                     <label class="lbl_form">Sim</label>
                                 </div>
 
                                 <div class="radio_lbl2">
-                                    <input type="radio" name="ativarFiltro" value="0"/>
+                                    <input type="radio" name="filtroAtivo1" value="0"/>
                                     <label class="lbl_form">Não</label>
                                 </div>
                             </div>
@@ -208,28 +210,28 @@
                                         2ª Questão:
                                 </label>
 
-                                <textarea class="txt_search" style="width: 99%; height: 30px;"></textarea>
+                                <textarea name="questao2" class="txt_search" style="width: 99%; height: 30px;"></textarea>
 
                                 <label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
                                 <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="TipoResposta" value="1"/>
+                                    <input type="radio" checked="true" name="tipoResposta2" value="1"/>
                                     <label class="lbl_form">Resposta do tipo aberta</label><label class="lbl_form2">exemplo: comente sua experiência na area...</label>
                                 </div>
 
                                 <div class="radio_lbl2">
-                                    <input type="radio" name="TipoResposta" value="2"/>
+                                    <input type="radio" name="tipoResposta2" value="2"/>
                                     <label class="lbl_form">Resposta do tipo SIM ou NÃO</label><label class="lbl_form2">exemplo: possui carro próprio?</label>
                                 </div>
 
                                 <label class="lbl_form b2" style="margin-top: 15px;">Ativar Filtro?</label>
                                 <label class="lbl_form2" style="width: 100%; margin: 0;">Utilize esta opção apenas para requisitos imprescindiveis da vaga. Exemplo: possui disponinilidade para viajens?</label>
                                 <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="ativarFiltro" value="1"/>
+                                    <input type="radio" checked="true" name="filtroAtivo2" value="1"/>
                                     <label class="lbl_form">Sim</label>
                                 </div>
 
                                 <div class="radio_lbl2">
-                                    <input type="radio" name="ativarFiltro" value="0"/>
+                                    <input type="radio" name="filtroAtivo2" value="0"/>
                                     <label class="lbl_form">Não</label>
                                 </div>
                             </div>
@@ -239,28 +241,28 @@
                                         3ª Questão:
                                 </label>
 
-                                <textarea class="txt_search" style="width: 99%; height: 30px;"></textarea>
+                                <textarea name="1uestao3" class="txt_search" style="width: 99%; height: 30px;"></textarea>
 
                                 <label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
                                 <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="TipoResposta" value="1"/>
+                                    <input type="radio" checked="true" name="tipoResposta3" value="1"/>
                                     <label class="lbl_form">Resposta do tipo aberta</label><label class="lbl_form2">exemplo: comente sua experiência na area...</label>
                                 </div>
 
                                 <div class="radio_lbl2">
-                                    <input type="radio" name="TipoResposta" value="2"/>
+                                    <input type="radio" name="tipoResposta3" value="2"/>
                                     <label class="lbl_form">Resposta do tipo SIM ou NÃO</label><label class="lbl_form2">exemplo: possui carro próprio?</label>
                                 </div>
 
                                 <label class="lbl_form b2" style="margin-top: 15px;">Ativar Filtro?</label>
                                 <label class="lbl_form2" style="width: 100%; margin: 0;">Utilize esta opção apenas para requisitos imprescindiveis da vaga. Exemplo: possui disponinilidade para viajens?</label>
                                 <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="ativarFiltro" value="1"/>
+                                    <input type="radio" checked="true" name="filtroAtivo3" value="1"/>
                                     <label class="lbl_form">Sim</label>
                                 </div>
 
                                 <div class="radio_lbl2">
-                                    <input type="radio" name="ativarFiltro" value="0"/>
+                                    <input type="radio" name="filtroAtivo3" value="0"/>
                                     <label class="lbl_form">Não</label>
                                 </div>
                             </div>
@@ -270,28 +272,28 @@
                                         4ª Questão:
                                 </label>
 
-                                <textarea class="txt_search" style="width: 99%; height: 30px;"></textarea>
+                                <textarea name="questao4" class="txt_search" style="width: 99%; height: 30px;"></textarea>
 
                                 <label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
                                 <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="TipoResposta" value="1"/>
+                                    <input type="radio" checked="true" name="tipoResposta4" value="1"/>
                                     <label class="lbl_form">Resposta do tipo aberta</label><label class="lbl_form2">exemplo: comente sua experiência na area...</label>
                                 </div>
 
                                 <div class="radio_lbl2">
-                                    <input type="radio" name="TipoResposta" value="2"/>
+                                    <input type="radio" name="tipoResposta4" value="2"/>
                                     <label class="lbl_form">Resposta do tipo SIM ou NÃO</label><label class="lbl_form2">exemplo: possui carro próprio?</label>
                                 </div>
 
                                 <label class="lbl_form b2" style="margin-top: 15px;">Ativar Filtro?</label>
                                 <label class="lbl_form2" style="width: 100%; margin: 0;">Utilize esta opção apenas para requisitos imprescindiveis da vaga. Exemplo: possui disponinilidade para viajens?</label>
                                 <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="ativarFiltro" value="1"/>
+                                    <input type="radio" checked="true" name="filtroAtivo4" value="1"/>
                                     <label class="lbl_form">Sim</label>
                                 </div>
 
                                 <div class="radio_lbl2">
-                                    <input type="radio" name="ativarFiltro" value="0"/>
+                                    <input type="radio" name="filtroAtivo4" value="0"/>
                                     <label class="lbl_form">Não</label>
                                 </div>
                             </div>
@@ -301,28 +303,28 @@
                                         5ª Questão:
                                 </label>
 
-                                <textarea class="txt_search" style="width: 99%; height: 30px;"></textarea>
+                                <textarea name="questao5" class="txt_search" style="width: 99%; height: 30px;"></textarea>
 
                                 <label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
                                 <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="TipoResposta" value="1"/>
+                                    <input type="radio" checked="true" name="tipoResposta5" value="1"/>
                                     <label class="lbl_form">Resposta do tipo aberta</label><label class="lbl_form2">exemplo: comente sua experiência na area...</label>
                                 </div>
 
                                 <div class="radio_lbl2">
-                                    <input type="radio" name="TipoResposta" value="2"/>
+                                    <input type="radio" name="tipoResposta5" value="2"/>
                                     <label class="lbl_form">Resposta do tipo SIM ou NÃO</label><label class="lbl_form2">exemplo: possui carro próprio?</label>
                                 </div>
 
                                 <label class="lbl_form b2" style="margin-top: 15px;">Ativar Filtro?</label>
                                 <label class="lbl_form2" style="width: 100%; margin: 0;">Utilize esta opção apenas para requisitos imprescindiveis da vaga. Exemplo: possui disponinilidade para viajens?</label>
                                 <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="ativarFiltro" value="1"/>
+                                    <input type="radio" checked="true" name="filtroAtivo5" value="1"/>
                                     <label class="lbl_form">Sim</label>
                                 </div>
 
                                 <div class="radio_lbl2">
-                                    <input type="radio" name="ativarFiltro" value="0"/>
+                                    <input type="radio" name="filtroAtivo5" value="0"/>
                                     <label class="lbl_form">Não</label>
                                 </div>
                             </div>
@@ -340,12 +342,12 @@
 
                             <label class="lbl_form b2" style="margin-top: 15px;">Sexo</label>
                             <div class="radio_lbl2">
-                                <input type="radio" name="s_sexo" value="1"/>
+                                <input type="radio" name="FiltroSexo" value="1"/>
                                 <label class="lbl_form">Masculino</label>
                             </div>
 
                             <div class="radio_lbl2">
-                                <input type="radio" name="s_sexo" value="2"/>
+                                <input type="radio" name="FiltroSexo" value="2"/>
                                 <label class="lbl_form">Feminino</label>
                             </div>
 
@@ -354,7 +356,7 @@
                             <div class="filters_multi">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Faixa Etária</label>
 
-                                <select multiple class="select_multi">
+                                <select name="FiltroFaixaEtaria" multiple class="select_multi">
                                   <option>asdasd</option>
                                   <option>asdasd</option>
                                 </select>
@@ -363,7 +365,7 @@
                             <div class="filters_multi" style="margin-left: 32px;">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Pretensão salarial</label>
 
-                                <select multiple class="select_multi">
+                                <select name="FiltroPretensaoSalarial" multiple class="select_multi">
                                   <option>asdasd</option>
                                   <option>asdasd</option>
                                 </select>
@@ -372,7 +374,7 @@
                             <div class="filters_multi" style="float: right;">
                                 <label class="lbl_form b2" style="margin-top: 15px;">PNE</label>
 
-                                <select multiple class="select_multi">
+                                <select name="FiltroPNE" multiple class="select_multi">
                                   <option>asdasd</option>
                                   <option>asdasd</option>
                                 </select>
@@ -381,7 +383,7 @@
                             <div class="filters_multi">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Estado</label>
 
-                                <select multiple class="select_multi cities">
+                                <select name="FiltroEstado" multiple class="select_multi cities">
                                   <option>asdasd</option>
                                   <option>asdasd</option>
                                 </select>
@@ -390,7 +392,7 @@
                             <div class="filters_multi" style="margin-left: 32px;">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Cidade</label>
 
-                                <select multiple class="select_multi cities">
+                                <select name="FiltroCidade" multiple class="select_multi cities">
                                   <option>asdasd</option>
                                   <option>asdasd</option>
                                 </select>
