@@ -92,7 +92,7 @@ class Cadastrar_vaga_Model {
                 $arrVaga['salarioCombinar'] = 0;
             }
             
-            $values = array($arrVaga['idVaga'],$arrVaga['empresa'], $arrVaga['local'], $arrVaga['confidencial'],
+            $values = array($arrVaga['empresa'], $arrVaga['local'], $arrVaga['confidencial'],
                             $arrVaga['ramoAtuacao'], $arrVaga['nacionalidade'], $arrVaga['porte'],
                             $arrVaga['descricao'], $arrVaga['quantidade'], $arrVaga['atribuicoes'],
                             $arrVaga['experiencia'], $arrVaga['escolaridade'],$arrVaga['qualificacoes'],
@@ -108,6 +108,14 @@ class Cadastrar_vaga_Model {
         
             $idCadastro = $this->db->Update('tb0013_Vagas_Empresa',$values);
 
+            if($idFiltro > 0  && $idCadastro > 0){
+                $values = array($idFiltro, $idCadastro, $arrVaga['filtroSexo'], $arrVaga['filtroFaixaEtaria'],
+                                $arrVaga['filtroPretensaoSalarial'], $arrVaga['filtroPNE'],
+                                $arrVaga['filtroEstado'], $arrVaga['filtroCidade']);
+
+                $idFiltro = $this->db->Update('tb0014_Filtros_Vaga',$values);
+            }
+            
             return $idCadastro;
         }
     }

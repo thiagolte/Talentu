@@ -357,8 +357,8 @@
                                 <label class="lbl_form b2" style="margin-top: 15px;">Faixa Etária</label>
 
                                 <select name="filtroFaixaEtaria" multiple class="select_multi">
-                                  <option>asdasd</option>
-                                  <option>asdasd</option>
+                                    <option value="1">asdasd</option>
+                                    <option value="2">asdasd</option>
                                 </select>
                             </div>
 
@@ -366,35 +366,35 @@
                                 <label class="lbl_form b2" style="margin-top: 15px;">Pretensão salarial</label>
 
                                 <select name="filtroPretensaoSalarial" multiple class="select_multi">
-                                  <option>asdasd</option>
-                                  <option>asdasd</option>
+                                  <option value="1">asdasd</option>
+                                  <option value="2">asdasd</option>
                                 </select>
                             </div>
 
                             <div class="filters_multi" style="float: right;">
                                 <label class="lbl_form b2" style="margin-top: 15px;">PNE</label>
 
-                                <select name="filtroPNE" multiple class="select_multi">
-                                  <option>asdasd</option>
-                                  <option>asdasd</option>
+                                <select name="filtroPNE" multiple="multiple" class="select_multi">
+                                  <option value="1">asdasd</option>
+                                  <option value="2">asdasd</option>
                                 </select>
                             </div>
 
                             <div class="filters_multi">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Estado</label>
 
-                                <select name="filtroEstado" multiple class="select_multi cities">
-                                  <option>asdasd</option>
-                                  <option>asdasd</option>
+                                <select name="filtroEstado" multiple="multiple" class="select_multi cities">
+                                  <option value="1">asdasd</option>
+                                  <option value="2">asdasd</option>
                                 </select>
                             </div>
 
                             <div class="filters_multi" style="margin-left: 32px;">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Cidade</label>
 
-                                <select name="filtroCidade" multiple class="select_multi cities">
-                                  <option>asdasd</option>
-                                  <option>asdasd</option>
+                                <select name="filtroCidade" multiple="multiple" class="select_multi cities">
+                                  <option value="1">asdasd</option>
+                                  <option value="2">asdasd</option>
                                 </select>
                             </div>
                         </div>

@@ -159,7 +159,7 @@ $(document).ready(function() {
             }
         });
     });
-     
+          
     //Enviar Dados CV
     $('#Enviar').click(function(){
         $.ajax({
