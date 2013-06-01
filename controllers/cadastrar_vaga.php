@@ -6,7 +6,7 @@ class Cadastrar_vaga_Controller {
     public function main(array $getVars) {
         
         $Cadastrar_Vaga_Model = new Cadastrar_vaga_Model();
-
+        
         //Nova Vaga
         if (isset($_GET['ICadastro']) && !empty($_GET['ICadastro'])){
             
@@ -23,6 +23,11 @@ class Cadastrar_vaga_Controller {
 
         }
         
+        //Pretenção
+        if (isset($_GET['getPretencao']) && !empty($_GET['getPretencao'])){
+           
+        }
+        
         //Main
         if (count($getVars) == 0) {
             //telmplates
@@ -30,9 +35,27 @@ class Cadastrar_vaga_Controller {
 
             $vw_Login = new View_Model('login/login');
             $view->assign('vw_Login', $vw_Login->render(FALSE));
+
+            $this->CarregaItens($view);
             
             $view->render();
         }
 
+    }
+    
+    function CarregaItens($view){
+        $Cadastrar_cv_Model = new Cadastrar_cv_Model();
+                
+        $Pretencao = $Cadastrar_cv_Model->get_Pretencoes();
+        $Estado = $Cadastrar_cv_Model->get_Estados();
+        $Cidade = $Cadastrar_cv_Model->get_Cidades();
+        $Grau = $Cadastrar_cv_Model->get_Graus();
+        $Categoria = $Cadastrar_cv_Model->get_CategoriasAtivas();
+        
+        $view->assign('Pretencao', $Pretencao);
+        $view->assign('Estado', $Estado);
+        $view->assign('Cidade', $Cidade);
+        $view->assign('Grau', $Grau);
+        $view->assign('Categoria', $Categoria);
     }
 }

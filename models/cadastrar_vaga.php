@@ -74,6 +74,12 @@ class Cadastrar_vaga_Model {
                                 $arrVaga['filtroPretensaoSalarial'], $arrVaga['filtroPNE'],
                                 $arrVaga['filtroEstado'], $arrVaga['filtroCidade']);
 
+                            echo " Faixa " . var_dump($arrVaga['filtroFaixaEtaria']) . "<br>";
+                            echo " Pretensao " . var_dump($arrVaga['filtroPretensaoSalarial']) . "<br>";;
+                            echo " PNE " . var_dump($arrVaga['filtroPNE']) . "<br>";;
+                            echo " Estado " . var_dump($arrVaga['filtroEstado']) . "<br>";;
+                            echo " Cidade " . var_dump($arrVaga['filtroCidade']) . "<br>";;
+                
                 $idFiltro = $this->db->Create('tb0014_Filtros_Vaga',$values);
             }
             

@@ -168,6 +168,7 @@ $(document).ready(function() {
             data: {ICadastro:$('#frmVagas').serializeObject()},
             success: function(data)
             {
+                //console.log($('#frmVagas').serializeObject());
                 if(data > 0){
                     if($("#Edicao").attr("value") != 1){
                         alert('Vaga cadastrada com sucesso!');

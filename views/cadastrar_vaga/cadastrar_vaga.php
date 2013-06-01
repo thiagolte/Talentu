@@ -64,8 +64,8 @@
                             <select name="porte" class="select_form" value="" style="width: 432px;">
                                 <option value="0">Selecione</option>
                                 <option value="1">pequeno (de 1 a 99 funcionários)</option>
-                                <option value="1">médio (de 100 a 499 funcionários)</option>
-                                <option value="1">grande (mais de 500 funcionários)</option>
+                                <option value="2">médio (de 100 a 499 funcionários)</option>
+                                <option value="3">grande (mais de 500 funcionários)</option>
                             </select>
 
                             <label class="lbl_form">Descrição sumária da empresa</label>
@@ -90,6 +90,15 @@
                             <label class="lbl_form">Escolaridade</label>
                             <select name="escolaridade" class="select_form" value="" style="width: 395px;">
                                 <option value="0">Selecione</option>
+                                <? 
+                                if($data['Grau']){
+                                    foreach ($data['Grau'] as $dados) { ?>
+
+                                        <option value="<? echo $dados['Codigo'] ?>"><? echo utf8_encode($dados['Nome']) ?></option>
+                                <?
+                                    }
+                                }
+                                ?>
                             </select>
 
                             <label class="lbl_form">Qualificações: <span>(cursos, certificações e conhecimentos)</span></label>
@@ -98,6 +107,15 @@
                             <label class="lbl_form b2">Categoria da area de atuação do profissional</label>
                             <select name="categoria" class="select_form" value="" style="width: 395px;">
                                 <option value="0">Selecione</option>
+                                <? 
+                                if($data['Categoria']){
+                                    foreach ($data['Categoria'] as $dados) { ?>
+
+                                        <option value="<? echo $dados['Codigo'] ?>"><? echo utf8_encode($dados['Nome']) ?></option>
+                                <?
+                                    }
+                                }
+                                ?>
                             </select>
 
                             <label class="lbl_form b2">Vaga de atuação do profissional</label>
@@ -366,17 +384,27 @@
                                 <label class="lbl_form b2" style="margin-top: 15px;">Pretensão salarial</label>
 
                                 <select name="filtroPretensaoSalarial" multiple class="select_multi">
-                                  <option value="1">asdasd</option>
-                                  <option value="2">asdasd</option>
+                                    <? 
+                                    if($data['Pretencao']){
+                                        foreach ($data['Pretencao'] as $dados) { ?>
+                                    
+                                            <option value="<? echo $dados['Codigo'] ?>"><? echo utf8_encode($dados['Nome']) ?></option>
+                                    <?
+                                        }
+                                    }
+                                    ?>
                                 </select>
                             </div>
 
                             <div class="filters_multi" style="float: right;">
                                 <label class="lbl_form b2" style="margin-top: 15px;">PNE</label>
 
-                                <select name="filtroPNE" multiple="multiple" class="select_multi">
-                                  <option value="1">asdasd</option>
-                                  <option value="2">asdasd</option>
+                                <select name="filtroPNE" multiple="multiple" class="select_multi">                                   
+                                  <option value="1">Física</option>
+                                  <option value="2">Auditiva</option>
+                                  <option value="3">Visual</option>
+                                  <option value="4">Mental</option>
+                                  <option value="5">Múltiplas</option>
                                 </select>
                             </div>
 
@@ -384,8 +412,15 @@
                                 <label class="lbl_form b2" style="margin-top: 15px;">Estado</label>
 
                                 <select name="filtroEstado" multiple="multiple" class="select_multi cities">
-                                  <option value="1">asdasd</option>
-                                  <option value="2">asdasd</option>
+                                    <? 
+                                    if($data['Estado']){
+                                        foreach ($data['Estado'] as $dados) { ?>
+                                    
+                                            <option value="<? echo utf8_encode($dados['Nome']); ?>"><? echo utf8_encode($dados['Nome']); ?></option>
+                                    <?
+                                        }
+                                    }
+                                    ?>
                                 </select>
                             </div>
 
@@ -393,8 +428,15 @@
                                 <label class="lbl_form b2" style="margin-top: 15px;">Cidade</label>
 
                                 <select name="filtroCidade" multiple="multiple" class="select_multi cities">
-                                  <option value="1">asdasd</option>
-                                  <option value="2">asdasd</option>
+                                    <? 
+                                    if($data['Cidade']){
+                                        foreach ($data['Cidade'] as $dados) { ?>
+                                    
+                                            <option value="<? echo utf8_encode($dados['Nome']); ?>"><? echo utf8_encode($dados['Nome']) ?></option>
+                                    <?
+                                        }
+                                    }
+                                    ?>
                                 </select>
                             </div>
                         </div>
