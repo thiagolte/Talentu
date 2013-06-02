@@ -8,7 +8,7 @@ class Cadastrar_vaga_Controller {
         $Cadastrar_Vaga_Model = new Cadastrar_vaga_Model();
         
         //Nova Vaga
-        if (isset($_GET['ICadastro']) && !empty($_GET['ICadastro'])){
+        if ( isset($_GET['ICadastro']) && !empty($_GET['ICadastro']) ){
             
             $retorno = $Cadastrar_Vaga_Model->set_CadastroVaga( $_GET['ICadastro'] );
             echo $retorno;
@@ -22,12 +22,7 @@ class Cadastrar_vaga_Controller {
             echo $retorno;
 
         }
-        
-        //Pretenção
-        if (isset($_GET['getPretencao']) && !empty($_GET['getPretencao'])){
-           
-        }
-        
+
         //Main
         if (count($getVars) == 0) {
             //telmplates

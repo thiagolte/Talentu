@@ -73,12 +73,6 @@ class Cadastrar_vaga_Model {
                 $values = array($idCadastro, $arrVaga['filtroSexo'], $arrVaga['filtroFaixaEtaria'],
                                 $arrVaga['filtroPretensaoSalarial'], $arrVaga['filtroPNE'],
                                 $arrVaga['filtroEstado'], $arrVaga['filtroCidade']);
-
-                            echo " Faixa " . var_dump($arrVaga['filtroFaixaEtaria']) . "<br>";
-                            echo " Pretensao " . var_dump($arrVaga['filtroPretensaoSalarial']) . "<br>";;
-                            echo " PNE " . var_dump($arrVaga['filtroPNE']) . "<br>";;
-                            echo " Estado " . var_dump($arrVaga['filtroEstado']) . "<br>";;
-                            echo " Cidade " . var_dump($arrVaga['filtroCidade']) . "<br>";;
                 
                 $idFiltro = $this->db->Create('tb0014_Filtros_Vaga',$values);
             }
@@ -98,7 +92,7 @@ class Cadastrar_vaga_Model {
                 $arrVaga['salarioCombinar'] = 0;
             }
             
-            $values = array($arrVaga['empresa'], $arrVaga['local'], $arrVaga['confidencial'],
+            $values = array($arrVaga['idVaga'], $arrVaga['empresa'], $arrVaga['local'], $arrVaga['confidencial'],
                             $arrVaga['ramoAtuacao'], $arrVaga['nacionalidade'], $arrVaga['porte'],
                             $arrVaga['descricao'], $arrVaga['quantidade'], $arrVaga['atribuicoes'],
                             $arrVaga['experiencia'], $arrVaga['escolaridade'],$arrVaga['qualificacoes'],
@@ -112,17 +106,17 @@ class Cadastrar_vaga_Model {
                             $arrVaga['questao4'], $arrVaga['tipoResposta4'], $arrVaga['filtroAtivo4'],
                             $arrVaga['questao5'], $arrVaga['tipoResposta5'], $arrVaga['filtroAtivo5']);
         
-            $idCadastro = $this->db->Update('tb0013_Vagas_Empresa',$values);
+            $retorno = $this->db->Update('tb0013_Vagas_Empresa',$values);
 
-            if($idFiltro > 0  && $idCadastro > 0){
-                $values = array($idFiltro, $idCadastro, $arrVaga['filtroSexo'], $arrVaga['filtroFaixaEtaria'],
+            if($arrVaga['idFiltro'] > 0  && $arrVaga['idVaga'] > 0){
+                $values = array($arrVaga['idFiltro'], $arrVaga['idVaga'], $arrVaga['filtroSexo'], $arrVaga['filtroFaixaEtaria'],
                                 $arrVaga['filtroPretensaoSalarial'], $arrVaga['filtroPNE'],
                                 $arrVaga['filtroEstado'], $arrVaga['filtroCidade']);
 
-                $idFiltro = $this->db->Update('tb0014_Filtros_Vaga',$values);
+                $retorno = $this->db->Update('tb0014_Filtros_Vaga',$values);
             }
             
-            return $idCadastro;
+            return $retorno;
         }
     }
 }

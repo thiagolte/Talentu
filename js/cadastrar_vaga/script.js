@@ -161,56 +161,36 @@ $(document).ready(function() {
     });
           
     //Enviar Dados CV
-    $('#Enviar').click(function(){
+    $('#Salvar').click(function(){
         $.ajax({
             url: "index.php?cadastrar_vaga",
             type: "GET",
-            data: {ICadastro:$('#frmVagas').serializeObject()},
+            data: { ICadastro: $('#frmVagas').serializeObject() },
             success: function(data)
             {
-                //console.log($('#frmVagas').serializeObject());
                 if(data > 0){
-                    if($("#Edicao").attr("value") != 1){
-                        alert('Vaga cadastrada com sucesso!');
-                    }else{
-                        alert('Vaga alterada com sucesso!');
-                    }
-
+                    alert('Vaga cadastrada com sucesso!');
                 }else{
                     alert('ERRO: Contate o administrador');
                 }
             }
         });
-//        if($("#dadosPessoais").valid()){
-//            $.ajax({
-//                url: "index.php?cadastrar_cv",
-//                type: "GET",
-//                data: {Edicao:$("#Edicao").attr("value"),
-//                        IcadastroCV:$('#CV').val()},
-//                success: function(data)
-//                {
-//                    if(data > 0){
-//                        if($("#Edicao").attr("value") != 1){
-//                            if(confirm('Cadastro efetuado com sucesso! Confirme em seu e-mail')){
-//                                window.location = "?ativar&Tipo=1&Nome=" + $('#Nome').attr('value') + '&Email=' + $('#Email').attr('value');
-//                            }else{
-//                                window.location = "?ativar&Tipo=1&Nome=" + $('#Nome').attr('value') + '&Email=' + $('#Email').attr('value');
-//                            }
-//                        }else{
-//                            if(confirm('Cadastro alterado com sucesso!')){
-//                                window.location = "?area_usuario";
-//                            }else{
-//                                window.location = "?area_usuario";
-//                            } 
-//                        }
-//
-//                    }else{
-//                        alert('ERRO: Cadastro já existente!');
-//                    }
-//                }
-//            });
-//        }
-//        return false;
+    });
+    
+    $('#Editar').click(function(){
+        $.ajax({
+            url: "index.php?cadastrar_vaga",
+            type: "GET",
+            data: { ECadastro: $('#frmVagas').serializeObject() },
+            success: function(data)
+            {
+                if(data > 0){
+                    alert('Vaga alterada com sucesso!');
+                }else{
+                    alert('ERRO: Contate o administrador');
+                }
+            }
+        });
     });  
 });
 

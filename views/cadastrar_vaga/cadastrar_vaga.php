@@ -26,6 +26,8 @@
                             <h2 class="sub_title" style="font-size: 17px;">Dados da empresa onde o candidato irá trabalhar </h2>
 
                             <input name="empresa" type="hidden" value="1"/>
+                            <input name="idVaga" type="hidden" value="30"/>
+                            <input name="idFiltro" type="hidden" value="20"/>
                             
                             <div class="radio_lbl">
                                     <input type="radio" name="local" value="1"/>
@@ -374,16 +376,20 @@
                             <div class="filters_multi">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Faixa Etária</label>
 
-                                <select name="filtroFaixaEtaria" multiple class="select_multi">
-                                    <option value="1">asdasd</option>
-                                    <option value="2">asdasd</option>
+                                <select name="filtroFaixaEtaria[]" multiple class="select_multi">
+                                    <option value="16 AND 21">16 - 21</option>
+                                    <option value="21 AND 26">21 - 26</option>
+                                    <option value="26 AND 30">26 - 30</option>
+                                    <option value="30 AND 35">30 - 35</option>
+                                    <option value="35 AND 45">35 - 45</option>
+                                    <option value="45 AND 120">Mais de 45</option>
                                 </select>
                             </div>
 
                             <div class="filters_multi" style="margin-left: 32px;">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Pretensão salarial</label>
 
-                                <select name="filtroPretensaoSalarial" multiple class="select_multi">
+                                <select name="filtroPretensaoSalarial[]" multiple class="select_multi">
                                     <? 
                                     if($data['Pretencao']){
                                         foreach ($data['Pretencao'] as $dados) { ?>
@@ -399,7 +405,7 @@
                             <div class="filters_multi" style="float: right;">
                                 <label class="lbl_form b2" style="margin-top: 15px;">PNE</label>
 
-                                <select name="filtroPNE" multiple="multiple" class="select_multi">                                   
+                                <select name="filtroPNE[]" multiple="multiple" class="select_multi">                                   
                                   <option value="1">Física</option>
                                   <option value="2">Auditiva</option>
                                   <option value="3">Visual</option>
@@ -411,7 +417,7 @@
                             <div class="filters_multi">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Estado</label>
 
-                                <select name="filtroEstado" multiple="multiple" class="select_multi cities">
+                                <select name="filtroEstado[]" multiple="multiple" class="select_multi cities">
                                     <? 
                                     if($data['Estado']){
                                         foreach ($data['Estado'] as $dados) { ?>
@@ -427,7 +433,7 @@
                             <div class="filters_multi" style="margin-left: 32px;">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Cidade</label>
 
-                                <select name="filtroCidade" multiple="multiple" class="select_multi cities">
+                                <select name="filtroCidade[]" multiple="multiple" class="select_multi cities">
                                     <? 
                                     if($data['Cidade']){
                                         foreach ($data['Cidade'] as $dados) { ?>
@@ -442,7 +448,8 @@
                         </div>
 
                         <div style="float: left; width: 577px; margin:40px 40px 0 0;">
-                            <input id="Enviar" type="button" value="cadastrar vaga" style="float: right;"/>
+                            <input id="Salvar" type="button" value="cadastrar vaga" style="float: right;"/>
+                            <input id="Editar" type="button" value="editar vaga" style="float: right;"/>
                         </div>
 
                         <div id="Retorno"></div>
