@@ -14,8 +14,18 @@ class Area_Empresa_Controller {
             $vw_Login = new View_Model('login/login');
             $view->assign('vw_Login', $vw_Login->render(FALSE));
             
+            $this->CarregaVagas($view);
+            
             $view->render();
         }
 
+    }
+    
+    public function CarregaVagas($view){
+        $Cadastrar_Vaga_Model = new Cadastrar_vaga_Model();
+        
+        $Retorno = $Cadastrar_Vaga_Model->get_VagasEmpresa();
+        
+        $view->assign('Vagas', $Retorno);
     }
 }

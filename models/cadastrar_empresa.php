@@ -172,6 +172,29 @@ private $db;
         
         return $Retorno;
     }
+    
+    public function get_idEmpresa(){
+        $Retorno = $this->MySQLSelect(
+                "
+                SELECT 
+                    codigoCADASTROEMPRESA AS Codigo
+                FROM
+                    tb0012_Cadastro_Empresas
+                WHERE
+                    SHA1(MD5(codigoCADASTROEMPRESA)) = '" . $_COOKIE['idCadastroEmp'] . "'  
+                ;
+                "
+        );
+        
+                        
+        if($Retorno){
+            foreach ($Retorno as $dados) {
+                $idEmpresa = $dados['Codigo'];
+            }
+        }
+        
+        return $idEmpresa;
+    }
 
     public function get_EmailById($idCadastroEmpCrip){
         $Retorno = $this->MySQLSelect(

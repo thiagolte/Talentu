@@ -20,11 +20,13 @@
         <div class="containerCt">
             <div class="container">
                 <div class="box_x2" style="width: 963px;">
-                    <h1 class="title_pages">Analista de Recursos Humanos Pleno</h1>
+                    <? if($data['Vaga']){ 
+                        foreach($data['Vaga'] as $dado){ ?>
+                    <h1 class="title_pages"><? echo utf8_decode( $dado['Vaga'] ); ?></h1>
 					
 					<div class="vacancy_full">
 					
-					<label class="lbl_pre">Salário: <span>R$ 5.000,00</span></label>
+					<label class="lbl_pre">Salário: <span><? echo utf8_decode( $dado['Salario'] ); ?></span></label>
 					<label class="lbl_pre">Area de Atuação: <span>Administrativo</span></label>
 					<label class="lbl_pre">Empresa: <span>Confidencial</span></label>
 					<label class="lbl_pre">Porte da Empresa: <span>Pequeno (de 1 a 99 funcionários)</span></label>
@@ -57,7 +59,10 @@ Experiência em recrutamento e seleção.</span>
 						<a class="btn_default" style="float: left;">Candidatar-se a esta vaga</a>
 					</div>
                     
-                   
+                   <?
+                        }
+                    }
+                   ?>
                 </div>
             </div>
         </div>

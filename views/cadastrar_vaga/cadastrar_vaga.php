@@ -25,7 +25,6 @@
                             <h1 class="title_pages">Cadastro de nova vaga</h1>
                             <h2 class="sub_title" style="font-size: 17px;">Dados da empresa onde o candidato irá trabalhar </h2>
 
-                            <input name="empresa" type="hidden" value="1"/>
                             <input name="idVaga" type="hidden" value="30"/>
                             <input name="idFiltro" type="hidden" value="20"/>
                             
@@ -107,7 +106,7 @@
                             <textarea name="qualificacoes" class="txt_search" style="width: 383px!important; height: 60px;"></textarea>
 
                             <label class="lbl_form b2">Categoria da area de atuação do profissional</label>
-                            <select name="categoria" class="select_form" value="" style="width: 395px;">
+                            <select id="categoria" name="categoria" class="select_form" value="" style="width: 395px;">
                                 <option value="0">Selecione</option>
                                 <? 
                                 if($data['Categoria']){
@@ -121,7 +120,7 @@
                             </select>
 
                             <label class="lbl_form b2">Vaga de atuação do profissional</label>
-                            <select name="vaga" class="select_form" value="" style="width: 395px;">
+                            <select id="vaga" name="vaga" class="select_form" value="" style="width: 395px;">
                                 <option value="0">Selecione</option>
                             </select>
                         </div>
