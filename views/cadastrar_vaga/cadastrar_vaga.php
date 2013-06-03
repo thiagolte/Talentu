@@ -447,8 +447,11 @@
                         </div>
 
                         <div style="float: left; width: 577px; margin:40px 40px 0 0;">
-                            <input id="Salvar" type="button" value="cadastrar vaga" style="float: right;"/>
-                            <input id="Editar" type="button" value="editar vaga" style="float: right;"/>
+                            <? if($data['Editar'] == 1){ ?>
+                                <input id="Editar" type="button" value="editar vaga" style="float: right;"/>
+                            <? } else { ?>
+                                <input id="Salvar" type="button" value="cadastrar vaga" style="float: right;"/>
+                            <? } ?>
                         </div>
 
                         <div id="Retorno"></div>

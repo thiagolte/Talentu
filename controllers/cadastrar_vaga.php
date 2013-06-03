@@ -22,6 +22,22 @@ class Cadastrar_vaga_Controller {
             echo $retorno;
 
         }
+        
+        //Editar
+        if (isset($_GET['Editar']) && !empty($_GET['Editar']) &&
+                isset($_GET['idVaga']) && !empty($_GET['idVaga'])){
+            
+            //telmplates
+            $view = new View_Model($this->template);
+
+            $vw_Login = new View_Model('login/login');
+            $view->assign('vw_Login', $vw_Login->render(FALSE));
+            $view->assign('Editar', 1);
+            
+            $this->CarregaItens($view);
+            
+            $view->render();
+        }
 
         //Main
         if (count($getVars) == 0) {
