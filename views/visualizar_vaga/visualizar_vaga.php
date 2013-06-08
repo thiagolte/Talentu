@@ -46,11 +46,21 @@
                                 <label class="lbl_pre">Comente sua expectativa sobre a vaga</label>
                                 <textarea class="txt_search" style="margin: 0 0 20px 0;"></textarea>
 
-                                <label class="lbl_pre">Possui carro próprio?</label>
-                                <span>SIM</span>
-                                <input type="radio" name="question1">
-                                <span>NÃO</span>
-                                <input type="radio" name="question1">
+                                <? for($i == 0; $i <=5; $i++){ ?>
+                                    <? if(!empty( $dado['Questao' . $i] )){ ?>
+                                        <div>
+                                        <label class="lbl_pre"><? echo utf8_decode( $dado['Questao' . $i] ); ?></label>
+                                        <? if( utf8_decode( $dado['TipoResposta' . $i] ) == 1 ){ ?>
+                                            <textarea class="txt_search" style="margin: 0 0 20px 0;"></textarea>
+                                        <? }else{ ?>
+                                            <span>SIM</span>
+                                            <input type="radio" name="question<? echo $i ?>">
+                                            <span>NÃO</span>
+                                            <input type="radio" name="question1">
+                                        <? } ?>
+                                        </div>
+                                    <? } ?>
+                                <?}?>
                             </div>
 
                             <div class="btn_container">

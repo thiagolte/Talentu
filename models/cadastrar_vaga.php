@@ -92,7 +92,22 @@ class Cadastrar_vaga_Model {
                         escolaridadeVAGAEMPRESA AS Escolaridade,
                         qualificacoesVAGAEMPRESA AS Qualificacoes,
                         beneficiosVAGAEMPRESA AS Beneficios,
-                        CONCAT(regimetrabalhoVAGAEMPRESA, ' - ', horariodeVAGAEMPRESA, ' as ', horarioateVAGAEMPRESA)  AS Regime
+                        CONCAT(regimetrabalhoVAGAEMPRESA, ' - ', horariodeVAGAEMPRESA, ' as ', horarioateVAGAEMPRESA)  AS Regime,
+                        questao1VAGAEMPRESA AS Questao1,
+                        tiporesposta1VAGAEMPRESA AS TipoResposta1,
+                        filtroativo1VAGAEMPRESA AS Filtro1,
+                        questao2VAGAEMPRESA AS Questao2,
+                        tiporesposta2VAGAEMPRESA AS TipoResposta2,
+                        filtroativo2VAGAEMPRESA AS Filtro2,
+                        questao3VAGAEMPRESA AS Questao3,
+                        tiporesposta3VAGAEMPRESA AS TipoResposta3,
+                        filtroativo3VAGAEMPRESA AS Filtro3,
+                        questao4VAGAEMPRESA AS Questao4,
+                        tiporesposta4VAGAEMPRESA AS TipoResposta4,
+                        filtroativo4VAGAEMPRESA AS Filtro4,
+                        questao5VAGAEMPRESA AS Questao5,
+                        tiporesposta5VAGAEMPRESA AS TipoResposta5,
+                        filtroativo5VAGAEMPRESA AS Filtro5
                 FROM
                         tb0013_Vagas_Empresa
                 LEFT JOIN

@@ -260,7 +260,7 @@
                                         3ª Questão:
                                 </label>
 
-                                <textarea name="1uestao3" class="txt_search" style="width: 99%; height: 30px;"></textarea>
+                                <textarea name="questao3" class="txt_search" style="width: 99%; height: 30px;"></textarea>
 
                                 <label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
                                 <div class="radio_lbl2">
