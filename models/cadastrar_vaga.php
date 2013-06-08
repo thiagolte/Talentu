@@ -55,7 +55,7 @@ class Cadastrar_vaga_Model {
                         salarioVAGAEMPRESA as Salario,
                         acombinarVAGAEMPRESA as Combinar,
                         atribuicoesVAGAEMPRESA as Atribuicoes,
-                        COALESCE(nomeVAGA,'Não especificado') as Vaga
+                        COALESCE(nomeVAGA,'[sem nome]') as Vaga
                 FROM
                         tb0013_Vagas_Empresa
                 LEFT JOIN
@@ -74,13 +74,29 @@ class Cadastrar_vaga_Model {
         $Retorno = $this->MySQLSelect(
                 "
                 SELECT 
-                        codigoVAGAEMPRESA as Codigo,
+                        codigoVAGAEMPRESA AS Codigo,
+                        nomeCATEGORIA AS AreaAtuacao,
+                        ramoVAGAEMPRESA AS Ramo,
+                        IF(confidencialVAGAEMPRESA = 1, 'Confidencial',empresaVAGAEMPRESA) AS Empresa,
+                        porteVAGAEMPRESA AS Porte,
+                        nacionalidadeVAGAEMPRESA AS Nacionalidade,
+                        ramoVAGAEMPRESA AS Ramo,
+                        COALESCE(nomeVAGA,'[sem nome]') as Vaga,
+                        quantidadeVAGAEMPRESA AS Qtd,
+                        regimecontratacaoVAGAEMPRESA AS RegimeContratacao,
+                        atribuicoesVAGAEMPRESA AS Atribuicoes,
                         salarioVAGAEMPRESA as Salario,
                         acombinarVAGAEMPRESA as Combinar,
                         atribuicoesVAGAEMPRESA as Atribuicoes,
-                        COALESCE(nomeVAGA,'Não especificado') as Vaga
+                        experienciaVAGAEMPRESA AS Experiencia,
+                        escolaridadeVAGAEMPRESA AS Escolaridade,
+                        qualificacoesVAGAEMPRESA AS Qualificacoes,
+                        beneficiosVAGAEMPRESA AS Beneficios,
+                        CONCAT(regimetrabalhoVAGAEMPRESA, ' - ', horariodeVAGAEMPRESA, ' as ', horarioateVAGAEMPRESA)  AS Regime
                 FROM
                         tb0013_Vagas_Empresa
+                LEFT JOIN
+                        tb0007_Categorias ON codigoCATEGORIA = categoriaVAGAEMPRESA
                 LEFT JOIN
                         tb0008_Vagas ON codigoVAGA = vagaVAGAEMPRESA
                 WHERE

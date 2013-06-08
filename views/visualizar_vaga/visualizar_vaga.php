@@ -22,42 +22,40 @@
                 <div class="box_x2" style="width: 963px;">
                     <? if($data['Vaga']){ 
                         foreach($data['Vaga'] as $dado){ ?>
-                    <h1 class="title_pages"><? echo utf8_decode( $dado['Vaga'] ); ?></h1>
-					
-					<div class="vacancy_full">
-					
-					<label class="lbl_pre">Salário: <span><? echo utf8_decode( $dado['Salario'] ); ?></span></label>
-					<label class="lbl_pre">Area de Atuação: <span>Administrativo</span></label>
-					<label class="lbl_pre">Empresa: <span>Confidencial</span></label>
-					<label class="lbl_pre">Porte da Empresa: <span>Pequeno (de 1 a 99 funcionários)</span></label>
-					<label class="lbl_pre">Nacionalidade da empresa: <span>Nacional</span></label>
-					<label class="lbl_pre">Ramo de atuação da empresa: <span>TI</span></label>
-					<label class="lbl_pre">Vaga: <span>Analista de Recursos Humanos Pleno</span></label>
-					<label class="lbl_pre">Quantidade de vagas: <span>5 vagas</span></label>
-					<label class="lbl_pre">Regime de contratação: <span>CLT</span></label>
-					<label class="lbl_pre">Atribuições e Responsabilidades: <span>Realizar o processo de recrutamento e seleção para diversos níveis. Realizar entrevistas, dinâmicas e entrevistas de desligamentos. Atuar com a elaboração de laudo, avaliação de proficiência em idioma e buscar candidatos em diversas fontes.
-Experiência em recrutamento e seleção.</span>
-					</label>
-					<label class="lbl_pre">Experiência e habilidades: <span>Experiência em recrutamento e seleção.</span></label>
-					<label class="lbl_pre">Escolaridade: <span>Ensino Superior Completo</span></label>
-					<label class="lbl_pre">Qualificações: <span>Conhecimentos com pacote Office</span></label>
-					<label class="lbl_pre">Benefícios: <span>Seguro de vida em grupo, Tíquete-refeição, Vale-transporte</span>
-					</label>
-					<label class="lbl_pre">Regime de trabalho/horário: <span>Segunda a Sexta - 08:00 as 17:00</span></label>
-					
-                    <label class="lbl_pre">Comente sua expectativa sobre a vaga</label>
-                    <textarea class="txt_search" style="margin: 0 0 20px 0;"></textarea>
-						
-					<label class="lbl_pre">Possui carro próprio?</label>
-                    <span>SIM</span>
-					<input type="radio" name="question1">
-                    <span>NÃO</span>
-					<input type="radio" name="question1">
-                    </div>
-					
-					<div class="btn_container">
-						<a class="btn_default" style="float: left;">Candidatar-se a esta vaga</a>
-					</div>
+                            <h1 class="title_pages"><? echo utf8_decode( $dado['Vaga'] ); ?></h1>
+
+                            <div class="vacancy_full">
+                                <label class="lbl_pre">Salário: <span><? echo utf8_decode( $dado['Salario'] ); ?></span></label>
+                                <label class="lbl_pre">Area de Atuação: <span><? echo utf8_decode( $dado['AreaAtuacao'] ); ?></span></label>
+                                <label class="lbl_pre">Empresa: <span><? echo utf8_decode( $dado['Empresa'] ); ?></span></label>
+                                <label class="lbl_pre">Porte da Empresa: <span><? echo utf8_decode( $dado['Porte'] ); ?></span></label>
+                                <label class="lbl_pre">Nacionalidade da empresa: <span><? echo utf8_decode( $dado['Nacionalidade'] ); ?></span></label>
+                                <label class="lbl_pre">Ramo de atuação da empresa: <span><? echo utf8_decode( $dado['Ramo'] ); ?></span></label>
+                                <label class="lbl_pre">Vaga: <span><? echo utf8_decode( $dado['Vaga'] ); ?></span></label>
+                                <label class="lbl_pre">Quantidade de vagas: <span><? echo utf8_decode( $dado['Qtd'] ); ?></span></label>
+                                <label class="lbl_pre">Regime de contratação: <span><? echo utf8_decode( $dado['RegimeContratacao'] ); ?></span></label>
+                                <label class="lbl_pre">Atribuições e Responsabilidades: <span><? echo utf8_decode( $dado['Atribuicoes'] ); ?></span>
+                                </label>
+                                <label class="lbl_pre">Experiência e habilidades: <span><? echo utf8_decode( $dado['Experiencia'] ); ?></span></label>
+                                <label class="lbl_pre">Escolaridade: <span><? echo utf8_decode( $dado['Escolaridade'] ); ?></span></label>
+                                <label class="lbl_pre">Qualificações: <span><? echo utf8_decode( $dado['Qualificacoes'] ); ?></span></label>
+                                <label class="lbl_pre">Benefícios: <span><? echo utf8_decode( $dado['Beneficios'] ); ?></span>
+                                </label>
+                                <label class="lbl_pre">Regime de trabalho/horário: <span><? echo utf8_decode( $dado['Regime'] ); ?></span></label>
+
+                                <label class="lbl_pre">Comente sua expectativa sobre a vaga</label>
+                                <textarea class="txt_search" style="margin: 0 0 20px 0;"></textarea>
+
+                                <label class="lbl_pre">Possui carro próprio?</label>
+                                <span>SIM</span>
+                                <input type="radio" name="question1">
+                                <span>NÃO</span>
+                                <input type="radio" name="question1">
+                            </div>
+
+                            <div class="btn_container">
+                                <a class="btn_default" style="float: left;">Candidatar-se a esta vaga</a>
+                            </div>
                     
                    <?
                         }
