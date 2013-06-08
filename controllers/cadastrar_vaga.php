@@ -32,6 +32,13 @@ class Cadastrar_vaga_Controller {
 
             $vw_Login = new View_Model('login/login');
             $view->assign('vw_Login', $vw_Login->render(FALSE));
+            
+            $dadosVaga = $Cadastrar_Vaga_Model->get_VagaEdit($_GET['idVaga']);
+            $view->assign('dadosVaga',$dadosVaga);
+            
+            $dadosFiltro = $Cadastrar_Vaga_Model->get_FiltroEdit($_GET['idFiltro']);
+            $view->assign('dadosFiltro',$dadosFiltro);
+            
             $view->assign('Editar', 1);
             
             $this->CarregaItens($view);

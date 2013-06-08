@@ -25,8 +25,8 @@
                             <h1 class="title_pages">Cadastro de nova vaga</h1>
                             <h2 class="sub_title" style="font-size: 17px;">Dados da empresa onde o candidato irá trabalhar </h2>
 
-                            <input name="idVaga" type="hidden" value="30"/>
-                            <input name="idFiltro" type="hidden" value="20"/>
+                            <input name="idVaga" type="hidden" value="<? echo $_GET['idVaga'] ?>"/>
+                            <input name="idFiltro" type="hidden" value="<? echo $_GET['idFiltro'] ?>"/>
                             
                             <div class="radio_lbl">
                                     <input type="radio" name="local" value="1"/>

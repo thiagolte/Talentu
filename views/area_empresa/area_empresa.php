@@ -97,7 +97,7 @@
                                 <div class="vacancy_ct_buttons">
                                     <a class="btn_default btn_vacancy">Desativar</a>
                                     <a href="?visualizar_vaga&idVaga=<? echo sha1(md5($dado['Codigo'])); ?>" class="btn_default btn_vacancy">Visualizar</a>
-                                    <a href="?cadastrar_vaga&Editar=1&idVaga=<? echo sha1(md5($dado['Codigo'])); ?>" class="btn_default btn_vacancy">Editar</a>
+                                    <a href="?cadastrar_vaga&Editar=1&idVaga=<? echo $dado['idVaga']; ?>&idFiltro=<? echo $dado['idFiltro']; ?>" class="btn_default btn_vacancy">Editar</a>
                                 </div>
                             </div>
                     <? 
