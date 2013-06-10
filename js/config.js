@@ -70,16 +70,16 @@ $(document).ready( function() {
 	
 	$("#add_question").click(function(){
 		if ($(this).attr('data-number') == '1') {
-			$("#01").fadeIn('slow');
+			$("#2").fadeIn('slow');
 			$(this).attr('data-number', 1+1);
 		} else if ($(this).attr('data-number') == '2') {
-			$("#02").fadeIn('slow');
+			$("#3").fadeIn('slow');
 			$(this).attr('data-number', 2+1);
 		} else if ($(this).attr('data-number') == '3') {
-			$("#03").fadeIn('slow');
+			$("#4").fadeIn('slow');
 			$(this).attr('data-number', 3+1);
 		} else if ($(this).attr('data-number') == '4') {
-			$("#04").fadeIn('slow');
+			$("#5").fadeIn('slow');
 			$(this).hide();
 		}
 	});

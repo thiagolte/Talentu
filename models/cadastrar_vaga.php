@@ -135,7 +135,7 @@ class Cadastrar_vaga_Model {
                 "
                 SELECT 
                     empresaVAGAEMPRESA AS Empresa,
-                    localVAGAEMPRESA AS Local,
+                    localVAGAEMPRESA AS 'Local',
                     confidencialVAGAEMPRESA AS Confidencial,
                     ramoVAGAEMPRESA AS Ramo,
                     nacionalidadeVAGAEMPRESA AS Nacionalidade,

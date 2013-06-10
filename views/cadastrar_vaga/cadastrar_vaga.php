@@ -25,16 +25,45 @@
                             <h1 class="title_pages">Cadastro de nova vaga</h1>
                             <h2 class="sub_title" style="font-size: 17px;">Dados da empresa onde o candidato irá trabalhar </h2>
 
-                            <input name="idVaga" type="hidden" value="<? echo $_GET['idVaga'] ?>"/>
-                            <input name="idFiltro" type="hidden" value="<? echo $_GET['idFiltro'] ?>"/>
+                            <? if($data['Editar'] == 1){ ?>
+                                <input name="idVaga" type="hidden" value="<? echo $_GET['idVaga'] ?>"/>
+                                <input name="idFiltro" type="hidden" value="<? echo $_GET['idFiltro'] ?>"/>
+                                
+                                <input name="slcEmpresaConfidencial" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Confidencial'] ) ?>"/>
+                                <input name="slcRamoAtuacao" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Ramo'] ) ?>"/>
+                                <input name="slcNacionalidade" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Nacionalidade'] ) ?>"/>
+                                <input name="slcPorteEmpresa" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Porte'] ) ?>"/>
+                                <input name="slcEscolaridade" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Escolaridade'] ) ?>"/>
+                                <input name="slcCategoria" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Categoria'] ) ?>"/>
+                                <input name="slcVaga" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Vaga'] ) ?>"/>
+                                <input name="slcRegimeContratacao" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['RegimeContratacao'] ) ?>"/>
+                                <input name="slcHorarioDe" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['HoraioDe'] ) ?>"/>
+                                <input name="slcHorarioAte" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['HorarioAte'] ) ?>"/>
+                                
+                                <input name="slcFiltroFaixaEtaria" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['Faixa'] ) ?>"/>
+                                <input name="slcFiltroPretencaoSalarial" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['Pretencao'] ) ?>"/>
+                                <input name="slcFiltroPNE" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['PNE'] ) ?>"/>
+                                <input name="slcFiltroEstado" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['Estado'] ) ?>"/>
+                                <input name="slcFiltroCidade" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['Cidade'] ) ?>"/>
+                            <? } ?>
                             
+                            <? if($data['Editar'] == 1){
+                                $LocalMinha = '';
+                                $LocalOutra = '';
+                                if($data['dadosVaga'][0]['Local'] == 1){
+                                    $LocalMinha = 'checked';
+                                }else{
+                                    $LocalOutra = 'checked';
+                                }
+                            } ?>
+                                
                             <div class="radio_lbl">
-                                    <input type="radio" name="local" value="1"/>
-                                    <label class="lbl_form">vaga na minha empresa</label>
+                                <input type="radio" name="local" value="1" <? echo $LocalMinha ?> />
+                                <label class="lbl_form">vaga na minha empresa</label>
                             </div>
 
                             <div class="radio_lbl">
-                                <input type="radio" name="local" value="2"/>
+                                <input type="radio" name="local" value="2" <? echo $LocalOutra ?>/>
                                 <label class="lbl_form">vaga em outra empresa</label>
                             </div>
 
@@ -70,7 +99,7 @@
                             </select>
 
                             <label class="lbl_form">Descrição sumária da empresa</label>
-                            <textarea name="descricao" class="txt_search" style="width: 420px!important; height: 157px;"></textarea>
+                            <textarea name="descricao" class="txt_search" style="width: 420px!important; height: 157px;"><? echo utf8_decode( $data['dadosVaga'][0]['Descricao'] ) ?></textarea>
 
                         </div>
 
@@ -80,13 +109,13 @@
                             <h2 class="sub_title">Dados da vaga </h2>
 
                             <label class="lbl_form">Quantidade de Vagas</label>
-                            <input name="quantidade" type="text" class="input_form" style="width: 383px;">
+                            <input name="quantidade" type="text" class="input_form" style="width: 383px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['Qtd'] ) ?>">
 
                             <label class="lbl_form">Atribuições e Responsabilidades</label>
-                            <textarea name="atribuicoes" name="" class="txt_search" style="width: 383px!important; height: 60px;"></textarea>
+                            <textarea name="atribuicoes" name="" class="txt_search" style="width: 383px!important; height: 60px;"><? echo utf8_decode( $data['dadosVaga'][0]['Atribuicoes'] ) ?></textarea>
 
                             <label class="lbl_form">Experiência e habilidades</label>
-                            <textarea name="experiencia" class="txt_search" style="width: 383px!important; height: 60px;"></textarea>
+                            <textarea name="experiencia" class="txt_search" style="width: 383px!important; height: 60px;"><? echo utf8_decode( $data['dadosVaga'][0]['Experiencia'] ) ?></textarea>
 
                             <label class="lbl_form">Escolaridade</label>
                             <select name="escolaridade" class="select_form" value="" style="width: 395px;">
@@ -103,7 +132,7 @@
                             </select>
 
                             <label class="lbl_form">Qualificações: <span>(cursos, certificações e conhecimentos)</span></label>
-                            <textarea name="qualificacoes" class="txt_search" style="width: 383px!important; height: 60px;"></textarea>
+                            <textarea name="qualificacoes" class="txt_search" style="width: 383px!important; height: 60px;"><? echo utf8_decode( $data['dadosVaga'][0]['Qualificacoes'] ) ?></textarea>
 
                             <label class="lbl_form b2">Categoria da area de atuação do profissional</label>
                             <select id="categoria" name="categoria" class="select_form" value="" style="width: 395px;">
@@ -129,12 +158,20 @@
                             <h2 class="sub_title">Observações da vaga</h2>
 
                             <label class="lbl_form b2">Salário mensal</label>
+                            
+                            <? if($data['Editar'] == 1){
+                                $ACombinar = '';
+                                if($data['dadosVaga'][0]['ACombinar'] == 1){
+                                    $ACombinar = 'checked';
+                                }
+                            } ?>
+                            
                             <div class="radio_lbl" style="margin-top: 5px;">
-                                <input name="salarioCombinar" type="checkbox"/>
+                                <input name="salarioCombinar" type="checkbox" <? echo $ACombinar ?> />
                                 <label class="lbl_form">a combinar</label>
                             </div>
 
-                            <input name="salario" type="text" class="input_form" value="tratar valor" style="width: 200px"/>
+                            <input name="salario" type="text" class="input_form" style="width: 200px" value="<? echo utf8_decode( $data['dadosVaga'][0]['Salario'] ) ?>"/>
 
                             <label class="lbl_form b2">Regime de contratação</label>
                             <select name="regimeContratacao" class="select_form" value="" style="width: 432px;">
@@ -142,10 +179,10 @@
                             </select>
 
                             <label class="lbl_form">Benefícios</label>
-                            <textarea name="beneficios" class="txt_search" style="width: 420px!important; height: 80px; margin"></textarea>
+                            <textarea name="beneficios" class="txt_search" style="width: 420px!important; height: 80px; margin"><? echo utf8_decode( $data['dadosVaga'][0]['Beneficios'] ) ?></textarea>
 
                             <label class="lbl_form">Regime de trabalho: <span>(dia, escala, etc)</span></label>
-                            <input name="regimeTrabalho" type="text" class="input_form" style="width: 420px;">
+                            <input name="regimeTrabalho" type="text" class="input_form" style="width: 420px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['RegimeTrabalho'] ) ?>">
 
                             <label class="lbl_form">Horário: </label>
                             <span class="hours">a partir das</span>
@@ -159,26 +196,45 @@
 
                             <label class="lbl_form b2">Meios para receber candidatos:</label>
 
+                            <? if($data['Editar'] == 1){
+                                $EmailCadastro = '';
+                                $OutroEmail = '';
+                                if($data['dadosVaga'][0]['MeiosRecebimento'] == 0){
+                                    $EmailCadastro = 'checked';
+                                }else{
+                                    $OutroEmail = 'checked';
+                                }
+                            } ?>
+                            
                             <div class="radio_lbl2">
-                                <input name="meiosRecebimento" type="radio" id="other_unSelected" name="forma_contato" value="0"/>
+                                <input name="meiosRecebimento" type="radio" id="other_unSelected" name="forma_contato" value="0" <? echo $EmailCadastro ?> />
                                 <label class="lbl_form">E-mail de cadastro</label>
                             </div>
 
                             <div class="radio_lbl2">
-                                <input name="meiosRecebimento" type="radio" id="other_selected" name="forma_contato" value="1"/>
+                                <input name="meiosRecebimento" type="radio" id="other_selected" name="forma_contato" value="1" <? echo $OutroEmail ?> />
                                 <label class="lbl_form">Outro e-mail</label>
                             </div>
 
-                            <input name="emailRecebimento" type="text" class="input_form other_mail" style="width: 420px; display: none; margin-bottom: 3px!important">
+                            <input name="emailRecebimento" type="text" class="input_form other_mail" style="width: 420px; display: none; margin-bottom: 3px!important" value="<? echo utf8_decode( $data['dadosVaga'][0]['EmailRecebimento'] ) ?>">
 
                             <label class="lbl_form b2" style="margin-top: 15px;">Ativar Vagar?</label>
+                            <? if($data['Editar'] == 1){
+                                $Ativar = '';
+                                $Inativar = '';
+                                if($data['dadosVaga'][0]['Ativar'] == 1){
+                                    $Ativar = 'checked';
+                                }else{
+                                    $Inativar = 'checked';
+                                }
+                            } ?>
                             <div class="radio_lbl2">
-                                <input name="ativar" type="radio" checked="true" value="1"/>
+                                <input name="ativar" type="radio" value="1" <? echo $Ativar ?> />
                                 <label class="lbl_form">Sim</label>
                             </div>
 
                             <div class="radio_lbl2">
-                                <input name="ativar" type="radio" value="0"/>
+                                <input name="ativar" type="radio" value="0" <? echo $Inativar ?> />
                                 <label class="lbl_form">Não</label>
                             </div>
                         </div>
@@ -193,162 +249,73 @@
                             </label>
                             <label class="lbl_form2" style="width: 100%; margin: 0 0 10px 0;">É possível inserir até 5 questões.</label>
 
-                            <div class="question_item" id="00">
-                                <label class="lbl_form b2">
-                                        1ª Questão:
-                                </label>
+                            <? for($i = 1; $i < 6; $i++){ ?>
+                                <? if($data['Editar'] == 1){
+                                    $TipoRespostaAberta = '';
+                                    $TipoRespostaSimNao = '';
+                                    $FiltroAtivoSim = '';
+                                    $FiltroAtivoNao = '';
+                                    $stilo = '';
 
-                                <textarea name="questao1" class="txt_search" style="width: 99%; height: 30px;"></textarea>
+                                    if(empty( $data['dadosVaga'][0]['Questao' . $i] )){
+                                        $stilo = 'style="display: none;"';
+                                    }else{
+                                        $DataNumber = $i;
+                                    }
 
-                                <label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
-                                <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="tipoResposta1" value="1"/>
-                                    <label class="lbl_form">Resposta do tipo aberta</label><label class="lbl_form2">exemplo: comente sua experiência na area...</label>
+                                    if($data['dadosVaga'][0]['TipoQuestao' . $i] == 1){
+                                        $TipoRespostaAberta = 'checked';
+                                    }elseif($data['dadosVaga'][0]['TipoQuestao' . $i] == 2){
+                                        $TipoRespostaSimNao = 'checked';
+                                    }
+
+                                    if($data['dadosVaga'][0]['FiltroAtivo' . $i] == 1){
+                                        $FiltroAtivoSim = 'checked';
+                                    }elseif($data['dadosVaga'][0]['FiltroAtivo' . $i] == 0){
+                                        $FiltroAtivoNao = 'checked';
+                                    }
+                                }else{
+                                    $stilo = '';
+                                    $DataNumber = 1;
+                                    if( $i > 1 ){
+                                        $stilo = 'style="display: none;"';
+                                    }
+                                } 
+                                ?>
+                            
+                            <div class="question_item" id="<? echo $i ?>" <? echo $stilo ?>>
+                                    <label class="lbl_form b2">
+                                            <? echo $i ?>ª Questão:
+                                    </label>
+
+                                    <textarea name="questao<? echo $i ?>" class="txt_search" style="width: 99%; height: 30px;"><? echo utf8_decode( $data['dadosVaga'][0]['Questao' . $i] ) ?></textarea>
+
+                                    <label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
+                                    <div class="radio_lbl2">
+                                        <input type="radio" name="tipoResposta<? echo $i ?>" value="1" <? echo $TipoRespostaAberta ?> />
+                                        <label class="lbl_form">Resposta do tipo aberta</label><label class="lbl_form2">exemplo: comente sua experiência na area...</label>
+                                    </div>
+
+                                    <div class="radio_lbl2">
+                                        <input type="radio" name="tipoResposta<? echo $i ?>" value="2" <? echo $TipoRespostaSimNao ?> />
+                                        <label class="lbl_form">Resposta do tipo SIM ou NÃO</label><label class="lbl_form2">exemplo: possui carro próprio?</label>
+                                    </div>
+
+                                    <label class="lbl_form b2" style="margin-top: 15px;">Ativar Filtro?</label>
+                                    <label class="lbl_form2" style="width: 100%; margin: 0;">Utilize esta opção apenas para requisitos imprescindiveis da vaga. Exemplo: possui disponinilidade para viajens?</label>
+                                    <div class="radio_lbl2">
+                                        <input type="radio" name="filtroAtivo<? echo $i ?>" value="1" <? echo $FiltroAtivoSim ?> />
+                                        <label class="lbl_form">Sim</label>
+                                    </div>
+
+                                    <div class="radio_lbl2">
+                                        <input type="radio" name="filtroAtivo<? echo $i ?>" value="0" <? echo $FiltroAtivoNao ?> />
+                                        <label class="lbl_form">Não</label>
+                                    </div>
                                 </div>
+                            <? } ?>
 
-                                <div class="radio_lbl2">
-                                    <input type="radio" name="tipoResposta1" value="2" />
-                                    <label class="lbl_form">Resposta do tipo SIM ou NÃO</label><label class="lbl_form2">exemplo: possui carro próprio?</label>
-                                </div>
-
-                                <label class="lbl_form b2" style="margin-top: 15px;">Ativar Filtro?</label>
-                                <label class="lbl_form2" style="width: 100%; margin: 0;">Utilize esta opção apenas para requisitos imprescindiveis da vaga. Exemplo: possui disponinilidade para viajens?</label>
-                                <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="filtroAtivo1" value="1"/>
-                                    <label class="lbl_form">Sim</label>
-                                </div>
-
-                                <div class="radio_lbl2">
-                                    <input type="radio" name="filtroAtivo1" value="0"/>
-                                    <label class="lbl_form">Não</label>
-                                </div>
-                            </div>
-
-                            <div class="question_item" id="01" style="display: none;">
-                                <label class="lbl_form b2">
-                                        2ª Questão:
-                                </label>
-
-                                <textarea name="questao2" class="txt_search" style="width: 99%; height: 30px;"></textarea>
-
-                                <label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
-                                <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="tipoResposta2" value="1"/>
-                                    <label class="lbl_form">Resposta do tipo aberta</label><label class="lbl_form2">exemplo: comente sua experiência na area...</label>
-                                </div>
-
-                                <div class="radio_lbl2">
-                                    <input type="radio" name="tipoResposta2" value="2"/>
-                                    <label class="lbl_form">Resposta do tipo SIM ou NÃO</label><label class="lbl_form2">exemplo: possui carro próprio?</label>
-                                </div>
-
-                                <label class="lbl_form b2" style="margin-top: 15px;">Ativar Filtro?</label>
-                                <label class="lbl_form2" style="width: 100%; margin: 0;">Utilize esta opção apenas para requisitos imprescindiveis da vaga. Exemplo: possui disponinilidade para viajens?</label>
-                                <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="filtroAtivo2" value="1"/>
-                                    <label class="lbl_form">Sim</label>
-                                </div>
-
-                                <div class="radio_lbl2">
-                                    <input type="radio" name="filtroAtivo2" value="0"/>
-                                    <label class="lbl_form">Não</label>
-                                </div>
-                            </div>
-
-                            <div class="question_item" id="02" style="display: none;">
-                                <label class="lbl_form b2">
-                                        3ª Questão:
-                                </label>
-
-                                <textarea name="questao3" class="txt_search" style="width: 99%; height: 30px;"></textarea>
-
-                                <label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
-                                <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="tipoResposta3" value="1"/>
-                                    <label class="lbl_form">Resposta do tipo aberta</label><label class="lbl_form2">exemplo: comente sua experiência na area...</label>
-                                </div>
-
-                                <div class="radio_lbl2">
-                                    <input type="radio" name="tipoResposta3" value="2"/>
-                                    <label class="lbl_form">Resposta do tipo SIM ou NÃO</label><label class="lbl_form2">exemplo: possui carro próprio?</label>
-                                </div>
-
-                                <label class="lbl_form b2" style="margin-top: 15px;">Ativar Filtro?</label>
-                                <label class="lbl_form2" style="width: 100%; margin: 0;">Utilize esta opção apenas para requisitos imprescindiveis da vaga. Exemplo: possui disponinilidade para viajens?</label>
-                                <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="filtroAtivo3" value="1"/>
-                                    <label class="lbl_form">Sim</label>
-                                </div>
-
-                                <div class="radio_lbl2">
-                                    <input type="radio" name="filtroAtivo3" value="0"/>
-                                    <label class="lbl_form">Não</label>
-                                </div>
-                            </div>
-
-                            <div class="question_item" id="03" style="display: none;">
-                                <label class="lbl_form b2">
-                                        4ª Questão:
-                                </label>
-
-                                <textarea name="questao4" class="txt_search" style="width: 99%; height: 30px;"></textarea>
-
-                                <label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
-                                <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="tipoResposta4" value="1"/>
-                                    <label class="lbl_form">Resposta do tipo aberta</label><label class="lbl_form2">exemplo: comente sua experiência na area...</label>
-                                </div>
-
-                                <div class="radio_lbl2">
-                                    <input type="radio" name="tipoResposta4" value="2"/>
-                                    <label class="lbl_form">Resposta do tipo SIM ou NÃO</label><label class="lbl_form2">exemplo: possui carro próprio?</label>
-                                </div>
-
-                                <label class="lbl_form b2" style="margin-top: 15px;">Ativar Filtro?</label>
-                                <label class="lbl_form2" style="width: 100%; margin: 0;">Utilize esta opção apenas para requisitos imprescindiveis da vaga. Exemplo: possui disponinilidade para viajens?</label>
-                                <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="filtroAtivo4" value="1"/>
-                                    <label class="lbl_form">Sim</label>
-                                </div>
-
-                                <div class="radio_lbl2">
-                                    <input type="radio" name="filtroAtivo4" value="0"/>
-                                    <label class="lbl_form">Não</label>
-                                </div>
-                            </div>
-
-                            <div class="question_item" id="04" style="display: none;">
-                                <label class="lbl_form b2">
-                                        5ª Questão:
-                                </label>
-
-                                <textarea name="questao5" class="txt_search" style="width: 99%; height: 30px;"></textarea>
-
-                                <label class="lbl_form b2" style="margin-top: 15px;">Tipo de resposta</label>
-                                <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="tipoResposta5" value="1"/>
-                                    <label class="lbl_form">Resposta do tipo aberta</label><label class="lbl_form2">exemplo: comente sua experiência na area...</label>
-                                </div>
-
-                                <div class="radio_lbl2">
-                                    <input type="radio" name="tipoResposta5" value="2"/>
-                                    <label class="lbl_form">Resposta do tipo SIM ou NÃO</label><label class="lbl_form2">exemplo: possui carro próprio?</label>
-                                </div>
-
-                                <label class="lbl_form b2" style="margin-top: 15px;">Ativar Filtro?</label>
-                                <label class="lbl_form2" style="width: 100%; margin: 0;">Utilize esta opção apenas para requisitos imprescindiveis da vaga. Exemplo: possui disponinilidade para viajens?</label>
-                                <div class="radio_lbl2">
-                                    <input type="radio" checked="true" name="filtroAtivo5" value="1"/>
-                                    <label class="lbl_form">Sim</label>
-                                </div>
-
-                                <div class="radio_lbl2">
-                                    <input type="radio" name="filtroAtivo5" value="0"/>
-                                    <label class="lbl_form">Não</label>
-                                </div>
-                            </div>
-
-                            <a class="btn_default" id="add_question"  data-number="1" style="float: left; margin-bottom: 15px;">+ Adicionar outra questão</a>
+                            <a class="btn_default" id="add_question"  data-number="<? echo $DataNumber ?>" style="float: left; margin-bottom: 15px;">+ Adicionar outra questão</a>
                         </div>
 
                         <div class="spacer"></div>
@@ -360,13 +327,22 @@
                             </label>
 
                             <label class="lbl_form b2" style="margin-top: 15px;">Sexo</label>
+                            <? if($data['Editar'] == 1){
+                                $FiltroMasculino = '';
+                                $FiltroFeminino = '';
+                                if($data['dadosFiltro'][0]['Sexo'] == 1){
+                                    $FiltroMasculino = 'checked';
+                                }else{
+                                    $FiltroFeminino = 'checked';
+                                }
+                            } ?>
                             <div class="radio_lbl2">
-                                <input type="radio" name="filtroSexo" value="1"/>
+                                <input type="radio" name="filtroSexo" value="1" <? echo $FiltroMasculino ?> />
                                 <label class="lbl_form">Masculino</label>
                             </div>
 
                             <div class="radio_lbl2">
-                                <input type="radio" name="filtroSexo" value="2"/>
+                                <input type="radio" name="filtroSexo" value="2" <? echo $FiltroFeminino ?> />
                                 <label class="lbl_form">Feminino</label>
                             </div>
 
