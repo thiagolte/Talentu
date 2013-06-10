@@ -29,22 +29,22 @@
                                 <input name="idVaga" type="hidden" value="<? echo $_GET['idVaga'] ?>"/>
                                 <input name="idFiltro" type="hidden" value="<? echo $_GET['idFiltro'] ?>"/>
                                 
-                                <input name="slcEmpresaConfidencial" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Confidencial'] ) ?>"/>
-                                <input name="slcRamoAtuacao" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Ramo'] ) ?>"/>
-                                <input name="slcNacionalidade" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Nacionalidade'] ) ?>"/>
-                                <input name="slcPorteEmpresa" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Porte'] ) ?>"/>
-                                <input name="slcEscolaridade" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Escolaridade'] ) ?>"/>
-                                <input name="slcCategoria" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Categoria'] ) ?>"/>
-                                <input name="slcVaga" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Vaga'] ) ?>"/>
-                                <input name="slcRegimeContratacao" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['RegimeContratacao'] ) ?>"/>
-                                <input name="slcHorarioDe" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['HoraioDe'] ) ?>"/>
-                                <input name="slcHorarioAte" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['HorarioAte'] ) ?>"/>
+                                <input id="slcEmpresaConfidencial" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Confidencial'] ) ?>"/>
+                                <input id="slcRamoAtuacao" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Ramo'] ) ?>"/>
+                                <input id="slcNacionalidade" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Nacionalidade'] ) ?>"/>
+                                <input id="slcPorteEmpresa" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Porte'] ) ?>"/>
+                                <input id="slcEscolaridade" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Escolaridade'] ) ?>"/>
+                                <input id="slcCategoria" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Categoria'] ) ?>"/>
+                                <input id="slcVaga" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Vaga'] ) ?>"/>
+                                <input id="slcRegimeContratacao" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['RegimeContratacao'] ) ?>"/>
+                                <input id="slcHorarioDe" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['HoraioDe'] ) ?>"/>
+                                <input id="slcHorarioAte" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['HorarioAte'] ) ?>"/>
                                 
-                                <input name="slcFiltroFaixaEtaria" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['Faixa'] ) ?>"/>
-                                <input name="slcFiltroPretencaoSalarial" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['Pretencao'] ) ?>"/>
-                                <input name="slcFiltroPNE" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['PNE'] ) ?>"/>
-                                <input name="slcFiltroEstado" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['Estado'] ) ?>"/>
-                                <input name="slcFiltroCidade" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['Cidade'] ) ?>"/>
+                                <input id="slcFiltroFaixaEtaria" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['Faixa'] ) ?>"/>
+                                <input id="slcFiltroPretencaoSalarial" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['Pretencao'] ) ?>"/>
+                                <input id="slcFiltroPNE" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['PNE'] ) ?>"/>
+                                <input id="slcFiltroEstado" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['Estado'] ) ?>"/>
+                                <input id="slcFiltroCidade" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['Cidade'] ) ?>"/>
                             <? } ?>
                             
                             <? if($data['Editar'] == 1){
@@ -69,19 +69,19 @@
 
 
                             <label class="lbl_form b2" style="margin-top: 15px;">Nome da empresa confidencial</label>
-                            <select name="confidencial" class="select_form" value="" style="width: 130px">
+                            <select id="confidencial" name="confidencial" class="select_form" value="" style="width: 130px">
                                 <option value="0">Não</option>
                                 <option value="1">Sim</option>
                             </select>
 
                             <label class="lbl_form b2" style="margin-top: 15px;">Ramo de atuação da empresa</label>
-                            <select name="ramoAtuacao" class="select_form" value="" style="width: 395px;">
+                            <select id="ramoAtuacao" name="ramoAtuacao" class="select_form" value="" style="width: 395px;">
                                 <option value="0">Selecione</option>
                                 <option value="1">Outro</option>
                             </select>
 
                             <label class="lbl_form b2" style="margin-top: 15px;">Nacionalidade da empresa</label>
-                            <select name="nacionalidade" class="select_form" value="" style="width: 130px;">
+                            <select id="nacionalidade" name="nacionalidade" class="select_form" value="" style="width: 130px;">
                                 <option value="0">Nacional</option>
                                 <option value="1">Multinacional</option>
                             </select>
@@ -91,7 +91,7 @@
                         <div class="box_x2 right_box" style="float: left!important; background: none!important">
 
                             <label class="lbl_form b2" style="margin-top: 100px;">Porte da empresa</label>
-                            <select name="porte" class="select_form" value="" style="width: 432px;">
+                            <select id="porte" name="porte" class="select_form" value="" style="width: 432px;">
                                 <option value="0">Selecione</option>
                                 <option value="1">pequeno (de 1 a 99 funcionários)</option>
                                 <option value="2">médio (de 100 a 499 funcionários)</option>
@@ -118,7 +118,7 @@
                             <textarea name="experiencia" class="txt_search" style="width: 383px!important; height: 60px;"><? echo utf8_decode( $data['dadosVaga'][0]['Experiencia'] ) ?></textarea>
 
                             <label class="lbl_form">Escolaridade</label>
-                            <select name="escolaridade" class="select_form" value="" style="width: 395px;">
+                            <select id="escolaridade" name="escolaridade" class="select_form" value="" style="width: 395px;">
                                 <option value="0">Selecione</option>
                                 <? 
                                 if($data['Grau']){
@@ -174,7 +174,7 @@
                             <input name="salario" type="text" class="input_form" style="width: 200px" value="<? echo utf8_decode( $data['dadosVaga'][0]['Salario'] ) ?>"/>
 
                             <label class="lbl_form b2">Regime de contratação</label>
-                            <select name="regimeContratacao" class="select_form" value="" style="width: 432px;">
+                            <select id="regimeContratacao" name="regimeContratacao" class="select_form" value="" style="width: 432px;">
                                 <option value="0">Selecione</option>
                             </select>
 
@@ -186,11 +186,11 @@
 
                             <label class="lbl_form">Horário: </label>
                             <span class="hours">a partir das</span>
-                            <select name="horarioDe" class="select_form" value="" style="width: 100px;">
+                            <select id="horarioDe" name="horarioDe" class="select_form" value="" style="width: 100px;">
                                 <option value="0">Selecione</option>
                             </select>
                             <span class="hours" style="margin-left: 10px">até as</span>
-                            <select name="horarioAte" class="select_form" value="" style="width: 100px;">
+                            <select id="horarioAte" name="horarioAte" class="select_form" value="" style="width: 100px;">
                                 <option value="0">Selecione</option>
                             </select>
 
@@ -351,7 +351,7 @@
                             <div class="filters_multi">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Faixa Etária</label>
 
-                                <select name="filtroFaixaEtaria[]" multiple class="select_multi">
+                                <select id="filtroFaixaEtaria" name="filtroFaixaEtaria[]" multiple class="select_multi">
                                     <option value="16 AND 21">16 - 21</option>
                                     <option value="21 AND 26">21 - 26</option>
                                     <option value="26 AND 30">26 - 30</option>
@@ -364,7 +364,7 @@
                             <div class="filters_multi" style="margin-left: 32px;">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Pretensão salarial</label>
 
-                                <select name="filtroPretensaoSalarial[]" multiple class="select_multi">
+                                <select id="filtroPretensaoSalarial" name="filtroPretensaoSalarial[]" multiple class="select_multi">
                                     <? 
                                     if($data['Pretencao']){
                                         foreach ($data['Pretencao'] as $dados) { ?>
@@ -380,7 +380,7 @@
                             <div class="filters_multi" style="float: right;">
                                 <label class="lbl_form b2" style="margin-top: 15px;">PNE</label>
 
-                                <select name="filtroPNE[]" multiple="multiple" class="select_multi">                                   
+                                <select id="filtroPNE" name="filtroPNE[]" multiple="multiple" class="select_multi">                                   
                                   <option value="1">Física</option>
                                   <option value="2">Auditiva</option>
                                   <option value="3">Visual</option>
@@ -392,7 +392,7 @@
                             <div class="filters_multi">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Estado</label>
 
-                                <select name="filtroEstado[]" multiple="multiple" class="select_multi cities">
+                                <select id="filtroEstado" name="filtroEstado[]" multiple="multiple" class="select_multi cities">
                                     <? 
                                     if($data['Estado']){
                                         foreach ($data['Estado'] as $dados) { ?>
@@ -408,7 +408,7 @@
                             <div class="filters_multi" style="margin-left: 32px;">
                                 <label class="lbl_form b2" style="margin-top: 15px;">Cidade</label>
 
-                                <select name="filtroCidade[]" multiple="multiple" class="select_multi cities">
+                                <select id="filtroCidade" name="filtroCidade[]" multiple="multiple" class="select_multi cities">
                                     <? 
                                     if($data['Cidade']){
                                         foreach ($data['Cidade'] as $dados) { ?>
