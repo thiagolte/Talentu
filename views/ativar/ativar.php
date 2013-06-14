@@ -35,7 +35,9 @@
 					
 					<p>
 						Cadastro efetuado com sucesso!<br/><br/>
-						Agora você pode efetuar o seu login.
+						
+						Para acessar o site com seu login, por favor, ative antes seu cadastro clicando no link que foi enviado no seu e-email
+						
 						
 						
 					</p>
