@@ -1,6 +1,42 @@
 $(document).ready(function() {
-  
-    $(function ($) {
+	
+	$("#Enviar").click(function(){
+		if($("#Email").val() == '') {
+			alert("Por favor, digite seu e-mail!");
+		} else if($("#Nome").val() == '') {
+			alert("Por favor, digite seu nome!");
+		} else if($("#Senha").val() == '') {
+			alert("Por favor, digite sua senha!");
+		} else if($("#DataNasci").val() == '') {
+			alert("Por favor, digite sua data de nascimento!");
+		} else if($("#Celular").val() == '') {
+			alert("Por favor, digite sua nro de celular!");
+		} else if($("#Telefone").val() == '') {
+			alert("Por favor, digite seu telefone!");
+		} else if($("#Cep").val() == '') {
+			alert("Por favor, digite seu CEP!");
+		} else if($("#Cpf").val() == '') {
+			alert("Por favor, digite seu CPF!");
+		} else if($("#Endereco").val() == '') {
+			alert("Por favor, digite seu endereco!");
+		} else if($("#Numero").val() == '') {
+			alert("Por favor, digite o nro do seu endereco!");
+		} else if($("#Bairro").val() == '') {
+			alert("Por favor, digite o nro do seu bairro!");
+		} else if($("#Pretencao").val() == 0) {
+			alert("Por favor, selecione sua pretensão salarial!");
+		} else if($("#Grau").val() == 0) {
+			alert("Por favor, selecione seu grau de escolaridade!");
+		} else if($("#EstadoCivil").val() == 0) {
+			alert("Por favor, selecione seu estado civil!");
+		} else if($("#Sexo").val() == 0) {
+			alert("Por favor, selecione seu sexo!");
+		} else if($("#Categoria1").val() == 0) {
+			alert("Por favor, selecione sua categoria de emprego!");
+		}
+	});
+
+	$(function ($) {
         $("#DataNasci").mask("99/99/9999");
         $("#Cpf").mask("999.999.999-99");
         $("#Cep").mask("99999-999");
@@ -340,7 +376,10 @@ $(document).ready(function() {
         }
         return false;
     });  
+	
+	
 });
+
 
 function getEndereco() {
     if($.trim($("#Cep").val()) != ""){
@@ -356,4 +395,6 @@ function getEndereco() {
         });				
     }			
 }
+
+
 
