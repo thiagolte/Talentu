@@ -1531,5 +1531,16 @@ strong {
 }
 
 select.error {
-	margin-top: 0!important;
+	margin-top: 5px!important;
 }
+
+textarea.error {
+	margin-top: 8px!important;
+	margin-bottom: 20px!important;
+}
+
+/*
+input[type='text'].error, {
+	margin:6px 0 0 0!important
+}
+*/

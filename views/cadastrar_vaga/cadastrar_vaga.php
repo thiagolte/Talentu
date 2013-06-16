@@ -58,16 +58,16 @@
                             } ?>
                                 
                             <div class="radio_lbl">
-                                <input type="radio" name="local" value="1" <? echo $LocalMinha ?> />
+                                <input type="radio" checked name="local" id="mesma" value="1" <? echo $LocalMinha ?> />
                                 <label class="lbl_form">vaga na minha empresa</label>
                             </div>
 
                             <div class="radio_lbl">
-                                <input type="radio" name="local" value="2" <? echo $LocalOutra ?>/>
+                                <input type="radio" name="local" id="outra" value="2" <? echo $LocalOutra ?>/>
                                 <label class="lbl_form">vaga em outra empresa</label>
                             </div>
 							
-                            <div class="outra_empresa">
+                            <div class="outra_empresa" style="display: none;">
                                     <label class="lbl_form b2">Nome da Empresa</label>
                                     <input name="NomeEmpresa" id="NomeEmpresa" type="text" class="input_form" style="width: 383px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['NomeEmpresa'] ) ?>">
                             </div>
@@ -136,7 +136,7 @@
                             <h2 class="sub_title">Dados da vaga </h2>
 
                             <label class="lbl_form">Quantidade de Vagas</label>
-                            <input name="quantidade" type="text" class="input_form" id="qtdVagas" style="width: 383px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['Qtd'] ) ?>">
+                            <input name="quantidade" type="text" class="input_form" style="width: 383px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['Qtd'] ) ?>">
 
                             <label class="lbl_form">Atribuições e Responsabilidades</label>
                             <textarea name="atribuicoes" name="" class="txt_search" style="width: 383px!important; height: 60px;"><? echo utf8_decode( $data['dadosVaga'][0]['Atribuicoes'] ) ?></textarea>
@@ -194,11 +194,11 @@
                             } ?>
                             
                             <div class="radio_lbl" style="margin-top: 5px;">
-                                <input name="salarioCombinar" type="checkbox" <? echo $ACombinar ?> />
+                                <input name="salarioCombinar" id="salarioCombinar" data-status="show" type="checkbox" <? echo $ACombinar ?> />
                                 <label class="lbl_form">a combinar</label>
                             </div>
 
-                            <input name="salario" type="text" class="input_form" style="width: 200px" value="<? echo utf8_decode( $data['dadosVaga'][0]['Salario'] ) ?>"/>
+                            <input name="salario" id="salario" data-status="show" type="text" class="input_form" style="width: 200px" value="<? echo utf8_decode( $data['dadosVaga'][0]['Salario'] ) ?>"/>
 
                             <label class="lbl_form b2">Regime de contratação</label>
                             <select id="regimeContratacao" name="regimeContratacao" class="select_form" value="" style="width: 432px;">
@@ -232,7 +232,7 @@
                             } ?>
                             
                             <div class="radio_lbl2">
-                                <input name="meiosRecebimento" type="radio" id="other_unSelected" name="forma_contato" value="0" <? echo $EmailCadastro ?> />
+                                <input name="meiosRecebimento" checked type="radio" id="other_unSelected" name="forma_contato" value="0" <? echo $EmailCadastro ?> />
                                 <label class="lbl_form">E-mail de cadastro</label>
                             </div>
 
@@ -254,7 +254,7 @@
                                 }
                             } ?>
                             <div class="radio_lbl2">
-                                <input name="ativar" type="radio" value="1" <? echo $Ativar ?> />
+                                <input name="ativar" checked type="radio" value="1" <? echo $Ativar ?> />
                                 <label class="lbl_form">Sim</label>
                             </div>
 

@@ -59,15 +59,6 @@ $(document).ready( function() {
     });
 	
 	
-	$('#other_selected').click(function(){
-		$(".other_mail").show();
-	});
-	
-	$('#other_unSelected').click(function(){
-		$(".other_mail").hide();
-	});
-		
-	
 	$("#add_question").click(function(){
 		if ($(this).attr('data-number') == '1') {
 			$("#2").fadeIn('slow');

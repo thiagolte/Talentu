@@ -1,5 +1,35 @@
 $(document).ready(function() {
 	
+	$('#other_selected').click(function(){
+		$(".other_mail").show();
+	});
+	
+	$('#other_unSelected').click(function(){
+		$(".other_mail").hide();
+	});
+	
+	$('#outra').click(function(){
+		$(".outra_empresa").show();
+	});
+	
+	$('#mesma').click(function(){
+		$(".outra_empresa").hide();
+	});
+	
+	$('#salarioCombinar').click(function(){
+		var self = $(this);
+		if (self.attr('data-status') == 'show') {
+			$("#salario").hide();
+			$("#salario").attr('data-status', 'hide');
+			self.attr('data-status', 'hide');
+		}else {
+			$("#salario").show();
+			$("#salario").attr('data-status', 'show');
+			self.attr('data-status', 'show');
+		}
+	});
+		
+	
 	$("#Enviar").click(function(){
 //		if($("#Email").val() == '') {
 //			alert("Por favor, digite seu e-mail!");
@@ -35,6 +65,33 @@ $(document).ready(function() {
 			},
 			vaga: {
 				valueNotEquals: "0"
+			},
+			EstadoEmpresa: {
+				valueNotEquals: "0"
+			},
+			CidadeEmpresa: {
+				required: true
+			},
+			EstadoEmpresa: {
+				valueNotEquals: "0"
+			},
+			quantidade: {
+				required: true
+			},
+			atribuicoes: {
+				required: true
+			},
+			experiencia:{
+				required: true
+			},
+			beneficios: {
+				required: true
+			},
+			regimeTrabalho: {
+				required: true			
+			},
+			horario: {
+				required: true			
 			}
         },
         messages:{
@@ -55,9 +112,50 @@ $(document).ready(function() {
 			},
 			vaga: {
 				valueNotEquals: "selecione a vaga"
+			},
+			CidadeEmpresa: {
+				required: "informe a cidade",
+			},
+			EstadoEmpresa: {
+				valueNotEquals: "Selecione o Estado"
+			},
+			quantidade: {
+				required: "informe a quantidade de vagas"
+			},
+			atribuicoes: {
+				required: "informe as atribuições"
+			},
+			experiencia:{
+				required: "informe a experiência"
+			},
+			beneficios: {
+				required: "informe os benefícios"
+			},
+			regimeTrabalho: {
+				required: "informe o regime de trabalho"
+			},
+			horario: {
+				required: "informe o horário de trabalho"
 			}
+						
         }
+		
     });
+	
+//	if ($("#salarioCombinar").attr('data-status') == 'show') {
+//		$("#frmVagas").validate({
+//			rules:{
+//				salario: {
+//					required: true			
+//				}
+//			},
+//			messages:{ 
+//				salario: {
+//					required: "informe o salário"
+//				}	
+//			}
+//		});
+//	}
          
      //Vaga
     $('#categoria').change(function(){
