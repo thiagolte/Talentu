@@ -66,31 +66,42 @@
                                 <input type="radio" name="local" value="2" <? echo $LocalOutra ?>/>
                                 <label class="lbl_form">vaga em outra empresa</label>
                             </div>
+							
+							<div class="outra_empresa">
+								<label class="lbl_form b2">Nome da Empresa</label>
+								<input name="" type="text" class="input_form" style="width: 383px;" value="">
+							</div>
+								
+							<label class="lbl_form b2">Local<span>(cidade e estado)</span></label>
+							<input name="" type="text" class="input_form" style="width: 288px;" value="">
+							<select class="select_form" style="width: 80px; margin-left: 15px;">
+								<option></option>
+								<option></option>
+							</select>
 
-
-                            <label class="lbl_form b2" style="margin-top: 15px;">Nome da empresa confidencial</label>
+                            <label class="lbl_form b2">Nome da empresa confidencial</label>
                             <select id="confidencial" name="confidencial" class="select_form" value="" style="width: 130px">
                                 <option value="0">Não</option>
                                 <option value="1">Sim</option>
                             </select>
 
-                            <label class="lbl_form b2" style="margin-top: 15px;">Ramo de atuação da empresa</label>
+                            <label class="lbl_form b2">Ramo de atuação da empresa</label>
                             <select id="ramoAtuacao" name="ramoAtuacao" class="select_form" value="" style="width: 395px;">
                                 <option value="0">Selecione</option>
                                 <option value="1">Outro</option>
                             </select>
 
-                            <label class="lbl_form b2" style="margin-top: 15px;">Nacionalidade da empresa</label>
+                        </div>
+
+                        <div class="box_x2 right_box" style="float: left!important; background: none!important">
+							
+							<label class="lbl_form b2" style="margin-top: 96px;">Nacionalidade da empresa</label>
                             <select id="nacionalidade" name="nacionalidade" class="select_form" value="" style="width: 130px;">
                                 <option value="0">Nacional</option>
                                 <option value="1">Multinacional</option>
                             </select>
 
-                        </div>
-
-                        <div class="box_x2 right_box" style="float: left!important; background: none!important">
-
-                            <label class="lbl_form b2" style="margin-top: 100px;">Porte da empresa</label>
+                            <label class="lbl_form b2">Porte da empresa</label>
                             <select id="porte" name="porte" class="select_form" value="" style="width: 432px;">
                                 <option value="0">Selecione</option>
                                 <option value="1">pequeno (de 1 a 99 funcionários)</option>
@@ -99,7 +110,7 @@
                             </select>
 
                             <label class="lbl_form">Descrição sumária da empresa</label>
-                            <textarea name="descricao" class="txt_search" style="width: 420px!important; height: 157px;"><? echo utf8_decode( $data['dadosVaga'][0]['Descricao'] ) ?></textarea>
+                            <textarea name="descricao" class="txt_search" style="width: 420px!important; height: 148px;"><? echo utf8_decode( $data['dadosVaga'][0]['Descricao'] ) ?></textarea>
 
                         </div>
 
@@ -176,6 +187,11 @@
                             <label class="lbl_form b2">Regime de contratação</label>
                             <select id="regimeContratacao" name="regimeContratacao" class="select_form" value="" style="width: 432px;">
                                 <option value="0">Selecione</option>
+                                <option value="1">CLT</option>
+                                <option value="2">PJ</option>
+                                <option value="3">Estágio</option>
+                                <option value="4">Temporário</option>
+                                <option value="5">Outros</option>
                             </select>
 
                             <label class="lbl_form">Benefícios</label>
@@ -185,14 +201,7 @@
                             <input name="regimeTrabalho" type="text" class="input_form" style="width: 420px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['RegimeTrabalho'] ) ?>">
 
                             <label class="lbl_form">Horário: </label>
-                            <span class="hours">a partir das</span>
-                            <select id="horarioDe" name="horarioDe" class="select_form" value="" style="width: 100px;">
-                                <option value="0">Selecione</option>
-                            </select>
-                            <span class="hours" style="margin-left: 10px">até as</span>
-                            <select id="horarioAte" name="horarioAte" class="select_form" value="" style="width: 100px;">
-                                <option value="0">Selecione</option>
-                            </select>
+                            <input name="" type="text" class="input_form" style="width: 420px;" value="">
 
                             <label class="lbl_form b2">Meios para receber candidatos:</label>
 
