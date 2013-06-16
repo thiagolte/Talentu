@@ -121,8 +121,8 @@
                             <textarea name="descricao" class="txt_search" style="width: 420px!important; height: 148px;"><? echo utf8_decode( $data['dadosVaga'][0]['Descricao'] ) ?></textarea>
 
                         </div>
-
-                        <div class="spacer"></div>
+						
+                        <div class="spacer"> </div>
 
                         <div class="box_x2">									
                             <h2 class="sub_title">Dados da vaga </h2>
