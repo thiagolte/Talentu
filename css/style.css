@@ -1529,3 +1529,7 @@ strong {
 	float: left;
 	margin-top: 20px;
 }
+
+select.error {
+	margin-top: 0!important;
+}

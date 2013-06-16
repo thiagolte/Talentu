@@ -1,4 +1,63 @@
 $(document).ready(function() {
+	
+	$("#Enviar").click(function(){
+//		if($("#Email").val() == '') {
+//			alert("Por favor, digite seu e-mail!");
+//		} else if($("#Nome").val() == '') {
+//			alert("Por favor, digite seu nome!");
+//		}
+	});
+
+//	$(function ($) {
+//        $("#qtdVagas").mask("9");
+//    });		
+  
+    $.validator.addMethod("valueNotEquals", function(value, element, arg){
+      return arg != value;
+    }, "Selecione uma opção.");
+
+    $("#frmVagas").validate({
+        rules:{
+			porte: { 
+				valueNotEquals: "0"
+			},
+			ramoAtuacao: { 
+				valueNotEquals: "0"
+			},
+			regimeContratacao: {
+				valueNotEquals: "0"
+			},
+			escolaridade: {
+				valueNotEquals: "0"
+			},
+			categoria: {
+				valueNotEquals: "0"
+			},
+			vaga: {
+				valueNotEquals: "0"
+			}
+        },
+        messages:{
+			porte: {
+				valueNotEquals: "selecione o porta da empresa"
+			},
+			ramoAtuacao: {
+				valueNotEquals: "selecione o ramo de atuação da empresa"
+			},
+			regimeContratacao: {
+				valueNotEquals: "selecione o regime de contratação"
+			},
+			escolaridade: {
+				valueNotEquals: "selecione a escolaridade"
+			},
+			categoria: {
+				valueNotEquals: "selecione a categoria"
+			},
+			vaga: {
+				valueNotEquals: "selecione a vaga"
+			}
+        }
+    });
          
      //Vaga
     $('#categoria').change(function(){
@@ -20,19 +79,21 @@ $(document).ready(function() {
           
     //Enviar Dados CV
     $('#Salvar').click(function(){
-        $.ajax({
-            url: "index.php?cadastrar_vaga",
-            type: "GET",
-            data: { ICadastro: $('#frmVagas').serializeObject() },
-            success: function(data)
-            {
-                if(data > 0){
-                    alert('Vaga cadastrada com sucesso!');
-                }else{
-                    alert('ERRO: Contate o administrador');
-                }
-            }
-        });
+		if($("#frmVagas").valid()){
+			$.ajax({
+				url: "index.php?cadastrar_vaga",
+				type: "GET",
+				data: { ICadastro: $('#frmVagas').serializeObject() },
+				success: function(data)
+				{
+					if(data > 0){
+						alert('Vaga cadastrada com sucesso!');
+					}else{
+						alert('ERRO: Contate o administrador');
+					}
+				}
+			});
+		}
     });
     
     $('#Editar').click(function(){

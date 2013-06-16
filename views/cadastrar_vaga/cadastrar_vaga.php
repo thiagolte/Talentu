@@ -136,7 +136,7 @@
                             <h2 class="sub_title">Dados da vaga </h2>
 
                             <label class="lbl_form">Quantidade de Vagas</label>
-                            <input name="quantidade" type="text" class="input_form" style="width: 383px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['Qtd'] ) ?>">
+                            <input name="quantidade" type="text" class="input_form" id="qtdVagas" style="width: 383px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['Qtd'] ) ?>">
 
                             <label class="lbl_form">Atribuições e Responsabilidades</label>
                             <textarea name="atribuicoes" name="" class="txt_search" style="width: 383px!important; height: 60px;"><? echo utf8_decode( $data['dadosVaga'][0]['Atribuicoes'] ) ?></textarea>
