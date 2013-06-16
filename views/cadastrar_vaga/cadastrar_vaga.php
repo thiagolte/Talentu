@@ -88,7 +88,15 @@
                             <label class="lbl_form b2">Ramo de atuação da empresa</label>
                             <select id="ramoAtuacao" name="ramoAtuacao" class="select_form" value="" style="width: 395px;">
                                 <option value="0">Selecione</option>
-                                <option value="1">Outro</option>
+                                <? 
+                                if($data['Categoria']){
+                                    foreach ($data['Categoria'] as $dados) { ?>
+
+                                        <option value="<? echo $dados['Codigo'] ?>"><? echo utf8_encode($dados['Nome']) ?></option>
+                                <?
+                                    }
+                                }
+                                ?>
                             </select>
 
                         </div>
