@@ -84,7 +84,7 @@
                                 <div class="vacancy_item_txt">
                                     <p>
                                         <strong>Salário: </strong><? echo utf8_decode( $dado['Salario'] ); ?><br/>
-                                        <strong>Local: </strong> São Paulo - SP<br/><br/>
+                                        <strong>Local: </strong> <? echo utf8_decode( $dado['Local'] ); ?><br/><br/>
                                         <strong>Sobre a Vaga: </strong><? echo utf8_decode( $dado['Atribuicoes'] ); ?>
                                     </p>
                                 </div>

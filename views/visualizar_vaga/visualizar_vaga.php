@@ -28,6 +28,7 @@
                                 <label class="lbl_pre">Salário: <span><? echo utf8_decode( $dado['Salario'] ); ?></span></label>
                                 <label class="lbl_pre">Area de Atuação: <span><? echo utf8_decode( $dado['AreaAtuacao'] ); ?></span></label>
                                 <label class="lbl_pre">Empresa: <span><? echo utf8_decode( $dado['Empresa'] ); ?></span></label>
+                                <label class="lbl_pre">Local: <span><? echo utf8_decode( $dado['Local'] ); ?></span></label>
                                 <label class="lbl_pre">Porte da Empresa: <span><? echo utf8_decode( $dado['Porte'] ); ?></span></label>
                                 <label class="lbl_pre">Nacionalidade da empresa: <span><? echo utf8_decode( $dado['Nacionalidade'] ); ?></span></label>
                                 <label class="lbl_pre">Ramo de atuação da empresa: <span><? echo utf8_decode( $dado['Ramo'] ); ?></span></label>

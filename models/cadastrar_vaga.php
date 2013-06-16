@@ -52,6 +52,7 @@ class Cadastrar_vaga_Model {
                 "
                 SELECT 
                     SHA1(MD5(codigoVAGAEMPRESA)) as idVaga,
+                    CONCAT(cidadeempresaVAGAEMPRESA, ' - ', estadoempresaVAGAEMPRESA) AS 'Local',
                     salarioVAGAEMPRESA as Salario,
                     acombinarVAGAEMPRESA as Combinar,
                     atribuicoesVAGAEMPRESA as Atribuicoes,
@@ -81,6 +82,7 @@ class Cadastrar_vaga_Model {
                     nomeCATEGORIA AS AreaAtuacao,
                     ramoVAGAEMPRESA AS Ramo,
                     IF(confidencialVAGAEMPRESA = 1, 'Confidencial',empresaVAGAEMPRESA) AS Empresa,
+                    CONCAT(cidadeempresaVAGAEMPRESA, ' - ', estadoempresaVAGAEMPRESA) AS 'Local',
                     porteVAGAEMPRESA AS Porte,
                     nacionalidadeVAGAEMPRESA AS Nacionalidade,
                     ramoVAGAEMPRESA AS Ramo,

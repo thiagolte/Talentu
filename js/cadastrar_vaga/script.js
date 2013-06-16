@@ -79,21 +79,21 @@ $(document).ready(function() {
           
     //Enviar Dados CV
     $('#Salvar').click(function(){
-		if($("#frmVagas").valid()){
-			$.ajax({
-				url: "index.php?cadastrar_vaga",
-				type: "GET",
-				data: { ICadastro: $('#frmVagas').serializeObject() },
-				success: function(data)
-				{
-					if(data > 0){
-						alert('Vaga cadastrada com sucesso!');
-					}else{
-						alert('ERRO: Contate o administrador');
-					}
-				}
-			});
-		}
+        if($("#frmVagas").valid()){
+                $.ajax({
+                        url: "index.php?cadastrar_vaga",
+                        type: "GET",
+                        data: { ICadastro: $('#frmVagas').serializeObject() },
+                        success: function(data)
+                        {
+                                if(data > 0){
+                                        alert('Vaga cadastrada com sucesso!');
+                                }else{
+                                        alert('ERRO: Contate o administrador');
+                                }
+                        }
+                });
+        }
     });
     
     $('#Editar').click(function(){
