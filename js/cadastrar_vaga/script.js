@@ -51,6 +51,7 @@ $(document).ready(function() {
         });
     });  
     
+    $("#EstadoEmpresa option[value='" + $("#slcEstadoEmpresa").attr('value') + "']").prop('selected',true);
     $("#confidencial option[value='" + $("#slcEmpresaConfidencial").attr('value') + "']").prop('selected',true);
     $("#ramoAtuacao option[value='" + $("#slcRamoAtuacao").attr('value') + "']").prop('selected',true);   
     $("#nacionalidade option[value='" + $("#slcNacionalidade").attr('value') + "']").prop('selected',true); 

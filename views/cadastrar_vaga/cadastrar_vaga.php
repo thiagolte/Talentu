@@ -29,6 +29,7 @@
                                 <input name="idVaga" type="hidden" value="<? echo $_GET['idVaga'] ?>"/>
                                 <input name="idFiltro" type="hidden" value="<? echo $_GET['idFiltro'] ?>"/>
                                 
+                                <input id="slcEstadoEmpresa" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['EstadoEmpresa'] ) ?>"/>
                                 <input id="slcEmpresaConfidencial" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Confidencial'] ) ?>"/>
                                 <input id="slcRamoAtuacao" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Ramo'] ) ?>"/>
                                 <input id="slcNacionalidade" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Nacionalidade'] ) ?>"/>
@@ -37,8 +38,7 @@
                                 <input id="slcCategoria" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Categoria'] ) ?>"/>
                                 <input id="slcVaga" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Vaga'] ) ?>"/>
                                 <input id="slcRegimeContratacao" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['RegimeContratacao'] ) ?>"/>
-                                <input id="slcHorarioDe" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['HoraioDe'] ) ?>"/>
-                                <input id="slcHorarioAte" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['HorarioAte'] ) ?>"/>
+                                <input id="slcHorario" type="hidden" value="<? echo utf8_decode( $data['dadosVaga'][0]['Horaio'] ) ?>"/>
                                 
                                 <input id="slcFiltroFaixaEtaria" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['Faixa'] ) ?>"/>
                                 <input id="slcFiltroPretencaoSalarial" type="hidden" value="<? echo utf8_decode( $data['dadosFiltro'][0]['Pretencao'] ) ?>"/>
@@ -67,17 +67,25 @@
                                 <label class="lbl_form">vaga em outra empresa</label>
                             </div>
 							
-							<div class="outra_empresa">
-								<label class="lbl_form b2">Nome da Empresa</label>
-								<input name="" type="text" class="input_form" style="width: 383px;" value="">
-							</div>
-								
-							<label class="lbl_form b2">Local<span>(cidade e estado)</span></label>
-							<input name="" type="text" class="input_form" style="width: 288px;" value="">
-							<select class="select_form" style="width: 80px; margin-left: 15px;">
-								<option></option>
-								<option></option>
-							</select>
+                            <div class="outra_empresa">
+                                    <label class="lbl_form b2">Nome da Empresa</label>
+                                    <input name="NomeEmpresa" id="NomeEmpresa" type="text" class="input_form" style="width: 383px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['NomeEmpresa'] ) ?>">
+                            </div>
+
+                            <label class="lbl_form b2">Local<span>(cidade e estado)</span></label>
+                            <input name="CidadeEmpresa" id="CidadeEmpresa" type="text" class="input_form" style="width: 288px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['CidadeEmpresa'] ) ?>">
+                                <select name="EstadoEmpresa" id="EstadoEmpresa" class="select_form" style="width: 80px; margin-left: 15px;">
+                                <option value="0">Selecione</option>
+                                <? 
+                                if($data['Estado']){
+                                    foreach ($data['Estado'] as $dados) { ?>
+
+                                        <option value="<? echo utf8_encode($dados['Nome']); ?>"><? echo utf8_encode($dados['Nome']); ?></option>
+                                <?
+                                    }
+                                }
+                                ?>
+                            </select>
 
                             <label class="lbl_form b2">Nome da empresa confidencial</label>
                             <select id="confidencial" name="confidencial" class="select_form" value="" style="width: 130px">
@@ -209,7 +217,7 @@
                             <input name="regimeTrabalho" type="text" class="input_form" style="width: 420px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['RegimeTrabalho'] ) ?>">
 
                             <label class="lbl_form">Horário: </label>
-                            <input name="" type="text" class="input_form" style="width: 420px;" value="">
+                            <input name="horario" type="text" class="input_form" style="width: 420px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['Horario'] ) ?>">
 
                             <label class="lbl_form b2">Meios para receber candidatos:</label>
 

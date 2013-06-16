@@ -95,7 +95,7 @@ class Cadastrar_vaga_Model {
                     escolaridadeVAGAEMPRESA AS Escolaridade,
                     qualificacoesVAGAEMPRESA AS Qualificacoes,
                     beneficiosVAGAEMPRESA AS Beneficios,
-                    CONCAT(regimetrabalhoVAGAEMPRESA, ' - ', horariodeVAGAEMPRESA, ' as ', horarioateVAGAEMPRESA)  AS Regime,
+                    CONCAT(regimetrabalhoVAGAEMPRESA, ' - ', horarioVAGAEMPRESA)  AS Regime,
                     questao1VAGAEMPRESA AS Questao1,
                     tiporesposta1VAGAEMPRESA AS TipoResposta1,
                     filtroativo1VAGAEMPRESA AS Filtro1,
@@ -136,6 +136,9 @@ class Cadastrar_vaga_Model {
                 SELECT 
                     empresaVAGAEMPRESA AS Empresa,
                     localVAGAEMPRESA AS 'Local',
+                    nomeempresaVAGAEMPRESA AS 'NomeEmpresa',
+                    cidadeempresaVAGAEMPRESA AS 'CidadeEmpresa',
+                    estadoempresaVAGAEMPRESA AS 'EstadoEmpresa',
                     confidencialVAGAEMPRESA AS Confidencial,
                     ramoVAGAEMPRESA AS Ramo,
                     nacionalidadeVAGAEMPRESA AS Nacionalidade,
@@ -153,8 +156,7 @@ class Cadastrar_vaga_Model {
                     regimecontratacaoVAGAEMPRESA AS RegimeContratacao,
                     beneficiosVAGAEMPRESA AS Beneficios,
                     regimetrabalhoVAGAEMPRESA AS RegimeTrabalho,
-                    horariodeVAGAEMPRESA AS HoraioDe,
-                    horarioateVAGAEMPRESA AS HorarioAte,
+                    horarioVAGAEMPRESA AS Horario,
                     meiosrecebimentoVAGAEMPRESA AS MeiosRecebimento,
                     emailrecebimentoVAGAEMPRESA AS EmailRecebimento,
                     ativarVAGAEMPRESA AS Ativar,
@@ -222,13 +224,14 @@ class Cadastrar_vaga_Model {
             
 
             
-            $values = array($idEmpresa, $arrVaga['local'], $arrVaga['confidencial'],
+            $values = array($idEmpresa, $arrVaga['local'], $arrVaga['NomeEmpresa'],
+                            $arrVaga['CidadeEmpresa'], $arrVaga['EstadoEmpresa'], $arrVaga['confidencial'],
                             $arrVaga['ramoAtuacao'], $arrVaga['nacionalidade'], $arrVaga['porte'],
                             $arrVaga['descricao'], $arrVaga['quantidade'], $arrVaga['atribuicoes'],
                             $arrVaga['experiencia'], $arrVaga['escolaridade'],$arrVaga['qualificacoes'],
                             $arrVaga['categoria'], $arrVaga['vaga'], $arrVaga['salario'],
                             $arrVaga['salarioCombinar'], $arrVaga['regimeContratacao'],$arrVaga['beneficios'],
-                            $arrVaga['regimeTrabalho'], $arrVaga['horarioDe'], $arrVaga['horarioAte'], 
+                            $arrVaga['regimeTrabalho'], $arrVaga['horario'],
                             $arrVaga['meiosRecebimento'],$arrVaga['emailRecebimento'], $arrVaga['ativar'],
                             $arrVaga['questao1'], $arrVaga['tipoResposta1'], $arrVaga['filtroAtivo1'],
                             $arrVaga['questao2'], $arrVaga['tipoResposta2'], $arrVaga['filtroAtivo2'],
@@ -265,13 +268,14 @@ class Cadastrar_vaga_Model {
                 $arrVaga['salarioCombinar'] = 0;
             }
             
-            $values = array($arrVaga['idVaga'], $idEmpresa, $arrVaga['local'], $arrVaga['confidencial'],
+            $values = array($arrVaga['idVaga'], $idEmpresa, $arrVaga['local'],$arrVaga['NomeEmpresa'],
+                            $arrVaga['CidadeEmpresa'], $arrVaga['EstadoEmpresa'], $arrVaga['confidencial'],
                             $arrVaga['ramoAtuacao'], $arrVaga['nacionalidade'], $arrVaga['porte'],
                             $arrVaga['descricao'], $arrVaga['quantidade'], $arrVaga['atribuicoes'],
                             $arrVaga['experiencia'], $arrVaga['escolaridade'],$arrVaga['qualificacoes'],
                             $arrVaga['categoria'], $arrVaga['vaga'], $arrVaga['salario'],
                             $arrVaga['salarioCombinar'], $arrVaga['regimeContratacao'],$arrVaga['beneficios'],
-                            $arrVaga['regimeTrabalho'], $arrVaga['horarioDe'], $arrVaga['horarioAte'], 
+                            $arrVaga['regimeTrabalho'], $arrVaga['horario'],
                             $arrVaga['meiosRecebimento'],$arrVaga['emailRecebimento'], $arrVaga['ativar'],
                             $arrVaga['questao1'], $arrVaga['tipoResposta1'], $arrVaga['filtroAtivo1'],
                             $arrVaga['questao2'], $arrVaga['tipoResposta2'], $arrVaga['filtroAtivo2'],
