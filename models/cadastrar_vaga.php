@@ -78,50 +78,61 @@ class Cadastrar_vaga_Model {
         $Retorno = $this->MySQLSelect(
                 "
                 SELECT 
-                    codigoVAGAEMPRESA AS Codigo,
-                    nomeCATEGORIA AS AreaAtuacao,
-                    ramoVAGAEMPRESA AS Ramo,
-                    IF(confidencialVAGAEMPRESA = 1, 'Confidencial',empresaVAGAEMPRESA) AS Empresa,
-                    CONCAT(cidadeempresaVAGAEMPRESA, ' - ', estadoempresaVAGAEMPRESA) AS 'Local',
-                    porteVAGAEMPRESA AS Porte,
-                    nacionalidadeVAGAEMPRESA AS Nacionalidade,
-                    ramoVAGAEMPRESA AS Ramo,
-                    COALESCE(nomeVAGA,'[sem nome]') as Vaga,
-                    quantidadeVAGAEMPRESA AS Qtd,
-                    regimecontratacaoVAGAEMPRESA AS RegimeContratacao,
-                    atribuicoesVAGAEMPRESA AS Atribuicoes,
-                    salarioVAGAEMPRESA as Salario,
-                    acombinarVAGAEMPRESA as Combinar,
-                    atribuicoesVAGAEMPRESA as Atribuicoes,
-                    experienciaVAGAEMPRESA AS Experiencia,
-                    escolaridadeVAGAEMPRESA AS Escolaridade,
-                    qualificacoesVAGAEMPRESA AS Qualificacoes,
-                    beneficiosVAGAEMPRESA AS Beneficios,
-                    CONCAT(regimetrabalhoVAGAEMPRESA, ' - ', horarioVAGAEMPRESA)  AS Regime,
-                    questao1VAGAEMPRESA AS Questao1,
-                    tiporesposta1VAGAEMPRESA AS TipoResposta1,
-                    filtroativo1VAGAEMPRESA AS Filtro1,
-                    questao2VAGAEMPRESA AS Questao2,
-                    tiporesposta2VAGAEMPRESA AS TipoResposta2,
-                    filtroativo2VAGAEMPRESA AS Filtro2,
-                    questao3VAGAEMPRESA AS Questao3,
-                    tiporesposta3VAGAEMPRESA AS TipoResposta3,
-                    filtroativo3VAGAEMPRESA AS Filtro3,
-                    questao4VAGAEMPRESA AS Questao4,
-                    tiporesposta4VAGAEMPRESA AS TipoResposta4,
-                    filtroativo4VAGAEMPRESA AS Filtro4,
-                    questao5VAGAEMPRESA AS Questao5,
-                    tiporesposta5VAGAEMPRESA AS TipoResposta5,
-                    filtroativo5VAGAEMPRESA AS Filtro5,
-                    SHA1(MD5(codigoFILTROVAGA)) AS idFiltro
+                        codigoVAGAEMPRESA AS Codigo,
+                        C.nomeCATEGORIA AS AreaAtuacao,
+                        ramoVAGAEMPRESA AS Ramo,
+                        IF(confidencialVAGAEMPRESA = 1, 'Confidencial',empresaVAGAEMPRESA) AS Empresa,
+                        CONCAT(cidadeempresaVAGAEMPRESA, ' - ', estadoempresaVAGAEMPRESA) AS 'Local',
+                        CASE porteVAGAEMPRESA WHEN 1 THEN 'pequeno (de 1 a 99 funcionários)'
+                        WHEN 2 THEN 'médio (de 100 a 499 funcionários)'
+                        WHEN 3 THEN 'grande (mais de 500 funcionários)' END AS Porte,
+                        CASE nacionalidadeVAGAEMPRESA WHEN 0 THEN 'Nacional'
+                        WHEN 1 THEN 'Multinacional' END AS Nacionalidade,
+                        R.nomeCATEGORIA AS Ramo,
+                        COALESCE(nomeVAGA,'[sem nome]') as Vaga,
+                        quantidadeVAGAEMPRESA AS Qtd,
+                        CASE regimecontratacaoVAGAEMPRESA WHEN 1 THEN 'CLT'
+                        WHEN 2 THEN 'PJ'
+                        WHEN 3 THEN 'Estágio'
+                        WHEN 4 THEN 'Temporário'
+                        WHEN 5 THEN 'Outros' END AS RegimeContratacao,
+                        atribuicoesVAGAEMPRESA AS Atribuicoes,
+                        salarioVAGAEMPRESA as Salario,
+                        acombinarVAGAEMPRESA as Combinar,
+                        atribuicoesVAGAEMPRESA as Atribuicoes,
+                        experienciaVAGAEMPRESA AS Experiencia,
+                        nomeGRAUESCOLARIDADE AS Escolaridade,
+                        qualificacoesVAGAEMPRESA AS Qualificacoes,
+                        beneficiosVAGAEMPRESA AS Beneficios,
+                        CONCAT(regimetrabalhoVAGAEMPRESA, ' - ', horarioVAGAEMPRESA)  AS Regime,
+                        questao1VAGAEMPRESA AS Questao1,
+                        tiporesposta1VAGAEMPRESA AS TipoResposta1,
+                        filtroativo1VAGAEMPRESA AS Filtro1,
+                        questao2VAGAEMPRESA AS Questao2,
+                        tiporesposta2VAGAEMPRESA AS TipoResposta2,
+                        filtroativo2VAGAEMPRESA AS Filtro2,
+                        questao3VAGAEMPRESA AS Questao3,
+                        tiporesposta3VAGAEMPRESA AS TipoResposta3,
+                        filtroativo3VAGAEMPRESA AS Filtro3,
+                        questao4VAGAEMPRESA AS Questao4,
+                        tiporesposta4VAGAEMPRESA AS TipoResposta4,
+                        filtroativo4VAGAEMPRESA AS Filtro4,
+                        questao5VAGAEMPRESA AS Questao5,
+                        tiporesposta5VAGAEMPRESA AS TipoResposta5,
+                        filtroativo5VAGAEMPRESA AS Filtro5,
+                        SHA1(MD5(codigoFILTROVAGA)) AS idFiltro
                 FROM
-                    tb0013_Vagas_Empresa
+                        tb0013_Vagas_Empresa
                 LEFT JOIN
-                    tb0007_Categorias ON codigoCATEGORIA = categoriaVAGAEMPRESA
+                        tb0007_Categorias C ON C.codigoCATEGORIA = categoriaVAGAEMPRESA
                 LEFT JOIN
-                    tb0008_Vagas ON codigoVAGA = vagaVAGAEMPRESA
+                        tb0007_Categorias R ON R.codigoCATEGORIA = ramoVAGAEMPRESA
                 LEFT JOIN
-                    tb0014_Filtros_Vaga ON vagaempresaFILTROVAGA = codigoVAGAEMPRESA
+                        tb0008_Vagas ON codigoVAGA = vagaVAGAEMPRESA
+                LEFT JOIN
+                        tb0014_Filtros_Vaga ON vagaempresaFILTROVAGA = codigoVAGAEMPRESA
+                LEFT JOIN
+                        tb0003_Graus_Escolaridade ON codigoGRAUESCOLARIDADE = escolaridadeVAGAEMPRESA
                 WHERE
                     SHA1(MD5(codigoVAGAEMPRESA)) = '" . $idVaga . "' 
                 ;

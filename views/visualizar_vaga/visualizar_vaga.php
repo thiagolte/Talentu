@@ -29,23 +29,21 @@
                                 <label class="lbl_pre">Area de Atuação: <span><? echo utf8_decode( $dado['AreaAtuacao'] ); ?></span></label>
                                 <label class="lbl_pre">Empresa: <span><? echo utf8_decode( $dado['Empresa'] ); ?></span></label>
                                 <label class="lbl_pre">Local: <span><? echo utf8_decode( $dado['Local'] ); ?></span></label>
-                                <label class="lbl_pre">Porte da Empresa: <span><? echo utf8_decode( $dado['Porte'] ); ?></span></label>
+                                <label class="lbl_pre">Porte da Empresa: <span><? echo ( $dado['Porte'] ); ?></span></label>
                                 <label class="lbl_pre">Nacionalidade da empresa: <span><? echo utf8_decode( $dado['Nacionalidade'] ); ?></span></label>
-                                <label class="lbl_pre">Ramo de atuação da empresa: <span><? echo utf8_decode( $dado['Ramo'] ); ?></span></label>
+                                <label class="lbl_pre">Ramo de atuação da empresa: <span><? echo utf8_encode( $dado['Ramo'] ); ?></span></label>
                                 <label class="lbl_pre">Vaga: <span><? echo utf8_decode( $dado['Vaga'] ); ?></span></label>
                                 <label class="lbl_pre">Quantidade de vagas: <span><? echo utf8_decode( $dado['Qtd'] ); ?></span></label>
-                                <label class="lbl_pre">Regime de contratação: <span><? echo utf8_decode( $dado['RegimeContratacao'] ); ?></span></label>
+                                <label class="lbl_pre">Regime de contratação: <span><? echo ( $dado['RegimeContratacao'] ); ?></span></label>
                                 <label class="lbl_pre">Atribuições e Responsabilidades: <span><? echo utf8_decode( $dado['Atribuicoes'] ); ?></span>
                                 </label>
                                 <label class="lbl_pre">Experiência e habilidades: <span><? echo utf8_decode( $dado['Experiencia'] ); ?></span></label>
-                                <label class="lbl_pre">Escolaridade: <span><? echo utf8_decode( $dado['Escolaridade'] ); ?></span></label>
+                                <label class="lbl_pre">Escolaridade: <span><? echo utf8_encode( $dado['Escolaridade'] ); ?></span></label>
                                 <label class="lbl_pre">Qualificações: <span><? echo utf8_decode( $dado['Qualificacoes'] ); ?></span></label>
                                 <label class="lbl_pre">Benefícios: <span><? echo utf8_decode( $dado['Beneficios'] ); ?></span>
                                 </label>
                                 <label class="lbl_pre">Regime de trabalho/horário: <span><? echo utf8_decode( $dado['Regime'] ); ?></span></label>
-
-                                <label class="lbl_pre">Comente sua expectativa sobre a vaga</label>
-                                <textarea class="txt_search" style="margin: 0 0 20px 0;"></textarea>
+                                
 
                                 <? for($i == 0; $i <=5; $i++){ ?>
                                     <? if(!empty( $dado['Questao' . $i] )){ ?>
