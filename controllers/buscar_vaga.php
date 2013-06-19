@@ -18,8 +18,24 @@ class Buscar_vaga_Controller {
             $view->assign('vw_Login', $vw_Login->render(FALSE));
             $view->assign('Joomla', $Joomla);
 
+            $this->CarregaItens($view);
+            
             $view->render();
         }
 
+    }
+    
+    function CarregaItens($view){
+        $Cadastrar_cv_Model = new Cadastrar_cv_Model();
+                
+        $Pretencao = $Cadastrar_cv_Model->get_Pretencoes();
+        $Estado = $Cadastrar_cv_Model->get_Estados();
+        $Cidade = $Cadastrar_cv_Model->get_Cidades();
+        $Categoria = $Cadastrar_cv_Model->get_CategoriasAtivas();
+        
+        $view->assign('Pretencao', $Pretencao);
+        $view->assign('Estado', $Estado);
+        $view->assign('Cidade', $Cidade);
+        $view->assign('Categoria', $Categoria);
     }
 }
