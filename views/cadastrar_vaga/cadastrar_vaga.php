@@ -10,6 +10,7 @@
         <script src="jquery183.js"></script>
         <script src="js/maskedinput.js" type="text/javascript"></script>
         <script src="js/validate.js" type="text/javascript"></script>
+        <script src="js/jquery.maskMoney.js" type="text/javascript"></script>
         <script src="js/config.js" type="text/javascript"></script>
         <script src="js/serializeObject.js" type="text/javascript"></script>
         <script src="js/cadastrar_vaga/script.js" type="text/javascript"></script>
@@ -135,14 +136,14 @@
                         <div class="box_x2">									
                             <h2 class="sub_title">Dados da vaga </h2>
 
-                            <label class="lbl_form">Quantidade de Vagas</label>
-                            <input name="quantidade" type="text" class="input_form" style="width: 383px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['Qtd'] ) ?>">
+                            <label class="lbl_form">Quantidade de Vagas<span>(apenas números)</span></label>
+                            <input name="quantidade" id="quantidade" type="text" class="input_form numbers" style="width: 383px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['Qtd'] ) ?>">
 
                             <label class="lbl_form">Atribuições e Responsabilidades</label>
-                            <textarea name="atribuicoes" name="" class="txt_search" style="width: 383px!important; height: 60px;"><? echo utf8_decode( $data['dadosVaga'][0]['Atribuicoes'] ) ?></textarea>
+                            <textarea name="atribuicoes" id="atribuicoes" class="txt_search" style="width: 383px!important; height: 60px;"><? echo utf8_decode( $data['dadosVaga'][0]['Atribuicoes'] ) ?></textarea>
 
                             <label class="lbl_form">Experiência e habilidades</label>
-                            <textarea name="experiencia" class="txt_search" style="width: 383px!important; height: 60px;"><? echo utf8_decode( $data['dadosVaga'][0]['Experiencia'] ) ?></textarea>
+                            <textarea name="experiencia" id="experiencia" class="txt_search" style="width: 383px!important; height: 60px;"><? echo utf8_decode( $data['dadosVaga'][0]['Experiencia'] ) ?></textarea>
 
                             <label class="lbl_form">Escolaridade</label>
                             <select id="escolaridade" name="escolaridade" class="select_form" value="" style="width: 395px;">
@@ -211,13 +212,13 @@
                             </select>
 
                             <label class="lbl_form">Benefícios</label>
-                            <textarea name="beneficios" class="txt_search" style="width: 420px!important; height: 80px; margin"><? echo utf8_decode( $data['dadosVaga'][0]['Beneficios'] ) ?></textarea>
+                            <textarea name="beneficios" id="beneficios" class="txt_search" style="width: 420px!important; height: 80px; margin"><? echo utf8_decode( $data['dadosVaga'][0]['Beneficios'] ) ?></textarea>
 
                             <label class="lbl_form">Regime de trabalho: <span>(dia, escala, etc)</span></label>
-                            <input name="regimeTrabalho" type="text" class="input_form" style="width: 420px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['RegimeTrabalho'] ) ?>">
+                            <input name="regimeTrabalho" id="regimeTrabalho" type="text" class="input_form" style="width: 420px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['RegimeTrabalho'] ) ?>">
 
                             <label class="lbl_form">Horário: </label>
-                            <input name="horario" type="text" class="input_form" style="width: 420px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['Horario'] ) ?>">
+                            <input name="horario" id="horario" type="text" class="input_form" style="width: 420px;" value="<? echo utf8_decode( $data['dadosVaga'][0]['Horario'] ) ?>">
 
                             <label class="lbl_form b2">Meios para receber candidatos:</label>
 

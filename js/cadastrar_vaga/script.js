@@ -1,3 +1,16 @@
+$(function() {
+
+    $('.numbers').keypress(function(event) {
+        var tecla = (window.event) ? event.keyCode : event.which;
+        if ((tecla > 47 && tecla < 58)) return true;
+        else {
+            if (tecla != 8) return false;
+            else return true;
+        }
+    });
+
+});
+
 $(document).ready(function() {
 	
 	$('#other_selected').click(function(){
@@ -28,19 +41,45 @@ $(document).ready(function() {
 			self.attr('data-status', 'show');
 		}
 	});
-		
 	
-	$("#Enviar").click(function(){
-//		if($("#Email").val() == '') {
-//			alert("Por favor, digite seu e-mail!");
-//		} else if($("#Nome").val() == '') {
-//			alert("Por favor, digite seu nome!");
-//		}
-	});
-
-//	$(function ($) {
-//        $("#qtdVagas").mask("9");
-//    });		
+	$("#Salvar").click(function(){
+		if($("#CidadeEmpresa").val() == '') {
+			alert("Por favor, digite a cidade da empresa!");
+		}else if($("#EstadoEmpresa").val() == 0){			
+			alert("Por favor, selecione o estado da empresa!");
+		}else if($("#ramoAtuacao").val() == 0){			
+			alert("Por favor, selecione o ramo de atuação da empresa!");
+		}else if($("#porte").val() == 0){			
+			alert("Por favor, selecione o porte da empresa!");
+		}else if($("#quantidade").val() == '') {
+			alert("Por favor, digite a quantidade de vagas!");
+		}else if($("#atribuicoes").val() == '') {
+			alert("Por favor, digite as atribuições da vaga!");
+		}else if($("#experiencia").val() == '') {
+			alert("Por favor, digite a experiência exigida na vaga!");
+		}else if($("#escolaridade").val() == 0){			
+			alert("Por favor, selecione a escolaridade para a vaga!");
+		}else if($("#categoria").val() == 0){			
+			alert("Por favor, selecione a categoria da vaga!");
+		}else if($("#vaga").val() == 0){			
+			alert("Por favor, selecione a vaga de atuação!");
+		}else if($("#regimeContratacao").val() == 0){			
+			alert("Por favor, selecione o regime de contratação da vaga!");
+		}else if($("#beneficios").val() == '') {
+			alert("Por favor, digite os benefícios da vaga!");
+		}else if($("#regimeTrabalho").val() == '') {
+			alert("Por favor, digite o regime de trabalho!");
+		}else if($("#horario").val() == '') {
+			alert("Por favor, digite o horário de trabalho!");
+		}
+			
+			
+			
+			
+			
+	});	
+	
+	$("#salario").maskMoney({showSymbol:true, symbol:"R$ ", decimal:",", thousands:"."});
   
     $.validator.addMethod("valueNotEquals", function(value, element, arg){
       return arg != value;
@@ -141,6 +180,8 @@ $(document).ready(function() {
         }
 		
     });
+	
+	
 	
 //	if ($("#salarioCombinar").attr('data-status') == 'show') {
 //		$("#frmVagas").validate({
