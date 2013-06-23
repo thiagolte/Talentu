@@ -9,10 +9,11 @@ $(document).ready(function() {
            success: function(data)
            {
                 $("#vaga option").remove();
+                $("#vaga").append(new Option('Selecione', 0));
                 data.forEach(function(dados){
                     $("#vaga").append(new Option(dados.Nome, dados.Codigo));
                 });
-                // $("#vaga option[value='" + $("#slcVaga").attr('value') + "']").prop('selected',true);
+                $("#vaga option[value='" + $("#slcVaga").attr('value') + "']").prop('selected',true);
            }
         });
     });
@@ -20,19 +21,7 @@ $(document).ready(function() {
     
     //Pesquisa    
     $('#Enviar').click(function() {
-        $.ajax({
-                url: "index.php?cadastrar_vaga",
-                type: "GET",
-                data: { ICadastro: $('#frmVagas').serializeObject() },
-                success: function(data)
-                {
-                        if(data > 0){
-                                alert('Vaga cadastrada com sucesso!');
-                        }else{
-                                alert('ERRO: Contate o administrador');
-                        }
-                }
-        });
+        window.location = "?resultados_vagas&IBusca=1&" + $('#frmBusca').serialize();
     });
     
 });

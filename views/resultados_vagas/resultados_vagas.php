@@ -26,49 +26,33 @@
     <div class="center">
         <div class="containerCt">
             <div class="container">
-                
-
+                                
                 <div class="box_x2" style="width: 963px;">
                     <h2 class="sub_title">Resultados da busca</h2>
-                                        
+                    
+                    <?
+                        if($data['Vagas']){
+                            foreach ($data['Vagas'] as $dado) { ?>
                     <div class="vacancy_item">
                         <h1>Motorista Particular</h1>
                         <div class="vacancy_item_txt">
                             <p>
-                                <strong>Salário: </strong>R$ 1.372,00<br/>
-                                <strong>Local: </strong> São Paulo - SP<br/><br/>
-                                <strong>Sobre a Vaga: </strong>Dar suporte aos alunos, professores, sócios e outros 
-                                usuários durante suas pesquisas, na utilização da 
-                                biblioteca. Garantir a organização da biblioteca...
+                                <strong>Salário: </strong><? echo utf8_decode( $dado['Salario'] ); ?><br/>
+                                <strong>Local: </strong> <? echo utf8_decode( $dado['Local'] ); ?><br/><br/>
+                                <strong>Sobre a Vaga: </strong><? echo utf8_decode( $dado['Atribuicoes'] ); ?>
                             </p>
                         </div>
 						
-						<div class="vacancy_ct_buttons">
-							<a class="btn_default btn_vacancy">Compartilhar</a>
-							<a class="btn_default btn_vacancy">Visualizar</a>
-<!--							<a class="btn_default btn_vacancy">Candidatar-se</a>-->
-						</div>
-                    </div>
-					
-					<div class="vacancy_item">
-                        <h1>Motorista Particular</h1>
-                        <div class="vacancy_item_txt">
-                            <p>
-                                <strong>Salário: </strong>R$ 1.372,00<br/>
-                                <strong>Local: </strong> São Paulo - SP<br/><br/>
-                                <strong>Sobre a Vaga: </strong>Dar suporte aos alunos, professores, sócios e outros 
-                                usuários durante suas pesquisas, na utilização da 
-                                biblioteca. Garantir a organização da biblioteca...
-                            </p>
+                        <div class="vacancy_ct_buttons">
+                            <a class="btn_default btn_vacancy">Compartilhar</a>
+                            <a href="?visualizar_vaga&idVaga=<? echo $dado['idVaga']; ?>" class="btn_default btn_vacancy">Visualizar</a>
+                            <!--<a class="btn_default btn_vacancy">Candidatar-se</a>-->
                         </div>
-						
-						<div class="vacancy_ct_buttons">
-							<a class="btn_default btn_vacancy">Compartilhar</a>
-							<a class="btn_default btn_vacancy">Visualizar</a>
-<!--							<a class="btn_default btn_vacancy">Candidatar-se</a>-->
-						</div>
                     </div>
-
+                    <? 
+                        }
+                      }
+                    ?>
                 </div>                
             </div>
         </div>
