@@ -30,7 +30,7 @@
   js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=241787612634808";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
-</script>
+	</script>
     
 <?php
     $act = $_GET['act'];
@@ -86,8 +86,7 @@
 					
 					
                     <div class="fb_container">
-						<div class="fb-like-box" data-href="http://www.facebook.com/TalentuVagas" data-width="302" data-height="532" data-show-faces="true" data-stream="true" data-border-color="#ffffff" data-header="true">
-						</div>
+						<div class="fb-like-box" data-href="https://www.facebook.com/TalentuVagas" data-width="302" data-height="532" data-show-faces="true" data-stream="false" data-show-border="false" data-header="true"></div>
 					</div>
 						
 <!--
