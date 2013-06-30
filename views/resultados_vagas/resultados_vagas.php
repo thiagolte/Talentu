@@ -33,25 +33,25 @@
                     <?
                         if($data['Vagas']){
                             foreach ($data['Vagas'] as $dado) { ?>
-                    <div class="vacancy_item">
-                        <h1>Motorista Particular</h1>
-                        <div class="vacancy_item_txt">
-                            <p>
-                                <strong>Salário: </strong><? echo utf8_decode( $dado['Salario'] ); ?><br/>
-                                <strong>Local: </strong> <? echo utf8_decode( $dado['Local'] ); ?><br/><br/>
-                                <strong>Sobre a Vaga: </strong><? echo utf8_decode( $dado['Atribuicoes'] ); ?>
-                            </p>
-                        </div>
-						
-                        <div class="vacancy_ct_buttons">
-                            <a class="btn_default btn_vacancy">Compartilhar</a>
-                            <a href="?visualizar_vaga&idVaga=<? echo $dado['idVaga']; ?>" class="btn_default btn_vacancy">Visualizar</a>
-                            <!--<a class="btn_default btn_vacancy">Candidatar-se</a>-->
-                        </div>
-                    </div>
-                    <? 
+                                <div class="vacancy_item">
+                                    <h1>Motorista Particular</h1>
+                                    <div class="vacancy_item_txt">
+                                        <p>
+                                            <strong>Salário: </strong><? echo utf8_decode( $dado['Salario'] ); ?><br/>
+                                            <strong>Local: </strong> <? echo utf8_decode( $dado['Local'] ); ?><br/><br/>
+                                            <strong>Sobre a Vaga: </strong><? echo utf8_decode( $dado['Atribuicoes'] ); ?>
+                                        </p>
+                                    </div>
+
+                                    <div class="vacancy_ct_buttons">
+                                        <a class="btn_default btn_vacancy">Compartilhar</a>
+                                        <a href="?visualizar_vaga&idVaga=<? echo $dado['idVaga']; ?>" class="btn_default btn_vacancy">Visualizar</a>
+                                        <!--<a class="btn_default btn_vacancy">Candidatar-se</a>-->
+                                    </div>
+                                </div>
+                            <? 
+                            }
                         }
-                      }
                     ?>
                 </div>                
             </div>

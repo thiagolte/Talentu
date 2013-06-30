@@ -11,6 +11,7 @@
     <script src="js/maskedinput.js" type="text/javascript"></script>
     <script src="js/validate.js" type="text/javascript"></script>
     <script src="js/config.js" type="text/javascript"></script>  
+    <script src="visualizar_vaga/visualizar_vaga.js" type="text/javascript"></script>  
 </head>
     
 <body>
