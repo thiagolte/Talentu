@@ -23,12 +23,16 @@
                         <tr class="tb_title_line">
                             <td>Nome</td>
                             <td>Dados Pessoais</td>
+                            <td style="width: 50px; text-align: center;">Cadastro</td>
+                            <td style="width: 50px; text-align: center;">Atualização</td>
                             <td style="width: 50px; text-align: center;">Perfil</td>
                         </tr>
                         <?foreach ($data['Dados'] as $dados) { ?>
                             <tr>
                                 <td><a class="prof_name"><?= utf8_encode($dados['Nome'])?></a></td>
                                 <td><?= utf8_encode($dados['Descricao'])?></td>
+                                <td><?= utf8_encode($dados['DataCadastro'])?></td>
+                                <td><?= utf8_encode($dados['DataUpdate'])?></td>
                                 <td style="text-align: center;"><a href="?cadastrar_cv&idUsuario=<?= utf8_encode($dados['Codigo'])?>">acessar</a></td>
                             </tr>
                         <?}?>

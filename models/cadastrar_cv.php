@@ -621,6 +621,8 @@ class Cadastrar_cv_Model {
                 "SELECT	
                         SHA1(MD5(codigoCADASTROPESSOA)) AS Codigo,
                         nomecompletoCADASTROPESSOA AS Nome,
+                        DATE_FORMAT(datacadastroCADASTROPESSOA, '%d/%m/%Y %H:%m') AS DataCadastro,
+                        COALESCE(DATE_FORMAT(dataupdateCADASTROPESSOA, '%d/%m/%Y %H:%m'),DATE_FORMAT(datacadastroCADASTROPESSOA, '%d/%m/%Y %H:%m')) AS DataUpdate,
                         CONCAT((YEAR(CURDATE())-YEAR(STR_TO_DATE(datanascimentoCADASTROPESSOA,'%d/%m/%Y')))
                         - (RIGHT(CURDATE(),5)<RIGHT(STR_TO_DATE(datanascimentoCADASTROPESSOA,'%d/%m/%Y'),5)),' anos, ',
                         nomeESTADOCIVIL,', ',cidadeCADASTROPESSOA,'-', estadoCADASTROPESSOA,' (',GROUP_CONCAT(nomeVAGA),')') AS Descricao
