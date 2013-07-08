@@ -214,7 +214,8 @@ class Cadastrar_cv_Model {
                     sexoCADASTROPESSOA = $sexo,
                     ipCADASTROPESSOA = '" . $_SERVER["REMOTE_ADDR"] . "',
                     pneCADASTROPESSOA = $PNE,
-                    pnedetalhesCADASTROPESSOA = '$PNEDetalhes'
+                    pnedetalhesCADASTROPESSOA = '$PNEDetalhes',
+                    dataupdateCADASTROPESSOA = CURRENT_TIMESTAMP
                 WHERE 
                     SHA1(MD5(codigoCADASTROPESSOA)) = '" . $_COOKIE['idCadastro'] . "'
                 ;
