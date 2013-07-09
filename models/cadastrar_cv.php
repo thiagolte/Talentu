@@ -365,6 +365,30 @@ class Cadastrar_cv_Model {
         return $Retorno;
     }
     
+    
+    public function get_idPessoa(){
+        $Retorno = $this->MySQLSelect(
+                "
+                SELECT 
+                    codigoCADASTROPESSOA AS Codigo
+                FROM
+                    tb0001_Cadastro_Pessoa
+                WHERE
+                    SHA1(MD5(codigoCADASTROPESSOA)) = '" . $_COOKIE['idCadastro'] . "'  
+                ;
+                "
+        );
+        
+                        
+        if($Retorno){
+            foreach ($Retorno as $dados) {
+                $idEmpresa = $dados['Codigo'];
+            }
+        }
+        
+        return $idEmpresa;
+    }
+    
     public function get_VagasInteresseNome($idCadastroCrip){
         $Retorno = $this->MySQLSelect(
                 "

@@ -3,12 +3,14 @@
 class Cadastrar_vaga_Model {
     private $db;
     public $Cadastrar_Empresa_Model;
+    public $Cadastrar_Cv_Model;
     
 
     public function __construct() {
         $this->db = new MysqlImproved_Driver();
         
         $this->Cadastrar_Empresa_Model = new Cadastrar_Empresa_Model();
+        $this->Cadastrar_Cv_Model = new Cadastrar_cv_Model();
     }
 
     Private function MySQLSelect($Query) {
@@ -307,6 +309,47 @@ class Cadastrar_vaga_Model {
             }
             
             return $retorno;
+        }
+    }
+    
+    public function get_idVaga($CripId){
+        $Retorno = $this->MySQLSelect(
+                "
+                SELECT 
+                    codigoVAGAEMPRESA AS Codigo
+                FROM
+                    tb0013_Vagas_Empresa
+                WHERE
+                    SHA1(MD5(codigoVAGAEMPRESA)) = '" . $CripId . "'  
+                ;
+                "
+        );
+        
+                        
+        if($Retorno){
+            foreach ($Retorno as $dados) {
+                $idEmpresa = $dados['Codigo'];
+            }
+        }
+        
+        return $idEmpresa;
+    }
+    
+    public function set_CandidatarVaga($arrVaga) {
+        
+        $idPessoa = $this->Cadastrar_Cv_Model->get_idPessoa();
+        $idVaga = $this->get_idVaga($arrVaga['idVaga']);
+        
+        if(isset($idPessoa) && !empty($idPessoa) && isset($idVaga) && !empty($idVaga))
+        {
+                            
+            $values = array($idVaga, $idPessoa, $arrVaga['Questao1'], $arrVaga['Questao2'],
+                            $arrVaga['Questao3'], $arrVaga['Questao4'], $arrVaga['Questao5']);
+
+
+            $Retorno = $this->db->Create('tb0015_Inscritos_Vagas',$values);
+            
+            return $Retorno;
         }
     }
 }

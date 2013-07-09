@@ -11,7 +11,8 @@
     <script src="js/maskedinput.js" type="text/javascript"></script>
     <script src="js/validate.js" type="text/javascript"></script>
     <script src="js/config.js" type="text/javascript"></script>  
-    <script src="visualizar_vaga/visualizar_vaga.js" type="text/javascript"></script>  
+    <script src="js/serializeObject.js" type="text/javascript"></script>
+    <script src="js/visualizar_vaga/visualizar_vaga.js" type="text/javascript"></script>  
 </head>
     
 <body>
@@ -45,26 +46,28 @@
                                 </label>
                                 <label class="lbl_pre">Regime de trabalho/horário: <span><? echo utf8_decode( $dado['Regime'] ); ?></span></label>
                                 
-
+                                <form name="frmVaga" id="frmVaga">
+                                    <input type="hidden" name="idVaga" id="idVaga" value="<? echo $_GET['idVaga']; ?>">
                                 <? for($i == 0; $i <=5; $i++){ ?>
                                     <? if(!empty( $dado['Questao' . $i] )){ ?>
                                         <div>
                                         <label class="lbl_pre"><? echo utf8_decode( $dado['Questao' . $i] ); ?></label>
                                         <? if( utf8_decode( $dado['TipoResposta' . $i] ) == 1 ){ ?>
-                                            <textarea class="txt_search" style="margin: 0 0 20px 0;"></textarea>
+                                            <textarea name="Questao<? echo $i ?>" class="txt_search" style="margin: 0 0 20px 0;"></textarea>
                                         <? }else{ ?>
                                             <span>SIM</span>
-                                            <input type="radio" name="question<? echo $i ?>">
+                                            <input type="radio" value="1" name="Questao<? echo $i ?>">
                                             <span>NÃO</span>
-                                            <input type="radio" name="question1">
+                                            <input type="radio" value="0" name="Questao<? echo $i ?>">
                                         <? } ?>
                                         </div>
                                     <? } ?>
                                 <?}?>
+                                </form>
                             </div>
 
                             <div class="btn_container">
-                                <a class="btn_default" style="float: left;">Candidatar-se a esta vaga</a>
+                                <a id="Enviar" class="btn_default" style="float: left;">Candidatar-se a esta vaga</a>
                             </div>
                     
                    <?

@@ -23,6 +23,14 @@ class Cadastrar_vaga_Controller {
 
         }
         
+        //Candidatar
+        if ( isset($_GET['ICadidatar']) && !empty($_GET['ICadidatar']) ){
+            
+            $retorno = $Cadastrar_Vaga_Model->set_CandidatarVaga( $_GET['ICadidatar'] );
+            echo $retorno;
+
+        }
+        
         //Editar
         if (isset($_GET['Editar']) && !empty($_GET['Editar']) &&
                 isset($_GET['idVaga']) && !empty($_GET['idVaga'])){
