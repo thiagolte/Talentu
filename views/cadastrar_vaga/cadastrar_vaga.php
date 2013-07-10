@@ -10,7 +10,7 @@
         <script src="jquery183.js"></script>
         <script src="js/maskedinput.js" type="text/javascript"></script>
         <script src="js/validate.js" type="text/javascript"></script>
-        <script src="js/jquery.maskMoney.js" type="text/javascript"></script>
+        <script src="js/maskMoney.js" type="text/javascript"></script>
         <script src="js/config.js" type="text/javascript"></script>
         <script src="js/serializeObject.js" type="text/javascript"></script>
         <script src="js/cadastrar_vaga/script.js" type="text/javascript"></script>
