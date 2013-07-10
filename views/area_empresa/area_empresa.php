@@ -80,18 +80,18 @@
                         foreach($data['Vagas'] as $dado) {  ?>
                             <div class="vacancy_item">
                                 <input name="idVaga" type="hidden" value="<? echo sha1(md5($dado['Codigo'])); ?>" />
-                                <h1><? echo utf8_decode($dado['Vaga']) ?></h1>
+                                <h1><? echo utf8_encode($dado['Vaga']) ?></h1>
                                 <div class="vacancy_item_txt">
                                     <p>
-                                        <strong>Salário: </strong><? echo utf8_decode( $dado['Salario'] ); ?><br/>
-                                        <strong>Local: </strong> <? echo utf8_decode( $dado['Local'] ); ?><br/><br/>
-                                        <strong>Sobre a Vaga: </strong><? echo utf8_decode( $dado['Atribuicoes'] ); ?>
+                                        <strong>Salário: </strong><? echo utf8_encode( $dado['Salario'] ); ?><br/>
+                                        <strong>Local: </strong> <? echo utf8_encode( $dado['Local'] ); ?><br/><br/>
+                                        <strong>Sobre a Vaga: </strong><? echo utf8_encode( $dado['Atribuicoes'] ); ?>
                                     </p>
                                 </div>
 
                                 <div class="btn_filters">
-                                    <a class="btn_unfiltered" title="Todos os candidatos incritos"><label>50</label></a>
-                                    <a class="btn_filtered" title="Apenas os candidatos que passaram pelos filtros"><label>103</label></a>
+                                    <a class="btn_unfiltered" title="Todos os candidatos incritos"><label><? echo $dado['qtdInscritos']; ?></label></a>
+                                    <a class="btn_filtered" title="Apenas os candidatos que passaram pelos filtros"><label><? echo $data['QtdFiltro' . $dado['idVaga']]; ?></label></a>
                                 </div>
 
                                 <div class="vacancy_ct_buttons">

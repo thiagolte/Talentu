@@ -49,26 +49,40 @@ class Cadastrar_vaga_Model {
     //SELECT
     public function get_VagasEmpresa(){
         $idEmpresa = $this->Cadastrar_Empresa_Model->get_idEmpresa();
-        
+                
         $Retorno = $this->MySQLSelect(
                 "
-                SELECT 
+                SELECT
+                    codigoVAGAEMPRESA AS Codigo,
                     SHA1(MD5(codigoVAGAEMPRESA)) as idVaga,
                     CONCAT(cidadeempresaVAGAEMPRESA, ' - ', estadoempresaVAGAEMPRESA) AS 'Local',
                     salarioVAGAEMPRESA as Salario,
                     acombinarVAGAEMPRESA as Combinar,
                     atribuicoesVAGAEMPRESA as Atribuicoes,
                     COALESCE(nomeVAGA,'[sem nome]') as Vaga,
-                    SHA1(MD5(codigoFILTROVAGA)) AS idFiltro
+                    SHA1(MD5(codigoFILTROVAGA)) AS idFiltro,
+                    COUNT(DISTINCT usuarioINSCRITOVAGA) AS qtdInscritos
                 FROM
                     tb0013_Vagas_Empresa
                 LEFT JOIN
                     tb0008_Vagas ON codigoVAGA = vagaVAGAEMPRESA
                 LEFT JOIN
                     tb0014_Filtros_Vaga ON vagaempresaFILTROVAGA = codigoVAGAEMPRESA
+                LEFT JOIN
+                        tb0015_Inscritos_Vagas ON vagaempresaINSCRITOVAGA = codigoVAGAEMPRESA
                 WHERE
                     empresaVAGAEMPRESA = " . $idEmpresa . " 
                 ;
+                "
+        );
+        
+        return $Retorno;
+    }
+    
+    public function get_CountFiltroVaga($idVaga){
+        $Retorno = $this->MySQLSelect(
+                "
+                CALL sps_CountFiltroVaga($idVaga);
                 "
         );
         
@@ -273,6 +287,7 @@ class Cadastrar_vaga_Model {
     public function edit_CadastroVaga($arrVaga) {
         
         $idEmpresa = $this->Cadastrar_Empresa_Model->get_idEmpresa();
+        $idVaga = $this->get_idVaga($arrVaga['idVaga']);
         
         if(isset($arrVaga['idVaga']) && !empty($arrVaga['idVaga']) &&
            isset($idEmpresa) && !empty($idEmpresa))
@@ -301,7 +316,7 @@ class Cadastrar_vaga_Model {
             $retorno = $this->db->Update('tb0013_Vagas_Empresa',$values);
 
             if($arrVaga['idFiltro'] > 0  && $arrVaga['idVaga'] > 0){
-                $values = array($arrVaga['idFiltro'], $arrVaga['idVaga'], $arrVaga['filtroSexo'], $arrVaga['filtroFaixaEtaria'],
+                $values = array($arrVaga['idFiltro'], $idVaga, $arrVaga['filtroSexo'], $arrVaga['filtroFaixaEtaria'],
                                 $arrVaga['filtroPretensaoSalarial'], $arrVaga['filtroPNE'],
                                 $arrVaga['filtroEstado'], $arrVaga['filtroCidade']);
 

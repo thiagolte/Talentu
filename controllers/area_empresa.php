@@ -26,6 +26,18 @@ class Area_Empresa_Controller {
         
         $Retorno = $Cadastrar_Vaga_Model->get_VagasEmpresa();
         
+        if($Retorno){
+            foreach ($Retorno as $dados) {
+                $Retorno2 = $Cadastrar_Vaga_Model->get_CountFiltroVaga($dados['Codigo']);
+
+                if($Retorno2){
+                    foreach ($Retorno2 as $dados2) {
+                        $view->assign('QtdFiltro' . $dados['idVaga'], $dados2['qtd']);
+                    }
+                }
+            }
+        }
+
         $view->assign('Vagas', $Retorno);
     }
 }

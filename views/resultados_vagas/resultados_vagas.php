@@ -37,9 +37,9 @@
                                     <h1>Motorista Particular</h1>
                                     <div class="vacancy_item_txt">
                                         <p>
-                                            <strong>Salário: </strong><? echo utf8_decode( $dado['Salario'] ); ?><br/>
-                                            <strong>Local: </strong> <? echo utf8_decode( $dado['Local'] ); ?><br/><br/>
-                                            <strong>Sobre a Vaga: </strong><? echo utf8_decode( $dado['Atribuicoes'] ); ?>
+                                            <strong>Salário: </strong><? echo utf8_encode( $dado['Salario'] ); ?><br/>
+                                            <strong>Local: </strong> <? echo utf8_encode( $dado['Local'] ); ?><br/><br/>
+                                            <strong>Sobre a Vaga: </strong><? echo utf8_encode( $dado['Atribuicoes'] ); ?>
                                         </p>
                                     </div>
 

@@ -259,3 +259,4 @@ sendgrid-php-master/
 !/js/serializeObject.js
 mobile.php
 !/js/visualizar_vaga/visualizar_vaga.js
+!/js/jquery.MaskMoney.js

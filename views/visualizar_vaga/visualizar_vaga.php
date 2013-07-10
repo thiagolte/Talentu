@@ -24,35 +24,35 @@
                 <div class="box_x2" style="width: 963px;">
                     <? if($data['Vaga']){ 
                         foreach($data['Vaga'] as $dado){ ?>
-                            <h1 class="title_pages"><? echo utf8_decode( $dado['Vaga'] ); ?></h1>
+                            <h1 class="title_pages"><? echo utf8_encode( $dado['Vaga'] ); ?></h1>
 
                             <div class="vacancy_full">
-                                <label class="lbl_pre">Salário: <span><? echo utf8_decode( $dado['Salario'] ); ?></span></label>
-                                <label class="lbl_pre">Area de Atuação: <span><? echo utf8_decode( $dado['AreaAtuacao'] ); ?></span></label>
-                                <label class="lbl_pre">Empresa: <span><? echo utf8_decode( $dado['Empresa'] ); ?></span></label>
-                                <label class="lbl_pre">Local: <span><? echo utf8_decode( $dado['Local'] ); ?></span></label>
+                                <label class="lbl_pre">Salário: <span><? echo utf8_encode( $dado['Salario'] ); ?></span></label>
+                                <label class="lbl_pre">Area de Atuação: <span><? echo utf8_encode( $dado['AreaAtuacao'] ); ?></span></label>
+                                <label class="lbl_pre">Empresa: <span><? echo utf8_encode( $dado['Empresa'] ); ?></span></label>
+                                <label class="lbl_pre">Local: <span><? echo utf8_encode( $dado['Local'] ); ?></span></label>
                                 <label class="lbl_pre">Porte da Empresa: <span><? echo ( $dado['Porte'] ); ?></span></label>
-                                <label class="lbl_pre">Nacionalidade da empresa: <span><? echo utf8_decode( $dado['Nacionalidade'] ); ?></span></label>
+                                <label class="lbl_pre">Nacionalidade da empresa: <span><? echo utf8_encode( $dado['Nacionalidade'] ); ?></span></label>
                                 <label class="lbl_pre">Ramo de atuação da empresa: <span><? echo utf8_encode( $dado['Ramo'] ); ?></span></label>
-                                <label class="lbl_pre">Vaga: <span><? echo utf8_decode( $dado['Vaga'] ); ?></span></label>
-                                <label class="lbl_pre">Quantidade de vagas: <span><? echo utf8_decode( $dado['Qtd'] ); ?></span></label>
+                                <label class="lbl_pre">Vaga: <span><? echo utf8_encode( $dado['Vaga'] ); ?></span></label>
+                                <label class="lbl_pre">Quantidade de vagas: <span><? echo utf8_encode( $dado['Qtd'] ); ?></span></label>
                                 <label class="lbl_pre">Regime de contratação: <span><? echo ( $dado['RegimeContratacao'] ); ?></span></label>
-                                <label class="lbl_pre">Atribuições e Responsabilidades: <span><? echo utf8_decode( $dado['Atribuicoes'] ); ?></span>
+                                <label class="lbl_pre">Atribuições e Responsabilidades: <span><? echo utf8_encode( $dado['Atribuicoes'] ); ?></span>
                                 </label>
-                                <label class="lbl_pre">Experiência e habilidades: <span><? echo utf8_decode( $dado['Experiencia'] ); ?></span></label>
+                                <label class="lbl_pre">Experiência e habilidades: <span><? echo utf8_encode( $dado['Experiencia'] ); ?></span></label>
                                 <label class="lbl_pre">Escolaridade: <span><? echo utf8_encode( $dado['Escolaridade'] ); ?></span></label>
-                                <label class="lbl_pre">Qualificações: <span><? echo utf8_decode( $dado['Qualificacoes'] ); ?></span></label>
-                                <label class="lbl_pre">Benefícios: <span><? echo utf8_decode( $dado['Beneficios'] ); ?></span>
+                                <label class="lbl_pre">Qualificações: <span><? echo utf8_encode( $dado['Qualificacoes'] ); ?></span></label>
+                                <label class="lbl_pre">Benefícios: <span><? echo utf8_encode( $dado['Beneficios'] ); ?></span>
                                 </label>
-                                <label class="lbl_pre">Regime de trabalho/horário: <span><? echo utf8_decode( $dado['Regime'] ); ?></span></label>
+                                <label class="lbl_pre">Regime de trabalho/horário: <span><? echo utf8_encode( $dado['Regime'] ); ?></span></label>
                                 
                                 <form name="frmVaga" id="frmVaga">
                                     <input type="hidden" name="idVaga" id="idVaga" value="<? echo $_GET['idVaga']; ?>">
                                 <? for($i == 0; $i <=5; $i++){ ?>
                                     <? if(!empty( $dado['Questao' . $i] )){ ?>
                                         <div>
-                                        <label class="lbl_pre"><? echo utf8_decode( $dado['Questao' . $i] ); ?></label>
-                                        <? if( utf8_decode( $dado['TipoResposta' . $i] ) == 1 ){ ?>
+                                        <label class="lbl_pre"><? echo utf8_encode( $dado['Questao' . $i] ); ?></label>
+                                        <? if( utf8_encode( $dado['TipoResposta' . $i] ) == 1 ){ ?>
                                             <textarea name="Questao<? echo $i ?>" class="txt_search" style="margin: 0 0 20px 0;"></textarea>
                                         <? }else{ ?>
                                             <span>SIM</span>
