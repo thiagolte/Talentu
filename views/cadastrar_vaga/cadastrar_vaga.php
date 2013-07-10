@@ -74,8 +74,8 @@
                             </div>
 
                             <label class="lbl_form b2">Local<span>(cidade e estado)</span></label>
-                            <input name="CidadeEmpresa" id="CidadeEmpresa" type="text" class="input_form" style="width: 288px;" value="<? echo utf8_encode( $data['dadosVaga'][0]['CidadeEmpresa'] ) ?>">
-                                <select name="EstadoEmpresa" id="EstadoEmpresa" class="select_form" style="width: 80px; margin-left: 15px;">
+                            <input name="CidadeEmpresa" id="CidadeEmpresa" type="text" class="input_form" style="width: 248px;" value="<? echo utf8_encode( $data['dadosVaga'][0]['CidadeEmpresa'] ) ?>">
+                                <select name="EstadoEmpresa" id="EstadoEmpresa" class="select_form" style="width: 120px; margin-left: 15px;">
                                 <option value="0">Selecione</option>
                                 <? 
                                 if($data['Estado']){
