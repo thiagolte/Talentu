@@ -42,7 +42,7 @@ class Buscar_Vaga_Model {
                	FROM  
                		uo47p_content
                	WHERE
-               		id = 3
+               		id = 7
                 "
         );
         

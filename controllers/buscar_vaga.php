@@ -5,14 +5,14 @@ class Buscar_vaga_Controller {
 
     public function main(array $getVars) {
 
-        $Ajuda_Model = new Ajuda_Model();
+        $Buscar_Vaga_Model = new Buscar_Vaga_Model();
 
         //Main
         if (count($getVars) == 0) {
             //telmplates
             $view = new View_Model($this->template);
 
-            $Joomla = $Ajuda_Model->get_Joomla();
+            $Joomla = $Buscar_Vaga_Model->get_Joomla();
 
             $vw_Login = new View_Model('login/login');
             $view->assign('vw_Login', $vw_Login->render(FALSE));

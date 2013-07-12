@@ -20,13 +20,13 @@
             <div class="container">
                 <div class="box_x1">
                     <form name="frmBusca" id="frmBusca">
-                        <h1 class="title_pages">Busca de Vagas</h1>
-                            <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed ipsum et augue varius dignissim nec eu ante. Aliquam eget tellus velit, sed viverra erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque massa neque, ultricies in sagittis id, consequat quis augue.
-                            </p>
-                            <p>Sed non lacinia urna. Mauris arcu tellus, malesuada vel eleifend nec, scelerisque vitae sapien. Mauris hendrerit metus est, eu consectetur erat. Phasellus massa mi, auctor ut aliquam non, sagittis id diam. Vestibulum tellus arcu, vehicula ac pharetra ut, porttitor et diam.	
-                            </p>
-
+						<?php
+							foreach ($data['Joomla'] as $dados) {
+								echo utf8_encode($dados['introtext']);
+							}
+						?>
+							
+                            
                             <span style="width: 100%; float: left; height: 30px;"></span>
 
                             <h2 style="position:relative; color: #999; font-size: 22px">Critérios de Busca<span class="img_vagas"></span></h2>
