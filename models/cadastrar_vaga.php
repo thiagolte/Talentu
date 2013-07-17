@@ -84,11 +84,12 @@ class Cadastrar_vaga_Model {
                 ;
                 "
         );
-        
+
         return $Retorno;
     }
     
     public function get_CountFiltroVaga($idVaga){
+        
         $Retorno = $this->MySQLSelect(
                 "
                 CALL sps_CountFiltroVaga($idVaga);
