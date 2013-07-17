@@ -72,6 +72,15 @@ class Cadastrar_vaga_Model {
                         tb0015_Inscritos_Vagas ON vagaempresaINSCRITOVAGA = codigoVAGAEMPRESA
                 WHERE
                     empresaVAGAEMPRESA = " . $idEmpresa . " 
+                GROUP BY 
+                    codigoVAGAEMPRESA,
+                    SHA1(MD5(codigoVAGAEMPRESA)),
+                    CONCAT(cidadeempresaVAGAEMPRESA, ' - ', estadoempresaVAGAEMPRESA),
+                    salarioVAGAEMPRESA,
+                    acombinarVAGAEMPRESA,
+                    atribuicoesVAGAEMPRESA,
+                    COALESCE(nomeVAGA,'[sem nome]'),
+                    SHA1(MD5(codigoFILTROVAGA))
                 ;
                 "
         );

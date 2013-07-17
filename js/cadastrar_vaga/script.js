@@ -236,19 +236,21 @@ $(document).ready(function() {
     });
     
     $('#Editar').click(function(){
-        $.ajax({
-            url: "index.php?cadastrar_vaga",
-            type: "GET",
-            data: { ECadastro: $('#frmVagas').serializeObject() },
-            success: function(data)
-            {
-                if(data > 0){
-                    alert('Vaga alterada com sucesso!');
-                }else{
-                    alert('ERRO: Contate o administrador');
+        if($("#frmVagas").valid()){
+            $.ajax({
+                url: "index.php?cadastrar_vaga",
+                type: "GET",
+                data: { ECadastro: $('#frmVagas').serializeObject() },
+                success: function(data)
+                {
+                    if(data > 0){
+                        alert('Vaga alterada com sucesso!');
+                    }else{
+                        alert('ERRO: Contate o administrador');
+                    }
                 }
-            }
-        });
+            });
+        }
     });  
     
     $("#EstadoEmpresa option[value='" + $("#slcEstadoEmpresa").attr('value') + "']").prop('selected',true);
