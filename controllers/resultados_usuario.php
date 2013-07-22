@@ -25,6 +25,36 @@ class Resultados_usuario_Controller {
             $view->render();
         }
         
+        //VAGA
+        if (isset($getVars['idVaga']) && !empty($getVars['idVaga']) && !empty($_COOKIE['idCadastroEmp'])){
+            
+            $Retorno = $Cadastrar_cv_Model->Profissionais_Vaga($getVars['idVaga']);
+            
+            //telmplates
+            $view = new View_Model($this->template);
+
+            $vw_Login = new View_Model('login/login');
+            $view->assign('Dados', $Retorno);
+            $view->assign('vw_Login', $vw_Login->render(FALSE));
+            
+            $view->render();
+        }
+        
+        //VAGA+FILTRO
+        if (isset($getVars['idVagaFiltro']) && !empty($getVars['idVagaFiltro']) && !empty($_COOKIE['idCadastroEmp'])){
+            
+            $Retorno = $Cadastrar_cv_Model->Profissionais_Vaga_Filtro($getVars['idVagaFiltro']);
+            
+            //telmplates
+            $view = new View_Model($this->template);
+
+            $vw_Login = new View_Model('login/login');
+            $view->assign('Dados', $Retorno);
+            $view->assign('vw_Login', $vw_Login->render(FALSE));
+            
+            $view->render();
+        }
+        
         //Main
         if (count($getVars) == 0) {
             //telmplates

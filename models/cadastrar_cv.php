@@ -698,6 +698,88 @@ class Cadastrar_cv_Model {
         return $Retorno;
     }
     
+    public function Profissionais_Vaga($Vaga){
+        $this->db->connect(); 
+        
+        $Vaga = $this->db->escape(utf8_decode($Vaga));
+        
+        $Query = 
+                "SELECT	
+                        SHA1(MD5(codigoCADASTROPESSOA)) AS Codigo,
+                        nomecompletoCADASTROPESSOA AS Nome,
+                        DATE_FORMAT(datacadastroCADASTROPESSOA, '%d/%m/%Y %H:%m') AS DataCadastro,
+                        COALESCE(DATE_FORMAT(dataupdateCADASTROPESSOA, '%d/%m/%Y %H:%m'),DATE_FORMAT(datacadastroCADASTROPESSOA, '%d/%m/%Y %H:%m')) AS DataUpdate,
+                        CONCAT((YEAR(CURDATE())-YEAR(STR_TO_DATE(datanascimentoCADASTROPESSOA,'%d/%m/%Y')))
+                        - (RIGHT(CURDATE(),5)<RIGHT(STR_TO_DATE(datanascimentoCADASTROPESSOA,'%d/%m/%Y'),5)),' anos, ',
+                        nomeESTADOCIVIL,', ',cidadeCADASTROPESSOA,'-', estadoCADASTROPESSOA,' (',GROUP_CONCAT(nomeVAGA),')') AS Descricao
+                FROM
+                        tb0001_Cadastro_Pessoa
+                INNER JOIN 
+                        tb0004_Estados_Civis ON codigoESTADOCIVIL = estadocivilCADASTROPESSOA
+                INNER JOIN
+                        tb0006_Vagas_Interesse ON pessoaVAGAINTERESSE = codigoCADASTROPESSOA
+                INNER JOIN
+                        tb0008_Vagas ON codigoVAGA = vagaVAGAINTERESSE
+                INNER JOIN tb0007_Categorias ON codigoCATEGORIA = categoriaVAGAINTERESSE
+                LEFT  JOIN tb0010_CV ON pessoaCV = codigoCADASTROPESSOA
+                INNER   JOIN tb0015_Inscritos_Vagas ON usuarioINSCRITOVAGA = codigoCADASTROPESSOA
+                AND     SHA1(MD5(vagaempresaINSCRITOVAGA)) = '$Vaga'
+                GROUP BY codigoCADASTROPESSOA";
+
+        $Retorno = $this->MySQLSelect($Query);
+        
+        return $Retorno;
+    }
+    
+    public function Profissionais_Vaga_Filtro($Vaga){
+        $this->db->connect(); 
+        
+        $Vaga = $this->db->escape(utf8_decode($Vaga));
+        
+        $Cadastrar_Vaga_Model = new Cadastrar_vaga_Model();
+        $Vaga = $Cadastrar_Vaga_Model->get_idVaga($Vaga);
+        
+        
+        $Query = "call sps_UsuariosFiltroVaga($Vaga)";
+
+        $Retorno = $this->MySQLSelect($Query);
+        
+        $usuarios = "";
+        foreach ($Retorno as $dado){
+            $usuarios .= $dado['usuario'] . ',';
+        }
+        
+        $usuarios = substr($usuarios,0, strlen($usuarios) - 1);
+        
+        $Query = 
+                "SELECT	
+                        SHA1(MD5(codigoCADASTROPESSOA)) AS Codigo,
+                        nomecompletoCADASTROPESSOA AS Nome,
+                        DATE_FORMAT(datacadastroCADASTROPESSOA, '%d/%m/%Y %H:%m') AS DataCadastro,
+                        COALESCE(DATE_FORMAT(dataupdateCADASTROPESSOA, '%d/%m/%Y %H:%m'),DATE_FORMAT(datacadastroCADASTROPESSOA, '%d/%m/%Y %H:%m')) AS DataUpdate,
+                        CONCAT((YEAR(CURDATE())-YEAR(STR_TO_DATE(datanascimentoCADASTROPESSOA,'%d/%m/%Y')))
+                        - (RIGHT(CURDATE(),5)<RIGHT(STR_TO_DATE(datanascimentoCADASTROPESSOA,'%d/%m/%Y'),5)),' anos, ',
+                        nomeESTADOCIVIL,', ',cidadeCADASTROPESSOA,'-', estadoCADASTROPESSOA,' (',GROUP_CONCAT(nomeVAGA),')') AS Descricao
+                FROM
+                        tb0001_Cadastro_Pessoa
+                INNER JOIN 
+                        tb0004_Estados_Civis ON codigoESTADOCIVIL = estadocivilCADASTROPESSOA
+                INNER JOIN
+                        tb0006_Vagas_Interesse ON pessoaVAGAINTERESSE = codigoCADASTROPESSOA
+                INNER JOIN
+                        tb0008_Vagas ON codigoVAGA = vagaVAGAINTERESSE
+                INNER JOIN tb0007_Categorias ON codigoCATEGORIA = categoriaVAGAINTERESSE
+                LEFT  JOIN tb0010_CV ON pessoaCV = codigoCADASTROPESSOA
+                INNER   JOIN tb0015_Inscritos_Vagas ON usuarioINSCRITOVAGA = codigoCADASTROPESSOA
+                AND     vagaempresaINSCRITOVAGA = '$Vaga'
+                AND     codigoCADASTROPESSOA IN ($usuarios)
+                GROUP BY codigoCADASTROPESSOA";
+
+        $Retorno = $this->MySQLSelect($Query);
+        
+        return $Retorno;
+    }
+    
     public function set_Congelamento($valor) {
         if($valor != 1){
             $valor = 0;
