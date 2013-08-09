@@ -9,6 +9,12 @@
         <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
         <script src="jquery183.js"></script>
         <script src="js/adm/script.js"></script>
+        
+        <script src="js/adm/categorias.js"></script>
+        <script src="js/adm/vagas.js"></script>
+        <script src="js/adm/categoriasxvagas.js"></script>
+        <script src="js/adm/usuarios.js"></script>
+        <script src="js/adm/empresas.js"></script>
 
         <link rel="stylesheet" href="js/jquery-ui/css/custom-theme/jquery-ui-1.10.1.custom.min.css" />
         <script src="js/jquery-ui/js/jquery-ui-1.10.1.custom.min.js"></script>		
@@ -30,211 +36,20 @@
                             <li><a href="#tabs-1">Categorias</a></li>
                             <li><a href="#tabs-2">Vagas</a></li>
                             <li><a href="#tabs-3">Categorias X Vagas</a></li>
+                            <li><a href="#tabs-4">Usuários</a></li>
+                            <li><a href="#tabs-5">Empresas</a></li>
                         </ul>
 
-                        <div id="tabs-1">
-                            
-                            <!-- CATEGORIAS --> 
-                            <input id="NovoCat" type="submit" value="Novo">
-                                
-                            <div id="dialogCat" title="Categoria">
-                                <p>
-                                    <input id="CodigoCat" type="hidden"/>
-                                    Nome: <input id="NomeCat" type="text" class="DialogInput" /> </br>
-                                    <input id="AtivoCat" type="checkbox" /> Ativo</br></br>
-                                    <input id="SalvarCat" type="submit" value="Salvar">
-                                    <input id="EditarCat" type="submit" value="Editar">
-                                </p>
-                            </div>
-                                
-                            <table cellpadding="0" cellspacing="0" border="0" class="display DataTable" id="Categorias">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th>Nome</th>
-                                        <th>Ativo</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <? 
-                                    if($data['dtCategorias']){
-                                        $count = 1;
-                                        foreach ($data['dtCategorias'] as $dados) { ?>
-                                            <tr class="gradeA">
-                                                <td>
-                                                    <div class="menu hide">
-                                                        <!-- <div class="DeleteCategorias delete"></div> -->
-                                                        <div class="EditCategorias edit"></div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <input type="hidden" class="codigo" value="<?echo(utf8_encode($dados['codigo'])); ?>" />
-                                                    <?echo($count); ?>
-                                                </td>
-                                                <td>
-                                                    <input type="hidden" class="nome" value="<?echo(utf8_encode($dados['nome'])); ?>" />
-                                                    <?echo(utf8_encode($dados['nome'])); ?>
-                                                </td>
-                                                <td>
-                                                    <?if (utf8_encode($dados['ativo']) == 1){?>
-                                                        <input type="hidden" class="ativo" value="true" />
-                                                        <input type="checkbox" checked disabled="true">
-                                                    <?}else{?>
-                                                        <input type="hidden" class="ativo" value="false" />
-                                                        <input type="checkbox" disabled="true" >    
-                                                    <?}?>
-                                                </td>
-                                            </tr>
-                                        <? 
-                                            $count ++;
-                                        }
-                                    }
-                                ?>
-                                </tbody>
-                            </table>
-                        </div>
+                        <?php include_once 'categorias.php'; ?>
 
-                        <div id="tabs-2">
-                            <!-- VAGAS -->
-                            <input id="NovoVag" type="submit" value="Novo">
-                                
-                            <div id="dialogVag" title="Vaga">
-                                <p>
-                                    <input id="CodigoVag" type="hidden"/>
-                                    Nome: <input id="NomeVag" type="text" class="DialogInput" /> </br>
-                                    <input id="AtivoVag" type="checkbox" /> Ativo</br></br>
-                                    <input id="SalvarVag" type="submit" value="Salvar">
-                                    <input id="EditarVag" type="submit" value="Editar">
-                              </p>
-                            </div>
-                            
-                            <table cellpadding="0" cellspacing="0" border="0" class="display DataTable" id="Vagas">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th>Nome</th>
-                                        <th>Ativo</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <? 
-                                    if($data['dtVagas']){
-                                        $count = 1;
-                                        foreach ($data['dtVagas'] as $dados) { ?>
-                                            <tr class="gradeB">
-                                                <td>
-                                                    <div class="menu hide">
-                                                        <!-- <div class="DeleteVagas delete"></div> -->
-                                                        <div class="EditVagas edit"></div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <input type="hidden" class="codigo" value="<?echo(utf8_encode($dados['codigo'])); ?>" />
-                                                    <?echo($count); ?>
-                                                </td>
-                                                <td>
-                                                    <input type="hidden" class="nome" value="<?echo(utf8_encode($dados['nome'])); ?>" />
-                                                    <?echo(utf8_encode($dados['nome'])); ?>
-                                                </td>
-                                                <td>
-                                                    <?if (utf8_encode($dados['ativo']) == 1){?>
-                                                        <input type="hidden" class="ativo" value="true" />
-                                                        <input type="checkbox" checked disabled="true">
-                                                    <?}else{?>
-                                                        <input type="hidden" class="ativo" value="false" />
-                                                        <input type="checkbox" disabled="true">    
-                                                    <?}?>
-                                                </td>
-                                            </tr>
-                                        <?
-                                            $count ++;
-                                        }
-                                    }
-                                ?>
-                                </tbody>
-                            </table>
-                        </div>
+                        <?php include_once 'vagas.php'; ?>
+                        
+                        <?php include_once 'categoriasxvagas.php'; ?>
+                        
+                        <?php include_once 'usuarios.php'; ?>
+                        
+                        <?php //include_once 'empresas.php'; ?>
 
-                        <div id="tabs-3">
-                            <!-- CATEGORIAS+VAGAS -->
-                            <input id="NovoCatVag" type="submit" value="Novo">
-                                
-                            <div id="dialogCatVag" title="Categoria X Vaga">
-                                <p>
-                                    <input id="CodigoCatVag" type="hidden"/>
-                                    Categoria:</br>
-                                    <select id="CodigoCat_catvag">
-                                        <?foreach ($data['dtCategorias'] as $dados) { ?>
-                                        <option value="<?echo(utf8_encode($dados['codigo'])); ?>"><?echo(utf8_encode($dados['nome'])); ?></option>
-                                        <?}?>
-                                    </select>
-                                    </br></br>
-                                    Vaga: </br>
-                                    <select id="CodigoVag_catvag">
-                                        <?foreach ($data['dtVagas'] as $dados) { ?>
-                                        <option value="<?echo(utf8_encode($dados['codigo'])); ?>"><?echo(utf8_encode($dados['nome'])); ?></option>
-                                        <?}?>
-                                    </select>
-                                    </br>
-                                    <input id="AtivoCatVag" type="checkbox" /> Ativo</br></br>
-                                    <input id="SalvarCatVag" type="submit" value="Salvar">
-                                    <input id="EditarCatVag" type="submit" value="Editar">
-                              </p>
-                            </div>
-                            
-                            <table cellpadding="0" cellspacing="0" border="0" class="display DataTable" id="CatVag">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th>Categoria</th>
-                                        <th>Vaga</th>
-                                        <th>Ativo</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <? 
-                                    if($data['dtCategoriasVagas']){
-                                        $count = 1;
-                                        foreach ($data['dtCategoriasVagas'] as $dados) { ?>
-                                            <tr class="gradeA">
-                                                <td>
-                                                    <div class="menu hide">
-                                                        <div class="EditCatVag edit"></div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <input type="hidden" class="codigo" value="<?echo(utf8_encode($dados['codigo'])); ?>" />
-                                                    <?echo($count); ?>
-                                                </td>
-                                                <td>
-                                                    <input type="hidden" class="codigoCat" value="<?echo(utf8_encode($dados['codigoCat'])); ?>" />
-                                                    <?echo(utf8_encode($dados['nomeCat'])); ?>
-                                                </td>
-                                                <td>
-                                                    <input type="hidden" class="codigoVag" value="<?echo(utf8_encode($dados['codigoVag'])); ?>" />
-                                                    <?echo(utf8_encode($dados['nomeVag'])); ?>
-                                                </td>
-                                                <td>
-                                                    <?if (utf8_encode($dados['ativo']) == 1){?>
-                                                        <input type="hidden" class="ativo" value="true" />
-                                                        <input type="checkbox" checked disabled="true">
-                                                    <?}else{?>
-                                                        <input type="hidden" class="ativo" value="false" />
-                                                        <input type="checkbox" disabled="true">    
-                                                    <?}?>
-                                                </td>
-                                            </tr>
-                                        <?
-                                            $count ++;
-                                        }
-                                    }
-                                ?>
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
                 </div>
             </div>

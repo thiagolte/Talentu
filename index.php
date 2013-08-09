@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(E_ALL ^ E_NOTICE);
+
 putenv("TZ=America/Sao_Paulo");
 date_default_timezone_set("America/Sao_Paulo");
 
