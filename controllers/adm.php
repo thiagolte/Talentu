@@ -129,7 +129,36 @@ class Adm_Controller {
             echo 1; 
         }
 
+        //Usuários
+        if (isset($getVars['getUsuario']) && !empty($getVars['getUsuario'])){
+            $Retorno = $Adm_Model->get_Usuarios();
+            echo 1; 
+        }
+        
+        if (isset($getVars['UpdateUsuario']) && !empty($getVars['UpdateUsuario']) &&
+                isset($getVars['CodigoUsuario']) && !empty($getVars['CodigoUsuario']) &&
+                isset($getVars['NomeUsuario']) && !empty($getVars['NomeUsuario']) &&
+                isset($getVars['EmailUsuario']) && !empty($getVars['EmailUsuario']) &&
+                isset($getVars['ResetSenhaUsuario']) &&
+                isset($getVars['AtivoUsuario'])){
+            
+            $Codigo = $getVars['CodigoUsuario'];
+            $Nome = $getVars['NomeUsuario'];
+            $Email = $getVars['EmailUsuario'];
+            $ResetSenha = $getVars['ResetSenhaUsuario'];
+            $Ativo = $getVars['AtivoUsuario'];
 
+            $Retorno = $Adm_Model->update_Usuario($Codigo, $Nome, $Email, $ResetSenha, $Ativo);
+            echo 1; 
+        }
+
+        // if (isset($getVars['DeleteUsuario']) && !empty($getVars['DeleteUsuario']) &&
+        //         isset($getVars['CodigoUsuario']) && !empty($getVars['CodigoUsuario'])){
+            
+        //     $Codigo = $getVars['CodigoUsuario'];
+        //     $Retorno = $Adm_Model->delete_Usuario($Codigo);
+        //     echo 1; 
+        // }
 
         //Main
         if (count($getVars) == 0) {
@@ -139,6 +168,7 @@ class Adm_Controller {
             $this->CarregaCategorias($view);
             $this->CarregaVagas($view);
             $this->CarregaCategoriasVagas($view);
+            $this->CarregaUsuario($view);
             
             $view->render();
         }
@@ -170,4 +200,14 @@ class Adm_Controller {
 
         $view->assign('dtCategoriasVagas', $Retorno);
     }
+
+    //Usuários
+    function CarregaUsuario($view){
+        $Adm_Model = new Adm_Model();
+        
+        $Retorno = $Adm_Model->get_Usuarios();
+
+        $view->assign('dtUsuarios', $Retorno);
+    }
+    
 }

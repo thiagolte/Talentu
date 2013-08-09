@@ -258,4 +258,72 @@ class Adm_Model {
         return $Retorno;
     }
 
+    //USUÁRIOS
+    public function get_Usuarios() {        
+        $Retorno = $this->MySQLSelect(
+            "
+            SELECT 
+                codigoCADASTROPESSOA AS codigo,
+                nomecompletoCADASTROPESSOA AS nome,
+                emailCADASTROPESSOA AS email,
+                DATE_FORMAT(datacadastroCADASTROPESSOA, '%d/%m/%Y %H:%i:%s' ) AS data,
+                ativoCADASTROPESSOA AS ativo 
+            FROM
+                tb0001_Cadastro_Pessoa
+            ORDER BY
+                codigoCADASTROPESSOA DESC
+            ;
+            "
+        );
+        
+        return $Retorno;
+    }
+    
+    public function update_Usuario($Codigo,$Nome,$Email,$ResetSenha,$Ativo){
+        $this->db->connect(); 
+
+        $Codigo = $this->db->escape(utf8_decode($Codigo));
+        $Nome = $this->db->escape(utf8_decode($Nome));
+        $Email = $this->db->escape(utf8_decode($Email));
+        $ResetSenha = $this->db->escape(utf8_decode($ResetSenha));
+        $Ativo = $this->db->escape(utf8_decode($Ativo));
+        
+        $query = "
+            UPDATE
+                tb0001_Cadastro_Pessoa
+            SET
+                nomecompletoCADASTROPESSOA = '$Nome'
+                ,emailCADASTROPESSOA = '$Email'
+                ,ativoCADASTROPESSOA = $Ativo";
+                if ($ResetSenha == 1){
+                    $query .= ",senhaCADASTROPESSOA='". sha1(sha1(md5('teste'))) ."'";
+                }
+                
+            $query .= " WHERE
+                codigoCADASTROPESSOA = $Codigo
+            ;
+            ";
+        
+        $Retorno = $this->MySQLIUD($query);
+        
+        return $Retorno;
+    }
+    
+    // public function delete_Usuario($Codigo){
+        
+    //     $Codigo = $this->db->escape(utf8_decode($Codigo));
+        
+    //     $Retorno = $this->MySQLIUD(
+    //         "
+    //         DELETE FROM
+    //             tb0007_Categorias
+    //         WHERE
+    //             codigoCATEGORIA = $Codigo
+    //         ;
+    //         "
+    //     );
+        
+    //     return $Retorno;
+    // }
+    
 }
