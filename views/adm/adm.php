@@ -48,7 +48,7 @@
                         
                         <?php include_once 'usuarios.php'; ?>
                         
-                        <?php //include_once 'empresas.php'; ?>
+                        <?php include_once 'empresas.php'; ?>
 
                     </div>
                 </div>

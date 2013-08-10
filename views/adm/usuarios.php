@@ -1,6 +1,6 @@
 <div id="tabs-4">
     <!-- USUÁRIOS -->
-    <div id="dialogUsuario" title="Categoria">
+    <div id="dialogUsuario" title="Usuário">
         <p>
             <input id="CodigoUsuario" type="hidden"/>
             Nome: <input id="NomeUsuario" type="text" class="DialogInput" /> </br>

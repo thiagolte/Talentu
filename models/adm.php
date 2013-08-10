@@ -326,4 +326,71 @@ class Adm_Model {
     //     return $Retorno;
     // }
     
+    //EMPRESAS
+    public function get_Empresas() {        
+        $Retorno = $this->MySQLSelect(
+            "
+            SELECT 
+                codigoCADASTROEMPRESA AS codigo,
+                nomecompletoCADASTROEMPRESA AS nome,
+                emailCADASTROEMPRESA AS email,
+                DATE_FORMAT(datacadastroCADASTROEMPRESA, '%d/%m/%Y %H:%i:%s' ) AS data,
+                ativoCADASTROEMPRESA AS ativo 
+            FROM
+                tb0012_Cadastro_Empresas
+            ORDER BY
+                codigoCADASTROEMPRESA DESC
+            ;
+            "
+        );
+        
+        return $Retorno;
+    }
+    
+    public function update_Empresa($Codigo,$Nome,$Email,$ResetSenha,$Ativo){
+        $this->db->connect(); 
+
+        $Codigo = $this->db->escape(utf8_decode($Codigo));
+        $Nome = $this->db->escape(utf8_decode($Nome));
+        $Email = $this->db->escape(utf8_decode($Email));
+        $ResetSenha = $this->db->escape(utf8_decode($ResetSenha));
+        $Ativo = $this->db->escape(utf8_decode($Ativo));
+        
+        $query = "
+            UPDATE
+                tb0012_Cadastro_Empresas
+            SET
+                nomecompletoCADASTROEMPRESA = '$Nome'
+                ,emailCADASTROEMPRESA = '$Email'
+                ,ativoCADASTROEMPRESA = $Ativo";
+                if ($ResetSenha == 1){
+                    $query .= ",senhaCADASTROEMPRESA='". sha1(sha1(md5('teste'))) ."'";
+                }
+                
+            $query .= " WHERE
+                codigoCADASTROEMPRESA = $Codigo
+            ;
+            ";
+        
+        $Retorno = $this->MySQLIUD($query);
+        
+        return $Retorno;
+    }
+    
+    // public function delete_Usuario($Codigo){
+        
+    //     $Codigo = $this->db->escape(utf8_decode($Codigo));
+        
+    //     $Retorno = $this->MySQLIUD(
+    //         "
+    //         DELETE FROM
+    //             tb0007_Categorias
+    //         WHERE
+    //             codigoCATEGORIA = $Codigo
+    //         ;
+    //         "
+    //     );
+        
+    //     return $Retorno;
+    // }
 }
