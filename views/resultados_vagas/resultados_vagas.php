@@ -34,7 +34,7 @@
                         if($data['Vagas']){
                             foreach ($data['Vagas'] as $dado) { ?>
                                 <div class="vacancy_item">
-                                    <h1>Motorista Particular</h1>
+                                    <h1><? echo utf8_encode( $dado['Vaga'] ); ?></h1>
                                     <div class="vacancy_item_txt">
                                         <p>
                                             <strong>Salário: </strong><? echo utf8_encode( $dado['Salario'] ); ?><br/>
