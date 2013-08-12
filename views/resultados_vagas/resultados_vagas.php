@@ -44,7 +44,7 @@
                                     </div>
 
                                     <div class="vacancy_ct_buttons">
-                                        <a href="#" class="btn_default btn_vacancy" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<? echo urlencode("http://talentu.com.br/visualizar_vaga&idVaga=" . $dado['idVaga']); ?>', 'facebook-share-dialog', 'width=626,height=436'); return false;">Compartilhar</a>
+                                        <a href="#" class="btn_default btn_vacancy" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<? echo urlencode("http://talentu.com.br/?visualizar_vaga&idVaga=" . $dado['idVaga']); ?>', 'facebook-share-dialog', 'width=626,height=436'); return false;">Compartilhar</a>
 										
                                         <a href="?visualizar_vaga&idVaga=<? echo $dado['idVaga']; ?>" class="btn_default btn_vacancy">Visualizar</a>
                                         <!--<a class="btn_default btn_vacancy">Candidatar-se</a>-->
