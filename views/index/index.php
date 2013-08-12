@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Talentu - Home</title>
+    <title>Talentu - o seu emprego é aqui!</title>
     <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700' rel='stylesheet' type='text/css'>
@@ -12,6 +12,15 @@
     <script src="js/validate.js" type="text/javascript"></script>
     <script src="js/validateCPF_CNPJ.js" type="text/javascript"></script>
     <script src="js/index/script.js"></script>
+	
+	<link rel="image_src" href="../../images/simbolo.jpg"/>
+	<meta property="og:image" content="http://talentu.com.br/images/simbolo.jpg" />
+	<meta property="og:locale" content="pt_BR" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Talentu - o seu emprego é aqui!" />
+	<meta property="og:url" content="http://talentu.com.br/" />
+	<meta property="og:description" content="Buscando vagas de ingresso no mercado de trabalho? Curta essa página e receba as melhores vagas de hotelaria, assistente, vendedor, varejo, telemarketing, atendimento, garçom, entre outras!!"/>
+	<meta name="description" content="Buscando vagas de ingresso no mercado de trabalho? Curta essa página e receba as melhores vagas de hotelaria, assistente, vendedor, varejo, telemarketing, atendimento, garçom, entre outras!!">
     
     <style>
         .hide_ {display: none!important;}

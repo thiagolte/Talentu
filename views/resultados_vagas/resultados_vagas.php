@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Talentu - Area do usuario</title>
+    <title>Talentu - Vagas</title>
     <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700' rel='stylesheet' type='text/css'/>
@@ -44,7 +44,8 @@
                                     </div>
 
                                     <div class="vacancy_ct_buttons">
-                                        <a class="btn_default btn_vacancy">Compartilhar</a>
+                                        <a href="#" class="btn_default btn_vacancy" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftalentu.com.br/visualizar_vaga&idVaga=<? echo $dado['idVaga']; ?>', 'facebook-share-dialog', 'width=626,height=436'); return false;">Compartilhar</a>
+										
                                         <a href="?visualizar_vaga&idVaga=<? echo $dado['idVaga']; ?>" class="btn_default btn_vacancy">Visualizar</a>
                                         <!--<a class="btn_default btn_vacancy">Candidatar-se</a>-->
                                     </div>

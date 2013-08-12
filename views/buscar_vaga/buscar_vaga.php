@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Talentu - Buscar Profissionais</title>
+    <title>Talentu - Buscar Vaga</title>
     <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700' rel='stylesheet' type='text/css'>

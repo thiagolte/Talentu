@@ -1196,13 +1196,22 @@ strong {
 	height:25px;
 	position:absolute;
 	right:20px;
-	top: 58px;
+	top: 66px;
 }
 
 .btn_filters a label {
 	float: left;
 	margin: 6px 0 0 26px;
 	cursor:pointer;
+}
+
+.btn_filters a span {
+	font-size: 11px;
+	width: 100%;
+	text-align: center;
+	float: left;
+	margin-left: -9px;
+	margin-top: -35px;
 }
 
 .btn_unfiltered {
