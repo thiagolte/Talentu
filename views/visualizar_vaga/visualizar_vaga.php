@@ -2,7 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title id="title_vagaPG">Talentu - Vaga</title>
+	<? if($data['Vaga']){ 
+		foreach($data['Vaga'] as $dado){
+			echo '<title>Talentu - Vaga - '.utf8_encode( $dado['Vaga'] ).'</title>';
+			echo '<meta property="og:description" content="'.utf8_encode( $dado['Atribuicoes'] ).'"/>';
+		}
+	} ?>
     <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon"/>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700' rel='stylesheet' type='text/css'>
@@ -17,10 +22,8 @@
 	<meta property="og:image" content="http://talentu.com.br/images/simbolo.jpg" />
 	<meta property="og:locale" content="pt_BR" />
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content="Talentu - o seu emprego é aqui!" />
-	<meta property="og:url" content="http://talentu.com.br/" />
-	<meta property="og:description" content="Buscando vagas de ingresso no mercado de trabalho? Curta essa página e receba as melhores vagas de hotelaria, assistente, vendedor, varejo, telemarketing, atendimento, garçom, entre outras!!"/>
-	<meta name="description" content="Buscando vagas de ingresso no mercado de trabalho? Curta essa página e receba as melhores vagas de hotelaria, assistente, vendedor, varejo, telemarketing, atendimento, garçom, entre outras!!">
+	<script>document.write('<meta property="og:title" content="'+document.title+'" />')</script>	 
+	<script>document.write('<meta property="og:url" content="'+location.href+'" />')</script>
 	
 </head>
     
