@@ -260,3 +260,8 @@ sendgrid-php-master/
 mobile.php
 !/js/visualizar_vaga/visualizar_vaga.js
 !/js/jquery.MaskMoney.js
+!/js/adm/categorias.js
+!/js/adm/categoriasxvagas.js
+!/js/adm/vagas.js
+!/js/adm/empresas.js
+!/js/adm/usuarios.js
