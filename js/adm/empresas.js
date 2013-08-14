@@ -30,6 +30,7 @@ $(document).ready(function() {
                     CodigoEmpresa: $('#CodigoEmpresa').attr('value'),
                     NomeEmpresa:$('#NomeEmpresa').attr('value'),
                     EmailEmpresa:$('#EmailEmpresa').attr('value'),
+                    TelefoneEmpresa:$('#TelefoneEmpresa').attr('value'),
                     ResetSenhaEmpresa:restSenha,
                     AtivoEmpresa:ativoEmpresa
                    },
@@ -53,6 +54,7 @@ $(document).ready(function() {
             $('#CodigoEmpresa').attr('value',anSelected.find('.codigo').val());
             $('#NomeEmpresa').attr('value',anSelected.find('.nome').val());
             $('#EmailEmpresa').attr('value',anSelected.find('.email').val());
+            $('#TelefoneEmpresa').attr('value',anSelected.find('.telefone').val());
 
             if(anSelected.find('.ativo').val() == 'true'){
                 $('#AtivoEmpresa').prop('checked', true);

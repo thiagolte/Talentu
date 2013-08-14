@@ -5,6 +5,7 @@
             <input id="CodigoEmpresa" type="hidden"/>
             Nome: <input id="NomeEmpresa" type="text" class="DialogInput" /> </br>
             E-mail: <input id="EmailEmpresa" type="text" class="DialogInput" /> </br>
+            E-mail: <input id="TelefoneEmpresa" type="text" class="DialogInput" /> </br>
             <input id="AtivoEmpresa" type="checkbox" /> Ativo</br>
             <input id="ResetSenhaEmpresa" type="checkbox" /> Reset Senha</br></br>
             <input id="SalvarEmpresa" type="submit" value="Salvar">
@@ -18,6 +19,7 @@
                 <th></th>
                 <th>Nome</th>
                 <th>Email</th>
+                <th>Telefone</th>
                 <th>Data</th>
                 <th>Ativo</th>
             </tr>
@@ -41,6 +43,10 @@
                         <td>
                             <input type="hidden" class="email" value="<?echo(utf8_encode($dados['email'])); ?>" />
                             <?echo(utf8_encode($dados['email'])); ?>
+                        </td>
+                        <td>
+                            <input type="hidden" class="telefone" value="<?echo(utf8_encode($dados['telefone'])); ?>" />
+                            <?echo(utf8_encode($dados['telefone'])); ?>
                         </td>
                         <td>
                             <?echo(utf8_encode($dados['data'])); ?>
