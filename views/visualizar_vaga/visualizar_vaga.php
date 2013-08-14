@@ -35,7 +35,7 @@
             <div class="container">
                 <div class="box_x2" style="width: 963px;">
                     <? if($data['Vaga']){ 
-
+                        
                         foreach($data['Vaga'] as $dado){ ?>
                             <h1 class="title_pages" id="title_vaga"><? echo utf8_encode( $dado['Vaga'] ); ?></h1>
                             
@@ -86,6 +86,10 @@
                                     <a id="Enviar" class="btn_default" style="float: left;">Candidatar-se a esta vaga</a>
                                 </div>
                             <?}else{?>
+                                <div class="Alerta">
+                                    <span>Cadastre-se ou faça o login para se candidatar a vaga</span>
+                                </div>
+
                                 <div class="btn_container">
                                     <a id="Cadastro" class="btn_default" style="float: left;">Cadastre-se AQUI antes de se candidatar</a>
                                 </div>

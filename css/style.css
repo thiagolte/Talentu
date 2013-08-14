@@ -216,6 +216,20 @@ header {
     cursor: pointer;
 }
 
+.Alerta{
+    clear: both;
+    float: left;
+    border: 1px solid #E87D7D;
+    padding: 22px;
+    margin: 11px 0;
+    border-radius: 4px;
+    background-color: #FFF6F0;
+}
+
+.Alerta span {
+    font-size: 15px;
+}
+
 .boxLogin input[type="checkbox"]{
     float: left;
     margin: 7px 3px 0 20px;
