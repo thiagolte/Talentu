@@ -31,7 +31,7 @@
                     <ul>
                         <li><a href="?cadastrar_cv&Editar=1">Editar perfil/cv</a></li>
                         <?php if($_COOKIE['Status'] == 1){ ?>
-<!--			<li><a href="?buscar_vaga">Buscar Vaga</a></li>-->
+						<li><a href="?buscar_vaga">Buscar Vaga</a></li>
                         <li><a href="?alterar_senha&resetpswd=<?= $_COOKIE['resetpswd']?>">Alterar Senha</a></li>
                         <li><a id="Congelar">Congelar Cadastro</a></li>
                         <li><a class="hide" id="Descongelar">Descongelar Cadastro</a></li>

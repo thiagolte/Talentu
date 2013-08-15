@@ -1,5 +1,17 @@
-$(document).ready(function() {
+	$(document).keyup(function(e) {
+		if (e.keyCode == 13) {
+			if($('#lLogin').val() == 'e-mail'){
+				$('#lLogin').focus();
+			}else if($('#lLogin').val() != ''){
+				$('#lSenha').focus();
+			}
+			if($('#lSenha').val() != 'senha' && $('#lSenha').val() != ''){			
+				$('#Entrar').trigger('click');	
+			}
+		}
+	});
 
+$(document).ready(function() {
     //Login
     $('#Entrar').click(function(){
         Login($('#lLogin').attr('value'),$('#lSenha').attr('value'));

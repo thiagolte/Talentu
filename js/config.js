@@ -1,5 +1,5 @@
 $(document).ready( function() {
-	
+
 	titleVaga = $('#title_vaga').text();
 	$('#title_vagaPG').text('Talentu - Vaga - '+titleVaga);
 	
