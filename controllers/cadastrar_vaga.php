@@ -31,6 +31,22 @@ class Cadastrar_vaga_Controller {
 
         }
         
+        //Ativar
+        if ( isset($_GET['Ativar']) && !empty($_GET['Ativar']) ){
+            
+            $retorno = $Cadastrar_Vaga_Model->set_AtivarVaga( $_GET['Ativar'] );
+            echo $retorno;
+            
+        }
+        
+        //Desativar
+        if ( isset($_GET['Desativar']) && !empty($_GET['Desativar']) ){
+            
+            $retorno = $Cadastrar_Vaga_Model->set_DesativarVaga( $_GET['Desativar'] );
+            echo $retorno;
+            
+        }
+        
         //Editar
         if (isset($_GET['Editar']) && !empty($_GET['Editar']) &&
                 isset($_GET['idVaga']) && !empty($_GET['idVaga'])){

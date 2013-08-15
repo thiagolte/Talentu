@@ -335,6 +335,9 @@ class Adm_Model {
                 nomecompletoCADASTROEMPRESA AS nome,
                 emailCADASTROEMPRESA AS email,
                 telefoneCADASTROEMPRESA AS telefone,
+                razaoCADASTROEMPRESA AS razao,
+                fantasiaCADASTROEMPRESA AS fantasia,
+                cnpjCADASTROEMPRESA AS cnpj,
                 DATE_FORMAT(datacadastroCADASTROEMPRESA, '%d/%m/%Y %H:%i:%s' ) AS data,
                 ativoCADASTROEMPRESA AS ativo 
             FROM
@@ -348,12 +351,15 @@ class Adm_Model {
         return $Retorno;
     }
     
-    public function update_Empresa($Codigo,$Nome,$Email,$Telefone,$ResetSenha,$Ativo){
+    public function update_Empresa($Codigo,$Nome,$Email,$Razao,$Fantasia,$CNPJ,$Telefone,$ResetSenha,$Ativo){
         $this->db->connect(); 
 
         $Codigo = $this->db->escape(utf8_decode($Codigo));
         $Nome = $this->db->escape(utf8_decode($Nome));
         $Email = $this->db->escape(utf8_decode($Email));
+        $Razao = $this->db->escape(utf8_decode($Razao));
+        $Fantasia = $this->db->escape(utf8_decode($Fantasia));
+        $CNPJ = $this->db->escape(utf8_decode($CNPJ));
         $Telefone = $this->db->escape(utf8_decode($Telefone));
         $ResetSenha = $this->db->escape(utf8_decode($ResetSenha));
         $Ativo = $this->db->escape(utf8_decode($Ativo));
@@ -365,6 +371,9 @@ class Adm_Model {
                 nomecompletoCADASTROEMPRESA = '$Nome'
                 ,emailCADASTROEMPRESA = '$Email'
                 ,telefoneCADASTROEMPRESA = '$Telefone'
+                ,razaoCADASTROEMPRESA = '$Razao'
+                ,fantasiaCADASTROEMPRESA = '$Fantasia'
+                ,cnpjCADASTROEMPRESA = '$CNPJ'
                 ,ativoCADASTROEMPRESA = $Ativo";
                 if ($ResetSenha == 1){
                     $query .= ",senhaCADASTROEMPRESA='". sha1(sha1(md5('teste'))) ."'";

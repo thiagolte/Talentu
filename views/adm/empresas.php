@@ -5,7 +5,10 @@
             <input id="CodigoEmpresa" type="hidden"/>
             Nome: <input id="NomeEmpresa" type="text" class="DialogInput" /> </br>
             E-mail: <input id="EmailEmpresa" type="text" class="DialogInput" /> </br>
-            E-mail: <input id="TelefoneEmpresa" type="text" class="DialogInput" /> </br>
+            Razão: <input id="RazaoEmpresa" type="text" class="DialogInput" /> </br>
+            Fantasia: <input id="FantasiaEmpresa" type="text" class="DialogInput" /> </br>
+            CNPJ: <input id="CNPJEmpresa" type="text" class="DialogInput" /> </br>
+            Telefone: <input id="TelefoneEmpresa" type="text" class="DialogInput" /> </br>
             <input id="AtivoEmpresa" type="checkbox" /> Ativo</br>
             <input id="ResetSenhaEmpresa" type="checkbox" /> Reset Senha</br></br>
             <input id="SalvarEmpresa" type="submit" value="Salvar">
@@ -19,6 +22,9 @@
                 <th></th>
                 <th>Nome</th>
                 <th>Email</th>
+                <th>Razao</th>
+                <th>Fantasia</th>
+                <th>CNPJ</th>
                 <th>Telefone</th>
                 <th>Data</th>
                 <th>Ativo</th>
@@ -44,6 +50,20 @@
                             <input type="hidden" class="email" value="<?echo(utf8_encode($dados['email'])); ?>" />
                             <?echo(utf8_encode($dados['email'])); ?>
                         </td>
+
+                        <td>
+                            <input type="hidden" class="razao" value="<?echo(utf8_encode($dados['razao'])); ?>" />
+                            <?echo(utf8_encode($dados['razao'])); ?>
+                        </td>
+                        <td>
+                            <input type="hidden" class="fantasia" value="<?echo(utf8_encode($dados['fantasia'])); ?>" />
+                            <?echo(utf8_encode($dados['fantasia'])); ?>
+                        </td>
+                        <td>
+                            <input type="hidden" class="cnpj" value="<?echo(utf8_encode($dados['cnpj'])); ?>" />
+                            <?echo(utf8_encode($dados['cnpj'])); ?>
+                        </td>
+                        
                         <td>
                             <input type="hidden" class="telefone" value="<?echo(utf8_encode($dados['telefone'])); ?>" />
                             <?echo(utf8_encode($dados['telefone'])); ?>

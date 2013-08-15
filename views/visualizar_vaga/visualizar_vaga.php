@@ -36,6 +36,12 @@
                 <div class="box_x2" style="width: 963px;">
                     <? if($data['Vaga']){ 
                         
+                        if($data['ativo'] == 0){ ?>
+                            <div class="Alerta">
+                                <span>Infelizmente esta vaga não está mais ativa, cadastre-se e não perca mais oportunidades.</span>
+                            </div>
+                        <?}
+                        
                         foreach($data['Vaga'] as $dado){ ?>
                             <h1 class="title_pages" id="title_vaga"><? echo utf8_encode( $dado['Vaga'] ); ?></h1>
                             
@@ -58,8 +64,8 @@
                                 <label class="lbl_pre">Benefícios: <span><? echo utf8_encode( $dado['Beneficios'] ); ?></span>
                                 </label>
                                 <label class="lbl_pre">Regime de trabalho/horário: <span><? echo utf8_encode( $dado['Regime'] ); ?></span></label>
-                                
-                                <?if(isset($_COOKIE['idCadastro']) && !empty($_COOKIE['idCadastro'])){?>
+
+                                <?if(isset($_COOKIE['idCadastro']) && !empty($_COOKIE['idCadastro']) && $data['ativo'] == 1){?>
                                     <form name="frmVaga" id="frmVaga">
                                         <input type="hidden" name="idVaga" id="idVaga" value="<? echo $_GET['idVaga']; ?>">
                                     <? for($i == 0; $i <=5; $i++){ ?>
@@ -81,18 +87,20 @@
                                 <?}?>
                             </div>
 
-                            <?if(isset($_COOKIE['idCadastro']) && !empty($_COOKIE['idCadastro'])){?>
-                                <div class="btn_container">
-                                    <a id="Enviar" class="btn_default" style="float: left;">Candidatar-se a esta vaga</a>
-                                </div>
-                            <?}else{?>
-                                <div class="Alerta">
-                                    <span>Cadastre-se ou faça o login para se candidatar a vaga</span>
-                                </div>
+                            <?if ($data['ativo'] == 1){?>
+                                <?if(isset($_COOKIE['idCadastro']) && !empty($_COOKIE['idCadastro'])){?>
+                                    <div class="btn_container">
+                                        <a id="Enviar" class="btn_default" style="float: left;">Candidatar-se a esta vaga</a>
+                                    </div>
+                                <?}else{?>
+                                    <div class="Alerta">
+                                        <span>Cadastre-se ou faça o login para se candidatar a vaga</span>
+                                    </div>
 
-                                <div class="btn_container">
-                                    <a id="Cadastro" href="?cadastrar_cv" class="btn_default" style="float: left;">Cadastre-se AQUI antes de se candidatar</a>
-                                </div>
+                                    <div class="btn_container">
+                                        <a id="Cadastro" href="?cadastrar_cv" class="btn_default" style="float: left;">Cadastre-se AQUI antes de se candidatar</a>
+                                    </div>
+                                <?}?>
                             <?}?>
                     
                    <?

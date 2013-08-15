@@ -145,6 +145,8 @@ class Cadastrar_Empresa_Controller {
             if($Retorno){
                 foreach ($Retorno as $dados) {
                     setcookie("idCadastroEmp", sha1(md5($dados['Codigo'])), time() + (86400 * 7)); // 1 dia
+                    //setcookie("idCadastroEmp", '7ec5d6abb39e96e5e992877ac4905cea82292b63', time() + (86400 * 7)); // 1 dia
+                    
                     setcookie("NomePessoa", utf8_encode($dados['Nome']), time() + (86400 * 7)); // 1 dia
                     setcookie("NomePessoa", utf8_encode($dados['Nome']), time() + (86400 * 7)); // 1 dia
                     setcookie("NumFunc", utf8_encode($dados['NumFunc']), time() + (86400 * 7)); // 1 dia

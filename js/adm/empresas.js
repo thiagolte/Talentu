@@ -30,6 +30,9 @@ $(document).ready(function() {
                     CodigoEmpresa: $('#CodigoEmpresa').attr('value'),
                     NomeEmpresa:$('#NomeEmpresa').attr('value'),
                     EmailEmpresa:$('#EmailEmpresa').attr('value'),
+                    RazaoEmpresa:$('#RazaoEmpresa').attr('value'),
+                    FantasiaEmpresa:$('#FantasiaEmpresa').attr('value'),
+                    CNPJEmpresa:$('#CNPJEmpresa').attr('value'),
                     TelefoneEmpresa:$('#TelefoneEmpresa').attr('value'),
                     ResetSenhaEmpresa:restSenha,
                     AtivoEmpresa:ativoEmpresa
@@ -54,6 +57,9 @@ $(document).ready(function() {
             $('#CodigoEmpresa').attr('value',anSelected.find('.codigo').val());
             $('#NomeEmpresa').attr('value',anSelected.find('.nome').val());
             $('#EmailEmpresa').attr('value',anSelected.find('.email').val());
+            $('#RazaoEmpresa').attr('value',anSelected.find('.razao').val());
+            $('#FantasiaEmpresa').attr('value',anSelected.find('.fantasia').val());
+            $('#CNPJEmpresa').attr('value',anSelected.find('.cnpj').val());
             $('#TelefoneEmpresa').attr('value',anSelected.find('.telefone').val());
 
             if(anSelected.find('.ativo').val() == 'true'){

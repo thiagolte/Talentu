@@ -61,6 +61,7 @@ class Cadastrar_vaga_Model {
                     atribuicoesVAGAEMPRESA as Atribuicoes,
                     COALESCE(nomeVAGA,'[sem nome]') as Vaga,
                     SHA1(MD5(codigoFILTROVAGA)) AS idFiltro,
+                    ativoVAGAEMPRESA AS ativo,
                     COUNT(DISTINCT usuarioINSCRITOVAGA) AS qtdInscritos
                 FROM
                     tb0013_Vagas_Empresa
@@ -93,6 +94,32 @@ class Cadastrar_vaga_Model {
         $Retorno = $this->MySQLSelect(
                 "
                 CALL sps_CountFiltroVaga($idVaga);
+                "
+        );
+        
+        return $Retorno;
+    }
+    
+    public function set_DesativarVaga($idVaga){
+        
+        $Retorno = $this->MySQLIUD(
+                "
+                UPDATE tb0013_Vagas_Empresa
+                SET ativoVAGAEMPRESA = 0
+                WHERE SHA1(MD5(codigoVAGAEMPRESA)) = '" . $idVaga . "'
+                "
+        );
+        
+        return $Retorno;
+    }
+    
+    public function set_AtivarVaga($idVaga){
+        
+        $Retorno = $this->MySQLIUD(
+                "
+                UPDATE tb0013_Vagas_Empresa
+                SET ativoVAGAEMPRESA = 1
+                WHERE SHA1(MD5(codigoVAGAEMPRESA)) = '" . $idVaga . "'
                 "
         );
         
@@ -146,6 +173,7 @@ class Cadastrar_vaga_Model {
                         questao5VAGAEMPRESA AS Questao5,
                         tiporesposta5VAGAEMPRESA AS TipoResposta5,
                         filtroativo5VAGAEMPRESA AS Filtro5,
+                        ativoVAGAEMPRESA AS ativo,
                         SHA1(MD5(codigoFILTROVAGA)) AS idFiltro
                 FROM
                         tb0013_Vagas_Empresa

@@ -93,9 +93,15 @@
                                     <a href="?resultados_usuario&idVaga=<? echo sha1(md5($dado['Codigo'])); ?>" class="btn_unfiltered" title="Todos os candidatos inscritos"><label><? echo $dado['qtdInscritos']; ?></label><span>Inscritos</span></a>
                                     <a href="?resultados_usuario&idVagaFiltro=<? echo sha1(md5($dado['Codigo'])); ?>" class="btn_filtered" title="Apenas os candidatos que passaram pelos filtros"><label><? echo $data['QtdFiltro' . $dado['idVaga']]; ?></label><span>Filtrados</span></a>
                                 </div>
-
-                                <div class="vacancy_ct_buttons">
-                                    <a class="btn_default btn_vacancy">Desativar</a>
+                                
+                                <div id="div<? echo $dado['idVaga']; ?>" class="vacancy_ct_buttons">
+                                <?if($dado['ativo'] == 1){?>
+                                    <a id="Desativar" class="btn_default btn_vacancy" value="<? echo $dado['idVaga']; ?>">Desativar</a>
+                                    <a id="Ativar" class="btn_default btn_vacancy hide" value="<? echo $dado['idVaga']; ?>">Ativar</a>
+                                <?}else{?>
+                                    <a id="Desativar" class="btn_default btn_vacancy hide" value="<? echo $dado['idVaga']; ?>">Desativar</a>
+                                    <a id="Ativar" class="btn_default btn_vacancy" value="<? echo $dado['idVaga']; ?>">Ativar</a>
+                                <?}?>
                                     <a href="?visualizar_vaga&idVaga=<? echo $dado['idVaga']; ?>" class="btn_default btn_vacancy">Visualizar</a>
                                     <a href="?cadastrar_vaga&Editar=1&idVaga=<? echo $dado['idVaga']; ?>&idFiltro=<? echo $dado['idFiltro']; ?>" class="btn_default btn_vacancy">Editar</a>
                                 </div>
