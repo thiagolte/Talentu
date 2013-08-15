@@ -58,7 +58,7 @@ class Resultados_vagas_Model {
                     tb0008_Vagas ON codigoVAGA = vagaVAGAEMPRESA
                 LEFT JOIN
                     tb0014_Filtros_Vaga ON vagaempresaFILTROVAGA = codigoVAGAEMPRESA
-                WHERE codigoVAGAEMPRESA > 0";
+                WHERE ativoVAGAEMPRESA = 1";
 
                 if(!empty($categoria) && isset($categoria)){
                     $query .= " AND categoriaVAGAEMPRESA LIKE '%$categoria%'";
