@@ -48,6 +48,13 @@
                             <input name="reSenha" type="password" class="input_form half"/>
                         </div>
                         <?php } ?>
+
+                        <label class="lbl_form">Razão Social</label>
+                        <input id="Razao" type="text" name="Razao" class="input_form" value="<?= $data['Razao']  ?>"/>
+                        
+                        <label class="lbl_form">Nome (Fantasia)</label>
+                        <input id="Fantasia" type="text" name="Fantasia" class="input_form" value="<?= $data['Fantasia']  ?>"/>
+                        
                         <div class="half_inputs">
                             <label class="lbl_form half">CNPJ</label>
                             <input id="Cnpj" name="Cnpj" type="text" class="input_form half" value="<?= $data['CNPJ']  ?>"/>

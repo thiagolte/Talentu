@@ -107,7 +107,7 @@ class Cadastrar_vaga_Model {
                         codigoVAGAEMPRESA AS Codigo,
                         C.nomeCATEGORIA AS AreaAtuacao,
                         ramoVAGAEMPRESA AS Ramo,
-                        IF(confidencialVAGAEMPRESA = 1, 'Confidencial',empresaVAGAEMPRESA) AS Empresa,
+                        IF(confidencialVAGAEMPRESA = 1, 'Confidencial',fantasiaCADASTROEMPRESA) AS Empresa,
                         CONCAT(cidadeempresaVAGAEMPRESA, ' - ', estadoempresaVAGAEMPRESA) AS 'Local',
                         CASE porteVAGAEMPRESA WHEN 1 THEN 'pequeno (de 1 a 99 funcionários)'
                         WHEN 2 THEN 'médio (de 100 a 499 funcionários)'
@@ -149,6 +149,8 @@ class Cadastrar_vaga_Model {
                         SHA1(MD5(codigoFILTROVAGA)) AS idFiltro
                 FROM
                         tb0013_Vagas_Empresa
+                LEFT JOIN
+                        tb0012_Cadastro_Empresas ON codigoCADASTROEMPRESA = empresaVAGAEMPRESA
                 LEFT JOIN
                         tb0007_Categorias C ON C.codigoCATEGORIA = categoriaVAGAEMPRESA
                 LEFT JOIN

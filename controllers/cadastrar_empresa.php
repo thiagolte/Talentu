@@ -16,6 +16,8 @@ class Cadastrar_Empresa_Controller {
         //(insert)
         if (isset($getVars['IcadastroEmail']) && !empty($getVars['IcadastroEmail']) &&
                 isset($getVars['IcadastroNome']) && !empty($getVars['IcadastroNome']) &&
+                isset($getVars['IcadastroRazao']) && !empty($getVars['IcadastroRazao']) &&
+                isset($getVars['IcadastroFantasia']) && !empty($getVars['IcadastroFantasia']) &&
                 isset($getVars['IcadastroTelefone']) && !empty($getVars['IcadastroTelefone']) &&
                 isset($getVars['IcadastroCnpj']) && !empty($getVars['IcadastroCnpj']) &&
                 isset($getVars['IcadastroCep']) && !empty($getVars['IcadastroCep']) &&
@@ -31,22 +33,43 @@ class Cadastrar_Empresa_Controller {
             
             if (!empty($_COOKIE['idCadastroEmp']) && isset($getVars['Edicao']) && !empty($getVars['Edicao'])){
                 //edit
-                $Retorno = $Cadastrar_Empresa_Model->edit_Cadastro($getVars['IcadastroEmail'],$getVars['IcadastroNome'],
+                $Retorno = $Cadastrar_Empresa_Model->edit_Cadastro($getVars['IcadastroEmail'],
+                        $getVars['IcadastroNome'],
+                        $getVars['IcadastroRazao'],
+                        $getVars['IcadastroFantasia'],
                         $getVars['IcadastroTelefone'],
-                        $getVars['IcadastroCnpj'],$getVars['IcadastroCep'],
-                        $getVars['IcadastroEndereco'],$getVars['IcadastroBairro'],$getVars['IcadastroNumero'],
-                        $getVars['IcadastroComplemento'],$getVars['IcadastroCidade'],$getVars['IcadastroEstado'],
-                        $getVars['IcadastroNumFunc'],$getVars['IcadastroAreaAtuacao'],$getVars['IcadastroSite'],
+                        $getVars['IcadastroCnpj'],
+                        $getVars['IcadastroCep'],
+                        $getVars['IcadastroEndereco'],
+                        $getVars['IcadastroBairro'],
+                        $getVars['IcadastroNumero'],
+                        $getVars['IcadastroComplemento'],
+                        $getVars['IcadastroCidade'],
+                        $getVars['IcadastroEstado'],
+                        $getVars['IcadastroNumFunc'],
+                        $getVars['IcadastroAreaAtuacao'],
+                        $getVars['IcadastroSite'],
                         $getVars['IcadastroDescricao']);
             }
             elseif(isset($getVars['IcadastroSenha']) && !empty($getVars['IcadastroSenha'])){
                 //create
-                $Retorno = $Cadastrar_Empresa_Model->set_Cadastro($getVars['IcadastroEmail'],$getVars['IcadastroNome'],
-                        sha1(sha1(md5($getVars['IcadastroSenha']))),$getVars['IcadastroTelefone'],
-                        $getVars['IcadastroCnpj'],$getVars['IcadastroCep'],
-                        $getVars['IcadastroEndereco'],$getVars['IcadastroBairro'],$getVars['IcadastroNumero'],
-                        $getVars['IcadastroComplemento'],$getVars['IcadastroCidade'],$getVars['IcadastroEstado'],
-                        $getVars['IcadastroNumFunc'],$getVars['IcadastroAreaAtuacao'],$getVars['IcadastroSite'],
+                $Retorno = $Cadastrar_Empresa_Model->set_Cadastro($getVars['IcadastroEmail'],
+                        $getVars['IcadastroNome'],
+                        $getVars['IcadastroRazao'],
+                        $getVars['IcadastroFantasia'],
+                        sha1(sha1(md5($getVars['IcadastroSenha']))),
+                        $getVars['IcadastroTelefone'],
+                        $getVars['IcadastroCnpj'],
+                        $getVars['IcadastroCep'],
+                        $getVars['IcadastroEndereco'],
+                        $getVars['IcadastroBairro'],
+                        $getVars['IcadastroNumero'],
+                        $getVars['IcadastroComplemento'],
+                        $getVars['IcadastroCidade'],
+                        $getVars['IcadastroEstado'],
+                        $getVars['IcadastroNumFunc'],
+                        $getVars['IcadastroAreaAtuacao'],
+                        $getVars['IcadastroSite'],
                         $getVars['IcadastroDescricao']);
                 setcookie("NomePessoa", utf8_encode($getVars['IcadastroNome']), time() + (86400 * 7)); // 1 dia
             }

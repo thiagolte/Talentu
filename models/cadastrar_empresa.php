@@ -41,7 +41,7 @@ private $db;
     * 
     */
     //CREATE
-    public function set_Cadastro($email, $nome, $senha, $telefone, $cnpj,
+    public function set_Cadastro($email, $nome, $razao, $fantasia, $senha, $telefone, $cnpj,
             $cep, $endereco, $bairro, $numero, $complemento, $cidade, $estado, $numfunc,
             $areaatuacao, $site, $Descricao) {
    
@@ -49,6 +49,8 @@ private $db;
         
         $email = $this->db->escape(utf8_decode($email));
         $nome = $this->db->escape(utf8_decode($nome));
+        $razao = $this->db->escape(utf8_decode($razao));
+        $fantasia = $this->db->escape(utf8_decode($fantasia));  
         $senha = $this->db->escape(utf8_decode($senha));
         
         $telefone = $this->db->escape(utf8_decode($telefone));
@@ -70,6 +72,7 @@ private $db;
                 INSERT INTO 
                     tb0012_Cadastro_Empresas
                         (emailCADASTROEMPRESA, nomecompletoCADASTROEMPRESA, senhaCADASTROEMPRESA,
+                        razaoCADASTROEMPRESA,fantasiaCADASTROEMPRESA,
                         telefoneCADASTROEMPRESA, cnpjCADASTROEMPRESA,
                         cepCADASTROEMPRESA, enderecoCADASTROEMPRESA, bairroCADASTROEMPRESA,
                         numeroCADASTROEMPRESA, complementoCADASTROEMPRESA, cidadeCADASTROEMPRESA,
@@ -77,6 +80,7 @@ private $db;
                         siteCADASTROEMPRESA, descricaoCADASTROEMPRESA,ativoCADASTROEMPRESA, ipCADASTROEMPRESA)
                 SELECT
                     '$email','$nome','$senha',
+                    '$razao','$fantasia',    
                     '$telefone','$cnpj',
                     '$cep','$endereco','$bairro',
                     '$numero','$complemento','$cidade',
@@ -90,7 +94,7 @@ private $db;
     }
     
     //EDIT
-    public function edit_Cadastro($email, $nome, $telefone, $cnpj,
+    public function edit_Cadastro($email, $nome, $razao, $fantasia, $telefone, $cnpj,
             $cep, $endereco, $bairro, $numero, $complemento, $cidade, $estado, $numfunc,
             $areaatuacao, $site, $Descricao) {
    
@@ -98,6 +102,8 @@ private $db;
         
         $email = $this->db->escape(utf8_decode($email));
         $nome = $this->db->escape(utf8_decode($nome));
+        $razao = $this->db->escape(utf8_decode($razao));
+        $fantasia = $this->db->escape(utf8_decode($fantasia));       
         $telefone = $this->db->escape(utf8_decode($telefone));
         $cnpj = $this->db->escape(utf8_decode($cnpj));
         $cep = $this->db->escape(utf8_decode($cep));
@@ -119,6 +125,8 @@ private $db;
                 SET
                     emailCADASTROEMPRESA = '$email',
                     nomecompletoCADASTROEMPRESA = '$nome',
+                    razaoCADASTROEMPRESA = '$razao',    
+                    fantasiaCADASTROEMPRESA = '$fantasia',
                     telefoneCADASTROEMPRESA = '$telefone',
                     cnpjCADASTROEMPRESA = '$cnpj',
                     cepCADASTROEMPRESA = '$cep',
@@ -149,6 +157,8 @@ private $db;
                     codigoCADASTROEMPRESA AS Codigo,
                     emailCADASTROEMPRESA  AS Email,
                     nomecompletoCADASTROEMPRESA  AS Nome,
+                    razaoCADASTROEMPRESA AS Razao,
+                    fantasiaCADASTROEMPRESA AS Fantasia,
                     telefoneCADASTROEMPRESA AS Telefone,
                     cnpjCADASTROEMPRESA AS CNPJ,
                     cepCADASTROEMPRESA AS CEP,
@@ -289,6 +299,8 @@ private $db;
                 SELECT 
                     codigoCADASTROEMPRESA AS Codigo,
                     nomecompletoCADASTROEMPRESA  AS Nome,
+                    razaoCADASTROEMPRESA AS Razao,
+                    fantasiaCADASTROEMPRESA AS Fantasia,
                     numerofuncionariosCADASTROEMPRESA AS NumFunc,
                     nomeCATEGORIA AS AreaAtuacao,
                     siteCADASTROEMPRESA AS Site,

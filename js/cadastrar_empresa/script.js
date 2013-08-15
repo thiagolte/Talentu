@@ -43,6 +43,12 @@ $(document).ready(function() {
                         required: true,
                         minlength: 8
                 },
+                Razao:{
+                        required: true
+                },
+                Fantasia:{
+                        required: true
+                },
                 Cnpj : { 
                         required: true, 
                         cnpj: 'both'
@@ -112,6 +118,8 @@ $(document).ready(function() {
                 data: {IcadastroEmail:$('#Email').attr('value'),
                         IcadastroNome:$('#Nome').attr('value'),
                         IcadastroSenha:$('#Senha').attr('value'),
+                        IcadastroRazao:$('#Razao').attr('value'),
+                        IcadastroFantasia:$('#Fantasia').attr('value'),
                         IcadastroTelefone:$('#Telefone').attr('value'),
                         IcadastroCnpj:$('#Cnpj').attr('value'),
                         IcadastroCep:$('#Cep').attr('value'),
