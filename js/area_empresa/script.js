@@ -31,7 +31,7 @@ $(document).ready(function() {
         });
     });
     
-    $('#Desativar').click(function(){
+    $('.Desativar').click(function(){
         objDesativar = $(this);
         $.ajax({
             url: "index.php?cadastrar_vaga",
@@ -39,14 +39,14 @@ $(document).ready(function() {
             data: {Desativar:$(this).attr('value')},
             success: function(data)
             {
-                $('#div'+$(objDesativar).attr('value')).find('#Ativar').removeClass('hide');
+                $('#div'+$(objDesativar).attr('value')).find('.Ativar').removeClass('hide');
                 $(objDesativar).addClass('hide');
                 alert('Desativado com sucesso!');
             }
         });
     });
     
-    $('#Ativar').click(function(){
+    $('.Ativar').click(function(){
         objAtivar = $(this);
         $.ajax({
             url: "index.php?cadastrar_vaga",
@@ -54,7 +54,7 @@ $(document).ready(function() {
             data: {Ativar:$(this).attr('value')},
             success: function(data)
             {
-                $('#div'+$(objAtivar).attr('value')).find('#Desativar').removeClass('hide');
+                $('#div'+$(objAtivar).attr('value')).find('.Desativar').removeClass('hide');
                 $(objAtivar).addClass('hide');
                 alert('Ativado com sucesso!');
             }
