@@ -67,12 +67,12 @@
                                             <div>
                                             <label class="lbl_pre"><? echo utf8_encode( $dado['Questao' . $i] ); ?></label>
                                             <? if( utf8_encode( $dado['TipoResposta' . $i] ) == 1 ){ ?>
-                                                <textarea name="Questao<? echo $i ?>" class="txt_search" style="margin: 0 0 20px 0;"></textarea>
+                                                <textarea name="Questao<? echo $i ?>" class="txt_search questTxt" style="margin: 0 0 20px 0;"></textarea>
                                             <? }else{ ?>
                                                 <span>SIM</span>
-                                                <input type="radio" value="1" name="Questao<? echo $i ?>">
+                                                <input type="radio" value="1" class="quest" name="Questao<? echo $i ?>">
                                                 <span>NÃO</span>
-                                                <input type="radio" value="0" name="Questao<? echo $i ?>">
+                                                <input type="radio" value="0" class="quest" name="Questao<? echo $i ?>">
                                             <? } ?>
                                             </div>
                                         <? } ?>
@@ -91,7 +91,7 @@
                                 </div>
 
                                 <div class="btn_container">
-                                    <a id="Cadastro" class="btn_default" style="float: left;">Cadastre-se AQUI antes de se candidatar</a>
+                                    <a id="Cadastro" href="?cadastrar_cv" class="btn_default" style="float: left;">Cadastre-se AQUI antes de se candidatar</a>
                                 </div>
                             <?}?>
                     
