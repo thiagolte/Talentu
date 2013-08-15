@@ -90,7 +90,7 @@
                                 </div>
 
                                 <div class="btn_filters">
-                                    <a href="?resultados_usuario&idVaga=<? echo sha1(md5($dado['Codigo'])); ?>" class="btn_unfiltered" title="Todos os candidatos incritos"><label><? echo $dado['qtdInscritos']; ?></label><span>Incritos</span></a>
+                                    <a href="?resultados_usuario&idVaga=<? echo sha1(md5($dado['Codigo'])); ?>" class="btn_unfiltered" title="Todos os candidatos inscritos"><label><? echo $dado['qtdInscritos']; ?></label><span>Inscritos</span></a>
                                     <a href="?resultados_usuario&idVagaFiltro=<? echo sha1(md5($dado['Codigo'])); ?>" class="btn_filtered" title="Apenas os candidatos que passaram pelos filtros"><label><? echo $data['QtdFiltro' . $dado['idVaga']]; ?></label><span>Filtrados</span></a>
                                 </div>
 
