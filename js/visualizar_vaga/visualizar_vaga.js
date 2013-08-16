@@ -46,9 +46,4 @@ $(document).ready(function() {
 			}
 		});
 	}
-   
-    
-    $('#Cadastro').click(function(){
-        window.location = "?cadastrar_cv";
-    });
 });
