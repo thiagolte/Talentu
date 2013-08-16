@@ -42,7 +42,7 @@
 	                            <div class="Alerta">
 	                                <span>Infelizmente esta vaga não está mais ativa, cadastre-se e não perca mais oportunidades.</span>
 	                            </div>
-	                        <?}
+	                        <?}?>
                         
                             <h1 class="title_pages" id="title_vaga"><? echo utf8_encode( $dado['Vaga'] ); ?></h1>
                             
