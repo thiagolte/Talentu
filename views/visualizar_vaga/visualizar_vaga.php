@@ -66,7 +66,7 @@
                                 </label>
                                 <label class="lbl_pre">Regime de trabalho/horário: <span><? echo utf8_encode( $dado['Regime'] ); ?></span></label>
 
-                                <?if(isset($_COOKIE['idCadastro']) && !empty($_COOKIE['idCadastro']) && $data['ativo'] == 1){?>
+                                <?if(isset($_COOKIE['idCadastro']) && !empty($_COOKIE['idCadastro']) && $dado['ativo'] == 1){?>
                                     <form name="frmVaga" id="frmVaga">
                                         <input type="hidden" name="idVaga" id="idVaga" value="<? echo $_GET['idVaga']; ?>">
                                     <? for($i == 0; $i <=5; $i++){ ?>
