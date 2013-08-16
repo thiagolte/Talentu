@@ -24,7 +24,6 @@
 	<meta property="og:type" content="article" />
 	<script>document.write('<meta property="og:title" content="'+document.title+'" />')</script>	 
 	<script>document.write('<meta property="og:url" content="'+location.href+'" />')</script>
-	
 </head>
     
 <body>
