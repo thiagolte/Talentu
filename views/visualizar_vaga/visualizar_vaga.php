@@ -36,15 +36,15 @@
                 <div class="box_x2" style="width: 963px;">
                     <? if($data['Vaga']){ 
                         
-                        echo 'aqui ' . $data['ativo'];
+
+                        foreach($data['Vaga'] as $dado){ 
+                        	$ativoVaga = $dado['ativo'];
+	                        if($dado['ativo'] == 0){ ?>
+	                            <div class="Alerta">
+	                                <span>Infelizmente esta vaga não está mais ativa, cadastre-se e não perca mais oportunidades.</span>
+	                            </div>
+	                        <?}
                         
-                        if($data['ativo'] == 0){ ?>
-                            <div class="Alerta">
-                                <span>Infelizmente esta vaga não está mais ativa, cadastre-se e não perca mais oportunidades.</span>
-                            </div>
-                        <?}
-                        
-                        foreach($data['Vaga'] as $dado){ ?>
                             <h1 class="title_pages" id="title_vaga"><? echo utf8_encode( $dado['Vaga'] ); ?></h1>
                             
                             <div class="vacancy_full">
@@ -89,7 +89,7 @@
                                 <?}?>
                             </div>
 
-                            <?if ($data['ativo'] == 1){?>
+                            <?if ($ativoVaga == 1){?>
                                 <?if(isset($_COOKIE['idCadastro']) && !empty($_COOKIE['idCadastro'])){?>
                                     <div class="btn_container">
                                         <a id="Enviar" class="btn_default" style="float: left;">Candidatar-se a esta vaga</a>
