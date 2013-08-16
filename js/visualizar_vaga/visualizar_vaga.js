@@ -26,12 +26,12 @@ $(document).ready(function() {
 			}	
 		}
 		if(quest1 == 's'){
-			cadastrar();
+			candidatar();
 		}
     });
 	
 	//Enviar Dados CV 	
-	function cadastrar(){
+	function candidatar(){
 		$.ajax({
 			url: "index.php?cadastrar_vaga",
 			type: "GET",

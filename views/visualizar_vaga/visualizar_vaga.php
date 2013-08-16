@@ -45,6 +45,8 @@
 	                        <?}?>
                         
                             <h1 class="title_pages" id="title_vaga"><? echo utf8_encode( $dado['Vaga'] ); ?></h1>
+							
+							<a href="#" class="btn_big share" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<? echo urlencode('http://talentu.com.br'.$_SERVER ['REQUEST_URI']); ?>', 'facebook-share-dialog', 'width=626,height=436'); return false;">compartilhar</a>
                             
                             <div class="vacancy_full">
                                 <label class="lbl_pre">Salário: <span><? echo utf8_encode( $dado['Salario'] ); ?></span></label>

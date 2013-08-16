@@ -962,6 +962,15 @@ strong {
     background: #ffa200;
 }
 
+.share {
+    background: #3b5998;
+    border:2px solid #133783;
+}
+
+.share:hover {
+    background: #607fbf;
+}
+
 .txt_desc {
     width: 418px;
     float: left;
