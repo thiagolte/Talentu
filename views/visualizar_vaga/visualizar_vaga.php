@@ -36,6 +36,8 @@
                 <div class="box_x2" style="width: 963px;">
                     <? if($data['Vaga']){ 
                         
+                        echo 'aqui ' . $data['ativo'];
+                        
                         if($data['ativo'] == 0){ ?>
                             <div class="Alerta">
                                 <span>Infelizmente esta vaga não está mais ativa, cadastre-se e não perca mais oportunidades.</span>
