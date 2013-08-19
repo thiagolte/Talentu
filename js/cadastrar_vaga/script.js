@@ -212,6 +212,7 @@ $(document).ready(function() {
           
     //Enviar Dados CV
     $('#Salvar').click(function(){
+        $('#Salvar').addClass('hide');
         if($("#frmVagas").valid()){
                 $.ajax({
                         url: "index.php?cadastrar_vaga",
@@ -227,9 +228,11 @@ $(document).ready(function() {
                         }
                 });
         }
+        $('#Salvar').removeClass('hide');
     });
     
     $('#Editar').click(function(){
+        $('#Editar').addClass('hide');
         if($("#frmVagas").valid()){
             $.ajax({
                 url: "index.php?cadastrar_vaga",
@@ -245,6 +248,7 @@ $(document).ready(function() {
                 }
             });
         }
+        $('#Editar').removeClass('hide');
     });  
     
     $("#EstadoEmpresa option[value='" + $("#slcEstadoEmpresa").attr('value') + "']").prop('selected',true);
