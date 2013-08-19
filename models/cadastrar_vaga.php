@@ -174,6 +174,7 @@ class Cadastrar_vaga_Model {
                         tiporesposta5VAGAEMPRESA AS TipoResposta5,
                         filtroativo5VAGAEMPRESA AS Filtro5,
                         ativoVAGAEMPRESA AS ativo,
+                        DATE_FORMAT(datacadastroVAGAEMPRESA, '%d/%m/%Y %H:%i:%s' ) AS dataCadastro,
                         SHA1(MD5(codigoFILTROVAGA)) AS idFiltro
                 FROM
                         tb0013_Vagas_Empresa

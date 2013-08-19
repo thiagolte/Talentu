@@ -49,6 +49,7 @@
 							<a href="#" class="btn_big share" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=<? echo urlencode('http://talentu.com.br'.$_SERVER ['REQUEST_URI']); ?>', 'facebook-share-dialog', 'width=626,height=436'); return false;">compartilhar</a>
                             
                             <div class="vacancy_full">
+                                <label class="lbl_pre">Data Publicação: <span><? echo utf8_encode( $dado['dataCadastro'] ); ?></span></label>
                                 <label class="lbl_pre">Salário: <span><? echo utf8_encode( $dado['Salario'] ); ?></span></label>
                                 <label class="lbl_pre">Area de Atuação: <span><? echo utf8_encode( $dado['AreaAtuacao'] ); ?></span></label>
                                 <label class="lbl_pre">Empresa: <span><? echo utf8_encode( $dado['Empresa'] ); ?></span></label>
