@@ -40,6 +40,7 @@ $(document).ready(function() {
 			{
 				if(data > 0){
 						alert('Candidatado com sucesso!');
+                                                window.location = "?area_usuario";
 				}else{
 						alert('ERRO: Contate o administrador');
 				}
