@@ -1,22 +1,22 @@
-<div id="tabs-5">
+<div id="tabs-6">
     <!-- USUÁRIOS -->
-    <div id="dialogEmpresa" title="Empresa">
+    <div id="dialogVagaEmpresa" title="Vaga Empresa">
         <p>
-            <input id="CodigoEmpresa" type="hidden"/>
-            Nome: <input id="NomeEmpresa" type="text" class="DialogInput" /> </br>
-            E-mail: <input id="EmailEmpresa" type="text" class="DialogInput" /> </br>
-            Razão: <input id="RazaoEmpresa" type="text" class="DialogInput" /> </br>
-            Fantasia: <input id="FantasiaEmpresa" type="text" class="DialogInput" /> </br>
-            CNPJ: <input id="CNPJEmpresa" type="text" class="DialogInput" /> </br>
-            Telefone: <input id="TelefoneEmpresa" type="text" class="DialogInput" /> </br>
-            <input id="AtivoEmpresa" type="checkbox" /> Ativo</br>
-            <input id="ResetSenhaEmpresa" type="checkbox" /> Reset Senha</br></br>
-            <input id="SalvarEmpresa" type="submit" value="Salvar">
-            <input id="EditarEmpresa" type="submit" value="Editar">
+            <input id="CodigoVagaEmpresa" type="hidden"/>
+            Nome: <input id="NomeVagaEmpresa" type="text" class="DialogInput" /> </br>
+            E-mail: <input id="EmailVagaEmpresa" type="text" class="DialogInput" /> </br>
+            Razão: <input id="RazaoVagaEmpresa" type="text" class="DialogInput" /> </br>
+            Fantasia: <input id="FantasiaVagaEmpresa" type="text" class="DialogInput" /> </br>
+            CNPJ: <input id="CNPJVagaEmpresa" type="text" class="DialogInput" /> </br>
+            Telefone: <input id="TelefoneVagaEmpresa" type="text" class="DialogInput" /> </br>
+            <input id="AtivoVagaEmpresa" type="checkbox" /> Ativo</br>
+            <input id="ResetSenhaVagaEmpresa" type="checkbox" /> Reset Senha</br></br>
+            <input id="SalvarVagaEmpresa" type="submit" value="Salvar">
+            <input id="EditarVagaEmpresa" type="submit" value="Editar">
         </p>
     </div>
     
-    <table cellpadding="0" cellspacing="0" border="0" class="display DataTable" id="Empresa">
+    <table cellpadding="0" cellspacing="0" border="0" class="display DataTable" id="VagaEmpresa">
         <thead>
             <tr>
                 <th></th>
@@ -32,14 +32,14 @@
         </thead>
         <tbody>
         <? 
-            if($data['dtEmpresas']){
+            if($data['dtVagaEmpresas']){
                 $count = 1;
-                foreach ($data['dtEmpresas'] as $dados) { ?>
-                    <tr class="gradeA">
+                foreach ($data['dtVagaEmpresas'] as $dados) { ?>
+                    <tr class="gradeB">
                         <td>
                             <input type="hidden" class="codigo" value="<?echo(utf8_encode($dados['codigo'])); ?>" />
                             <div class="menu hide">
-                                <div class="EditEmpresa edit"></div>
+                                <div class="EditVagaEmpresa edit"></div>
                             </div>
                         </td>
                         <td>

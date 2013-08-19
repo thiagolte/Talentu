@@ -38,6 +38,7 @@
                             <li><a href="#tabs-3">Categorias X Vagas</a></li>
                             <li><a href="#tabs-4">Usuários</a></li>
                             <li><a href="#tabs-5">Empresas</a></li>
+                            <li><a href="#tabs-6">Vagas Empresas</a></li>
                         </ul>
 
                         <?php include_once 'categorias.php'; ?>
@@ -49,6 +50,8 @@
                         <?php include_once 'usuarios.php'; ?>
                         
                         <?php include_once 'empresas.php'; ?>
+                        
+                        <?php include_once 'vagasempresas.php'; ?>
 
                     </div>
                 </div>

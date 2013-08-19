@@ -13,7 +13,7 @@ class Resultados_vagas_Controller {
             $vagas = $Resultados_Vagas_Model->get_Vagas( $_GET['categoria'], $_GET['vaga'],
                                                          $_GET['estado'], $_GET['cidade'],
                                                          $_GET['pretencao'], $_GET['pne']);
-
+            
             //telmplates
             $view = new View_Model($this->template);
 

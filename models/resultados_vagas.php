@@ -1,7 +1,6 @@
 <?php
-
 class Resultados_vagas_Model {
-    private $db;
+private $db;
 
     public function __construct() {
         $this->db = new MysqlImproved_Driver();
@@ -42,8 +41,16 @@ class Resultados_vagas_Model {
     */
     //SELECT
     public function get_Vagas($categoria, $vaga, $estado, $cidade, $faixa, $pne){
+        $this->db->connect(); 
+        
+        $categoria = $this->db->escape(utf8_decode($categoria));
+        $vaga = $this->db->escape(utf8_decode($vaga));
+        $estado = $this->db->escape(utf8_decode($estado));
+        $cidade = $this->db->escape(utf8_decode($cidade));
+        $faixa = $this->db->escape(utf8_decode($faixa));
+        $pne = $this->db->escape(utf8_decode($pne));
 
-       $query = "
+        $query = "
                 SELECT 
                     SHA1(MD5(codigoVAGAEMPRESA)) as idVaga,
                     CONCAT(cidadeempresaVAGAEMPRESA, ' - ', estadoempresaVAGAEMPRESA) AS 'Local',
@@ -75,12 +82,12 @@ class Resultados_vagas_Model {
                 if(!empty($faixa) && isset($faixa)){
                     $query .= " AND	salarioVAGAEMPRESA LIKE '%$faixa%'";
                 }
-//                if(!empty($pne) && isset($pne)){
-//                    $query .= " AND	pneFILTROVAGA LIKE '%$pne%'";
-//                }
-                
-        
-       $Retorno = $this->MySQLSelect($query);
+                if(!empty($pne) && isset($pne)){
+                    $query .= " AND	pneFILTROVAGA LIKE '%$pne%'";
+                }
+
+        //echo $query;
+        $Retorno = $this->MySQLSelect($query);
         
         return $Retorno;
     }
