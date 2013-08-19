@@ -68,10 +68,10 @@ private $db;
                 WHERE ativoVAGAEMPRESA = 1";
 
                 if(!empty($categoria) && isset($categoria)){
-                    $query .= " AND categoriaVAGAEMPRESA LIKE '%$categoria%'";
+                    $query .= " AND categoriaVAGAEMPRESA = '$categoria'";
                 }
                 if(!empty($vaga) && isset($vaga)){
-                    $query .= " AND vagaVAGAEMPRESA LIKE '%$vaga%'";
+                    $query .= " AND vagaVAGAEMPRESA = '$vaga'";
                 }
                 if(!empty($estado) && isset($estado)){
                     $query .= " AND estadoempresaVAGAEMPRESA LIKE '%$estado%'";
@@ -80,10 +80,10 @@ private $db;
                     $query .= " AND cidadeempresaVAGAEMPRESA LIKE '%$cidade%'";
                 }
                 if(!empty($faixa) && isset($faixa)){
-                    $query .= " AND	salarioVAGAEMPRESA LIKE '%$faixa%'";
+                    $query .= " AND	salarioVAGAEMPRESA = '$faixa'";
                 }
                 if(!empty($pne) && isset($pne)){
-                    $query .= " AND	pneFILTROVAGA LIKE '%$pne%'";
+                    $query .= " AND	pneFILTROVAGA = '$pne'";
                 }
 
         //echo $query;
