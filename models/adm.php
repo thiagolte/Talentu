@@ -389,20 +389,107 @@ class Adm_Model {
         return $Retorno;
     }
     
-    // public function delete_Usuario($Codigo){
+    //VAGAS EMPRESAS
+    public function get_VagasEmpresas() {        
+        $Retorno = $this->MySQLSelect(
+            "
+            SELECT
+            codigoVAGAEMPRESA AS codigo,
+            CASE localVAGAEMPRESA
+                    WHEN 1 THEN 'Vaga em minha empresa'
+                    ELSE nomeempresaVAGAEMPRESA
+            END AS local,
+            cidadeempresaVAGAEMPRESA AS cidade,
+            estadoempresaVAGAEMPRESA AS estado,
+            razaoCADASTROEMPRESA AS razao,
+            R.nomeCATEGORIA AS ramo,
+            CASE nacionalidadeVAGAEMPRESA
+                    WHEN 0 THEN 'Nacional'
+                    WHEN 1 THEN 'Internaciona'
+            END AS nacionalidade,
+            CASE porteVAGAEMPRESA 
+                    WHEN 1 THEN 'pequeno (de 1 a 99 funcionários)'
+                    WHEN 2 THEN 'médio (de 100 a 499 funcionários)'
+                    WHEN 3 THEN 'grande (mais de 500 funcionários)'
+            END AS porte,
+            descricaoVAGAEMPRESA AS descricao,
+            quantidadeVAGAEMPRESA AS quantidade,
+            atribuicoesVAGAEMPRESA AS atribuicoes,
+            experienciaVAGAEMPRESA AS experiencia,
+            nomeGRAUESCOLARIDADE AS escolaridade,
+            qualificacoesVAGAEMPRESA AS qualificacoes,
+            C.nomeCATEGORIA AS categoria,
+            V.nomeVAGA AS vaga,
+            CASE acombinarVAGAEMPRESA
+                    WHEN 0 THEN salarioVAGAEMPRESA
+                WHEN 1 THEN 'A Combinar'
+            END AS combinar,
+            CASE regimecontratacaoVAGAEMPRESA
+                    WHEN 1 THEN 'CLT'
+                    WHEN 2 THEN 'PJ'
+                    WHEN 3 THEN 'Estágio'
+                    WHEN 4 THEN 'Temporário'
+                    WHEN 5 THEN 'Outros'
+            END AS regime,
+            beneficiosVAGAEMPRESA AS beneficios,
+            regimetrabalhoVAGAEMPRESA AS regimetrabalho,
+            horarioVAGAEMPRESA AS horario,
+            questao1VAGAEMPRESA AS questao1,
+            questao2VAGAEMPRESA AS questao2,
+            questao3VAGAEMPRESA AS questao3,
+            questao4VAGAEMPRESA AS questao4,
+            questao5VAGAEMPRESA AS questao5,
+            ativoVAGAEMPRESA AS ativo,
+            DATE_FORMAT(datacadastroVAGAEMPRESA, '%d/%m/%Y %H:%i:%s' ) AS data
+            FROM	tb0013_Vagas_Empresa
+            INNER	JOIN tb0012_Cadastro_Empresas ON codigoCADASTROEMPRESA = empresaVAGAEMPRESA
+            INNER	JOIN tb0007_Categorias R ON R.codigoCATEGORIA = ramoVAGAEMPRESA
+            INNER	JOIN tb0003_Graus_Escolaridade ON codigoGRAUESCOLARIDADE = escolaridadeVAGAEMPRESA
+            INNER	JOIN tb0007_Categorias C ON C.codigoCATEGORIA = categoriaVAGAEMPRESA
+            INNER	JOIN tb0008_Vagas V ON V.codigoVAGA = vagaVAGAEMPRESA
+            ;
+            "
+        );
         
-    //     $Codigo = $this->db->escape(utf8_decode($Codigo));
+        return $Retorno;
+    }
+    
+    public function update_VagasEmpresa($Codigo,$Nome,$Email,$Razao,$Fantasia,$CNPJ,$Telefone,$ResetSenha,$Ativo){
+        $this->db->connect(); 
+
+        $Codigo = $this->db->escape(utf8_decode($Codigo));
+        $Nome = $this->db->escape(utf8_decode($Nome));
+        $Email = $this->db->escape(utf8_decode($Email));
+        $Razao = $this->db->escape(utf8_decode($Razao));
+        $Fantasia = $this->db->escape(utf8_decode($Fantasia));
+        $CNPJ = $this->db->escape(utf8_decode($CNPJ));
+        $Telefone = $this->db->escape(utf8_decode($Telefone));
+        $ResetSenha = $this->db->escape(utf8_decode($ResetSenha));
+        $Ativo = $this->db->escape(utf8_decode($Ativo));
         
-    //     $Retorno = $this->MySQLIUD(
-    //         "
-    //         DELETE FROM
-    //             tb0007_Categorias
-    //         WHERE
-    //             codigoCATEGORIA = $Codigo
-    //         ;
-    //         "
-    //     );
+        $query = "
+            UPDATE
+                tb0013_Vagas_Empresa
+            SET
+                nomecompletoCADASTROEMPRESA = '$Nome'
+                ,emailCADASTROEMPRESA = '$Email'
+                ,telefoneCADASTROEMPRESA = '$Telefone'
+                ,razaoCADASTROEMPRESA = '$Razao'
+                ,fantasiaCADASTROEMPRESA = '$Fantasia'
+                ,cnpjCADASTROEMPRESA = '$CNPJ'
+                ,ativoCADASTROEMPRESA = $Ativo";
+                if ($ResetSenha == 1){
+                    $query .= ",senhaCADASTROEMPRESA='". sha1(sha1(md5('teste'))) ."'";
+                }
+                
+            $query .= " WHERE
+                codigoCADASTROEMPRESA = $Codigo
+            ;
+            ";
         
-    //     return $Retorno;
-    // }
+        $Retorno = $this->MySQLIUD($query);
+        
+        return $Retorno;
+    }
+ 
 }

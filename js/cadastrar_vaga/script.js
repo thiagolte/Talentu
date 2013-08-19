@@ -71,12 +71,7 @@ $(document).ready(function() {
 			alert("Por favor, digite o regime de trabalho!");
 		}else if($("#horario").val() == '') {
 			alert("Por favor, digite o horário de trabalho!");
-		}
-			
-			
-			
-			
-			
+		}	
 	});	
 	
 	$("#salario").maskMoney({showSymbol:true, symbol:"R$ ", decimal:",", thousands:"."});
@@ -87,96 +82,95 @@ $(document).ready(function() {
 
     $("#frmVagas").validate({
         rules:{
-			porte: { 
-				valueNotEquals: "0"
-			},
-			ramoAtuacao: { 
-				valueNotEquals: "0"
-			},
-			regimeContratacao: {
-				valueNotEquals: "0"
-			},
-			escolaridade: {
-				valueNotEquals: "0"
-			},
-			categoria: {
-				valueNotEquals: "0"
-			},
-			vaga: {
-				valueNotEquals: "0"
-			},
-			EstadoEmpresa: {
-				valueNotEquals: "0"
-			},
-			CidadeEmpresa: {
-				required: true
-			},
-			EstadoEmpresa: {
-				valueNotEquals: "0"
-			},
-			quantidade: {
-				required: true
-			},
-			atribuicoes: {
-				required: true
-			},
-			experiencia:{
-				required: true
-			},
-			beneficios: {
-				required: true
-			},
-			regimeTrabalho: {
-				required: true			
-			},
-			horario: {
-				required: true			
-			}
+            porte: { 
+                    valueNotEquals: "0"
+            },
+            ramoAtuacao: { 
+                    valueNotEquals: "0"
+            },
+            regimeContratacao: {
+                    valueNotEquals: "0"
+            },
+            escolaridade: {
+                    valueNotEquals: "0"
+            },
+            categoria: {
+                    valueNotEquals: "0"
+            },
+            vaga: {
+                    valueNotEquals: "0"
+            },
+                EstadoEmpresa: {
+                valueNotEquals: "0"
+            },
+            CidadeEmpresa: {
+                    required: true
+            },
+            EstadoEmpresa: {
+                    valueNotEquals: "0"
+            },
+            quantidade: {
+                    required: true
+            },
+            atribuicoes: {
+                    required: true
+            },
+            experiencia:{
+                    required: true
+            },
+            beneficios: {
+                    required: true
+            },
+            regimeTrabalho: {
+                    required: true			
+            },
+            horario: {
+                    required: true			
+            }
         },
         messages:{
-			porte: {
-				valueNotEquals: "selecione o porta da empresa"
-			},
-			ramoAtuacao: {
-				valueNotEquals: "selecione o ramo de atuação da empresa"
-			},
-			regimeContratacao: {
-				valueNotEquals: "selecione o regime de contratação"
-			},
-			escolaridade: {
-				valueNotEquals: "selecione a escolaridade"
-			},
-			categoria: {
-				valueNotEquals: "selecione a categoria"
-			},
-			vaga: {
-				valueNotEquals: "selecione a vaga"
-			},
-			CidadeEmpresa: {
-				required: "informe a cidade",
-			},
-			EstadoEmpresa: {
-				valueNotEquals: "Selecione o Estado"
-			},
-			quantidade: {
-				required: "informe a quantidade de vagas"
-			},
-			atribuicoes: {
-				required: "informe as atribuições"
-			},
-			experiencia:{
-				required: "informe a experiência"
-			},
-			beneficios: {
-				required: "informe os benefícios"
-			},
-			regimeTrabalho: {
-				required: "informe o regime de trabalho"
-			},
-			horario: {
-				required: "informe o horário de trabalho"
-			}
-						
+            porte: {
+                    valueNotEquals: "selecione o porta da empresa"
+            },
+            ramoAtuacao: {
+                    valueNotEquals: "selecione o ramo de atuação da empresa"
+            },
+            regimeContratacao: {
+                    valueNotEquals: "selecione o regime de contratação"
+            },
+            escolaridade: {
+                    valueNotEquals: "selecione a escolaridade"
+            },
+            categoria: {
+                    valueNotEquals: "selecione a categoria"
+            },
+            vaga: {
+                    valueNotEquals: "selecione a vaga"
+            },
+            CidadeEmpresa: {
+                    required: "informe a cidade",
+            },
+            EstadoEmpresa: {
+                    valueNotEquals: "Selecione o Estado"
+            },
+            quantidade: {
+                    required: "informe a quantidade de vagas"
+            },
+            atribuicoes: {
+                    required: "informe as atribuições"
+            },
+            experiencia:{
+                    required: "informe a experiência"
+            },
+            beneficios: {
+                    required: "informe os benefícios"
+            },
+            regimeTrabalho: {
+                    required: "informe o regime de trabalho"
+            },
+            horario: {
+                    required: "informe o horário de trabalho"
+            }			
         }
 		
     });

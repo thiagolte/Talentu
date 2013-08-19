@@ -623,7 +623,7 @@ strong {
 
 .txt_search {
     width: 100%;
-    float: left;
+    /*float: left;*/
     padding: 5px 5px;
     border: 1px solid #f0702e;
     background: #f2f2f2;

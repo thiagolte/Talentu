@@ -143,7 +143,7 @@
                             <textarea name="atribuicoes" id="atribuicoes" class="txt_search" style="width: 383px!important; height: 60px;"><? echo utf8_encode( $data['dadosVaga'][0]['Atribuicoes'] ) ?></textarea>
 
                             <label class="lbl_form">Experiência e habilidades</label>
-                            <textarea name="experiencia" id="experiencia" class="txt_search" style="width: 383px!important; height: 60px;"><? echo utf8_encode( $data['dadosVaga'][0]['Experiencia'] ) ?></textarea>
+                            <textarea name="experiencia" id="experiencia" class="txt_search" style="width: 383px!important; height: 60px!important;"><? echo utf8_encode( $data['dadosVaga'][0]['Experiencia'] ) ?></textarea>
 
                             <label class="lbl_form">Escolaridade</label>
                             <select id="escolaridade" name="escolaridade" class="select_form" value="" style="width: 395px;">

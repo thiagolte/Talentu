@@ -152,17 +152,9 @@ class Adm_Controller {
             echo 1; 
         }
 
-        // if (isset($getVars['DeleteUsuario']) && !empty($getVars['DeleteUsuario']) &&
-        //         isset($getVars['CodigoUsuario']) && !empty($getVars['CodigoUsuario'])){
-            
-        //     $Codigo = $getVars['CodigoUsuario'];
-        //     $Retorno = $Adm_Model->delete_Usuario($Codigo);
-        //     echo 1; 
-        // }
-
         //Empresas
         if (isset($getVars['getEmpresa']) && !empty($getVars['getEmpresa'])){
-            $Retorno = $Adm_Model->get_Usuarios();
+            $Retorno = $Adm_Model->get_Empresas();
             echo 1; 
         }
         
@@ -182,14 +174,29 @@ class Adm_Controller {
             $Retorno = $Adm_Model->update_Empresa($Codigo, $Nome, $Email, $ResetSenha, $Ativo);
             echo 1; 
         }
-
-        // if (isset($getVars['DeleteEmpresa']) && !empty($getVars['DeleteEmpresa']) &&
-        //         isset($getVars['CodigoEmpresa']) && !empty($getVars['CodigoEmpresa'])){
+        
+        //Vagas Empresas
+        if (isset($getVars['getVagasEmpresa']) && !empty($getVars['getVagasEmpresa'])){
+            $Retorno = $Adm_Model->get_VagasEmpresas();
+            echo 1; 
+        }
+        
+        if (isset($getVars['UpdateEmpresa']) && !empty($getVars['UpdateEmpresa']) &&
+                isset($getVars['CodigoEmpresa']) && !empty($getVars['CodigoEmpresa']) &&
+                isset($getVars['NomeEmpresa']) && !empty($getVars['NomeEmpresa']) &&
+                isset($getVars['EmailEmpresa']) && !empty($getVars['EmailEmpresa']) &&
+                isset($getVars['ResetSenhaEmpresa']) &&
+                isset($getVars['AtivoEmpresa'])){
             
-        //     $Codigo = $getVars['CodigoEmpresa'];
-        //     $Retorno = $Adm_Model->delete_Empresa($Codigo);
-        //     echo 1; 
-        // }
+            $Codigo = $getVars['CodigoEmpresa'];
+            $Nome = $getVars['NomeEmpresa'];
+            $Email = $getVars['EmailEmpresa'];
+            $ResetSenha = $getVars['ResetSenhaEmpresa'];
+            $Ativo = $getVars['AtivoEmpresa'];
+
+            $Retorno = $Adm_Model->update_VagasEmpresa($Codigo, $Nome, $Email, $ResetSenha, $Ativo);
+            echo 1; 
+        }
         
         //Main
         if (count($getVars) == 0) {
@@ -201,6 +208,7 @@ class Adm_Controller {
             $this->CarregaCategoriasVagas($view);
             $this->CarregaUsuario($view);
             $this->CarregaEmpresa($view);
+            $this->CarregaVagasEmpresa($view);
             
             $view->render();
         }
@@ -242,12 +250,21 @@ class Adm_Controller {
         $view->assign('dtUsuarios', $Retorno);
     }
     
-    //Usuários
+    //Empresas
     function CarregaEmpresa($view){
         $Adm_Model = new Adm_Model();
         
         $Retorno = $Adm_Model->get_Empresas();
 
         $view->assign('dtEmpresas', $Retorno);
+    }
+    
+    //Vagas Empresas
+    function CarregaVagasEmpresa($view){
+        $Adm_Model = new Adm_Model();
+        
+        $Retorno = $Adm_Model->get_VagasEmpresas();
+
+        $view->assign('dtVagaEmpresas', $Retorno);
     }
 }
