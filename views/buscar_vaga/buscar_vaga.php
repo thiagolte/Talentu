@@ -93,24 +93,7 @@
 
                             <span style="width: 100%; float: left;"></span>
 
-                            <div class="filters_multi">
-                                    <label class="lbl_form" style="margin-top: 15px;">Faixa Salarial</label>
-
-                                    <select id="pretencao" name="pretencao" class="select_multi">
-                                        <option value="0">Selecione</option>
-                                        <? 
-                                        if($data['Pretencao']){
-                                            foreach ($data['Pretencao'] as $dados) { ?>
-
-                                                <option value="<? echo $dados['Codigo'] ?>"><? echo utf8_encode($dados['Nome']) ?></option>
-                                        <?
-                                            }
-                                        }
-                                        ?>
-                                    </select>
-                            </div>
-
-                            <div class="filters_multi" style="margin-left: 32px;">
+                            <div class="filters_multi" style="margin-left: 0px;">
                                     <label class="lbl_form" style="margin-top: 15px;">PNE</label>
 
                                     <select id="pne" name="pne" class="select_multi">
