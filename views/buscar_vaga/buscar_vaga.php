@@ -107,8 +107,8 @@
                             </div>
 
 
-                        <div style="float: left; width: 100%;">
-                            <input id="Enviar" type="button" value="buscar" style="float: right;"/>
+                        <div style="float: left; width: 100%; margin-left: -79px;margin-top: 10px;">
+                            <input id="Enviar" type="button" value="buscar"/>
                         </div>
 
                     </form>

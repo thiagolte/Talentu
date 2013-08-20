@@ -35,6 +35,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
     background: #2f92c5;
+	min-width:1053px;
 }
 ol, ul {
 	list-style: none;
@@ -1554,6 +1555,7 @@ strong {
     top: 24px;
     right: -43px;
     background: url(../images/img_vagas.png) no-repeat;
+	z-index: 1;
 }
 
 .btn_container {

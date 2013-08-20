@@ -1,5 +1,6 @@
-
 <?php
+	error_reporting(0);
+
     function curPageURL() {
         if ($_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
         if ($_SERVER["SERVER_PORT"] != "80") {
