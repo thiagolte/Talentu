@@ -168,10 +168,14 @@ class Adm_Controller {
             $Codigo = $getVars['CodigoEmpresa'];
             $Nome = $getVars['NomeEmpresa'];
             $Email = $getVars['EmailEmpresa'];
+            $Razao = $getVars['RazaoEmpresa'];
+            $Fantasia = $getVars['FantasiaEmpresa'];
+            $CNPJ = $getVars['CNPJEmpresa'];
+            $Telefone = $getVars['TelefoneEmpresa']; 
             $ResetSenha = $getVars['ResetSenhaEmpresa'];
             $Ativo = $getVars['AtivoEmpresa'];
 
-            $Retorno = $Adm_Model->update_Empresa($Codigo, $Nome, $Email, $ResetSenha, $Ativo);
+            $Retorno = $Adm_Model->update_Empresa($Codigo,$Nome,$Email,$Razao,$Fantasia,$CNPJ,$Telefone,$ResetSenha,$Ativo);
             echo 1; 
         }
         
@@ -181,20 +185,24 @@ class Adm_Controller {
             echo 1; 
         }
         
-        if (isset($getVars['UpdateEmpresa']) && !empty($getVars['UpdateEmpresa']) &&
-                isset($getVars['CodigoEmpresa']) && !empty($getVars['CodigoEmpresa']) &&
-                isset($getVars['NomeEmpresa']) && !empty($getVars['NomeEmpresa']) &&
-                isset($getVars['EmailEmpresa']) && !empty($getVars['EmailEmpresa']) &&
-                isset($getVars['ResetSenhaEmpresa']) &&
-                isset($getVars['AtivoEmpresa'])){
+        if (isset($getVars['UpdateVagasEmpresa']) && !empty($getVars['UpdateVagasVagasEmpresa']) &&
+                isset($getVars['CodigoVagasEmpresa']) && !empty($getVars['CodigoVagasEmpresa']) &&
+                isset($getVars['NomeVagasEmpresa']) && !empty($getVars['NomeVagasEmpresa']) &&
+                isset($getVars['EmailVagasEmpresa']) && !empty($getVars['EmailVagasEmpresa']) &&
+                isset($getVars['ResetSenhaVagasEmpresa']) &&
+                isset($getVars['AtivoVagasEmpresa'])){
             
             $Codigo = $getVars['CodigoEmpresa'];
             $Nome = $getVars['NomeEmpresa'];
             $Email = $getVars['EmailEmpresa'];
+            $Razao = $getVars['RazaoEmpresa'];
+            $Fantasia = $getVars['FantasiaEmpresa'];
+            $CNPJ = $getVars['CNPJEmpresa'];
+            $Telefone = $getVars['TelefoneEmpresa']; 
             $ResetSenha = $getVars['ResetSenhaEmpresa'];
             $Ativo = $getVars['AtivoEmpresa'];
 
-            $Retorno = $Adm_Model->update_VagasEmpresa($Codigo, $Nome, $Email, $ResetSenha, $Ativo);
+            $Retorno = $Adm_Model->update_VagasEmpresa($Codigo,$Nome,$Email,$Razao,$Fantasia,$CNPJ,$Telefone,$ResetSenha,$Ativo);
             echo 1; 
         }
         

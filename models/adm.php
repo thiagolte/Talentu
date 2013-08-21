@@ -486,7 +486,7 @@ class Adm_Model {
                 codigoCADASTROEMPRESA = $Codigo
             ;
             ";
-        
+
         $Retorno = $this->MySQLIUD($query);
         
         return $Retorno;
