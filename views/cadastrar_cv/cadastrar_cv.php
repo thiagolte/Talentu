@@ -274,8 +274,8 @@
                             <option value="mais de 5 anos">mais de 5 anos</option>
                         </select>
 
-                        <label class="lbl_form">copiar e colar curriculum</label>
-                        <textarea id="CV" class="txt_search" style="width: 383px!important; height: 140px;"><?= $data['CV']  ?></textarea>
+                        <label class="lbl_form">copiar e colar curriculum (Máximo 2000 caracteres)</label>
+                        <textarea id="CV" class="txt_search" style="width: 383px!important; height: 140px;" maxlength="2000" ><?= $data['CV']  ?></textarea>
 
                 </div>
                 <div style="float: left; width: 577px; margin:60px 40px 0 0;">
