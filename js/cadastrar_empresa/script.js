@@ -151,7 +151,7 @@ $(document).ready(function() {
                             } 
                         }
                     }else{
-                        alert('ERRO: Empresa já existente!');
+                        alert('ERRO: Contate o Administrador!');
                     }
                 }
             });

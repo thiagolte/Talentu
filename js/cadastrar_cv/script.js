@@ -369,7 +369,7 @@ $(document).ready(function() {
                         }
 
                     }else{
-                        alert('ERRO: Cadastro já existente!');
+                        alert('ERRO: Contate o Administrador!');
                     }
                 }
             });
