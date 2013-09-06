@@ -80,6 +80,20 @@
                 
                 <span class="spacer" style="margin-top: 0!important;"></span>
                 
+                <div align="center" style="margin: 20px;">
+                        <script type="text/javascript"><!--
+                        google_ad_client = "ca-pub-3505603995038341";
+                        /* Anúncio 1 */
+                        google_ad_slot = "5911298712";
+                        google_ad_width = 728;
+                        google_ad_height = 90;
+                        //-->
+                        </script>
+                        <script type="text/javascript"
+                        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                        </script>
+                </div>
+                
             </div>
         </div>
     </div>

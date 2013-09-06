@@ -10,6 +10,20 @@
 
 		<div id="primary" class="widget-area" role="complementary">
 			<ul class="xoxo">
+                            
+                    <div align="center" style="margin: 20px;">
+                        <script type="text/javascript"><!--
+                        google_ad_client = "ca-pub-3505603995038341";
+                        /* Anúncio 3 */
+                        google_ad_slot = "2818231514";
+                        google_ad_width = 320;
+                        google_ad_height = 50;
+                        //-->
+                        </script>
+                        <script type="text/javascript"
+                        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                        </script>
+                    </div>
 
 <?php
 	/* When we call the dynamic_sidebar() function, it'll spit out
