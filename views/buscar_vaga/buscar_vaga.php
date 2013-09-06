@@ -19,13 +19,13 @@
         <div class="containerCt">
             <div class="container">
                 <div class="box_x1">
-                    <div align="center">
+                    <div align="center" style="margin-bottom: 20px;">
                         <script type="text/javascript"><!--
                         google_ad_client = "ca-pub-3505603995038341";
-                        /* Anúncio 3 */
-                        google_ad_slot = "2818231514";
-                        google_ad_width = 320;
-                        google_ad_height = 50;
+                        /* Anúncio 1 */
+                        google_ad_slot = "5911298712";
+                        google_ad_width = 728;
+                        google_ad_height = 90;
                         //-->
                         </script>
                         <script type="text/javascript"

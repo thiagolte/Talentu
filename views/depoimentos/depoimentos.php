@@ -28,6 +28,21 @@
         <div class="containerCt">
             <div class="container">
                 <div class="box_x1" style="width: 588px; margin-right: 40px;">
+                    
+                    <div align="center" style="margin-bottom: 20px;">
+                            <script type="text/javascript"><!--
+                            google_ad_client = "ca-pub-3505603995038341";
+                            /* Anúncio 3 */
+                            google_ad_slot = "2818231514";
+                            google_ad_width = 320;
+                            google_ad_height = 50;
+                            //-->
+                            </script>
+                            <script type="text/javascript"
+                            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                            </script>
+                    </div>
+                    
                     <h1 class="title_pages">Depoimentos</h1>
                     <p>Conheça o depoimento de quem conseguiu emprego com a ajuda da <strong style="color: #f0702e;">Talentu!</strong></p>
                     
@@ -47,6 +62,21 @@
                 <div class="fb_box">
                     <div class="fb-like-box" data-href="http://www.facebook.com/TalentuVagas" data-width="292" data-show-faces="true" data-stream="true" data-border-color="#ffffff" data-header="true"></div>
                 </div>
+                
+                <div align="center" style="margin: 20px;">
+                        <script type="text/javascript"><!--
+                        google_ad_client = "ca-pub-3505603995038341";
+                        /* Anúncio 1 */
+                        google_ad_slot = "5911298712";
+                        google_ad_width = 728;
+                        google_ad_height = 90;
+                        //-->
+                        </script>
+                        <script type="text/javascript"
+                        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                        </script>
+                </div>
+                
             </div>
         </div>
     </div>

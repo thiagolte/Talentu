@@ -609,6 +609,21 @@
                 <a class="btn_default" href="javascript:history.go(-1)">retornar aos resultados</a>
               </div>
               <?}?>
+                
+                <div align="center" style="margin: 20px;">
+                        <script type="text/javascript"><!--
+                        google_ad_client = "ca-pub-3505603995038341";
+                        /* Anúncio 1 */
+                        google_ad_slot = "5911298712";
+                        google_ad_width = 728;
+                        google_ad_height = 90;
+                        //-->
+                        </script>
+                        <script type="text/javascript"
+                        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                        </script>
+                </div>
+                
             </div>
         </div>
     </div>
